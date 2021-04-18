@@ -1,0 +1,12 @@
+{
+  "main.js": "render-page.js",
+  "main.js.map": "render-page.js.map",
+  "static/about.jpeg": "static/about-abab02f6217dd695da4cf6653e3f4a5d.jpeg",
+  "static/avatar.jpeg": "static/avatar-e8995ace0d9542c60fd1086e4c64da78.jpeg",
+  "static/kotlin.jpeg": "static/kotlin-316e30cee68d766b615244f9842aa1f6.jpeg",
+  "static/lidemy.png": "static/lidemy-e57d3119009c574dde0fe4200ff69e8e.png",
+  "static/mountain.jpeg": "static/mountain-26184998bfb7e9fd2d66b557d96a7c2a.jpeg",
+  "static/travel.jpeg": "static/travel-1c82bd762bcefb86e9644543b6ee146f.jpeg",
+  "static/weeklyjournal.jpeg": "static/weeklyjournal-b90b83a35a7a3cbd90d91de44e8a0603.jpeg",
+  "static/yoga.jpeg": "static/yoga-309c240b0fa5fe7535c21e61b07150ed.jpeg"
+}
