@@ -56,40 +56,40 @@
   </script><link rel="alternate" type="application/rss+xml" href="/rss.xml"/><link rel="icon" href="/favicon-32x32.png?v=6c1afc0e3c2660e267f5f3cecef47589" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><meta name="theme-color" content="#663399"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=6c1afc0e3c2660e267f5f3cecef47589"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=6c1afc0e3c2660e267f5f3cecef47589"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=6c1afc0e3c2660e267f5f3cecef47589"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=6c1afc0e3c2660e267f5f3cecef47589"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=6c1afc0e3c2660e267f5f3cecef47589"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=6c1afc0e3c2660e267f5f3cecef47589"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=6c1afc0e3c2660e267f5f3cecef47589"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=6c1afc0e3c2660e267f5f3cecef47589"/><title data-react-helmet="true">認識 SQL Injection、XSS、CSRF | Travel in Time.</title><meta data-react-helmet="true" name="description" content="1. SQL Injection 的攻擊原理以及防範方法 又稱 SQL 隱碼或 SQL 注碼，發生於應用程式與資料庫層的安全漏洞。
 簡單來說，利用在輸入的字串之中夾帶 SQL 指令，因程式設計者忽略了字元檢查，這些夾帶進去的惡意指令就會被資料庫伺服器誤認為是正常的 SQL…"/><meta data-react-helmet="true" property="og:title" content="認識 SQL Injection、XSS、CSRF"/><meta data-react-helmet="true" property="og:description" content="1. SQL Injection 的攻擊原理以及防範方法 又稱 SQL 隱碼或 SQL 注碼，發生於應用程式與資料庫層的安全漏洞。
 簡單來說，利用在輸入的字串之中夾帶 SQL 指令，因程式設計者忽略了字元檢查，這些夾帶進去的惡意指令就會被資料庫伺服器誤認為是正常的 SQL…"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:creator" content="Zoe Yu"/><meta data-react-helmet="true" name="twitter:title" content="認識 SQL Injection、XSS、CSRF"/><meta data-react-helmet="true" name="twitter:description" content="1. SQL Injection 的攻擊原理以及防範方法 又稱 SQL 隱碼或 SQL 注碼，發生於應用程式與資料庫層的安全漏洞。
-簡單來說，利用在輸入的字串之中夾帶 SQL 指令，因程式設計者忽略了字元檢查，這些夾帶進去的惡意指令就會被資料庫伺服器誤認為是正常的 SQL…"/><style data-styled="" data-styled-version="5.2.3">.jGnann{padding:8px 24px;margin-right:16px;font-size:12px;margin-bottom:16px;font-weight:500;-webkit-letter-spacing:.5px;-moz-letter-spacing:.5px;-ms-letter-spacing:.5px;letter-spacing:.5px;line-height:24px;color:#181818;border:1px solid #ECECEC;border-radius:4px;}/*!sc*/
-.jGnann:hover{color:#C5322E;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
-data-styled.g29[id="tag__Tag-ipvvgn-0"]{content:"jGnann,"}/*!sc*/
+簡單來說，利用在輸入的字串之中夾帶 SQL 指令，因程式設計者忽略了字元檢查，這些夾帶進去的惡意指令就會被資料庫伺服器誤認為是正常的 SQL…"/><style data-styled="" data-styled-version="5.2.3">.htfJiN{padding:8px 24px;margin-right:16px;font-size:12px;margin-bottom:16px;font-weight:500;-webkit-letter-spacing:.5px;-moz-letter-spacing:.5px;-ms-letter-spacing:.5px;letter-spacing:.5px;line-height:24px;color:#181818;border:1px solid #ECECEC;border-radius:4px;}/*!sc*/
+.htfJiN:hover{color:#C5322E;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+data-styled.g29[id="tag__BlogTag-ipvvgn-0"]{content:"htfJiN,"}/*!sc*/
 .hYboqo{margin:10vh 0;padding:20px;background:#F6F6F6;}/*!sc*/
-data-styled.g30[id="blog-post__CommentWrapper-sc-1hz7w8z-0"]{content:"hYboqo,"}/*!sc*/
-</style><link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC|Source+Sans+Pro:300,400,500,700&amp;display=swap" rel="stylesheet"/><link as="script" rel="preload" href="/webpack-runtime-b79b73c0a761c3e72263.js"/><link as="script" rel="preload" href="/framework-2d6b7d2e2be378715b78.js"/><link as="script" rel="preload" href="/app-7200a275e6a5a54ac58c.js"/><link as="script" rel="preload" href="/styles-e9d24b1846c7d6eb9685.js"/><link as="script" rel="preload" href="/78bde0f9cbfb3abf81d5baf6b7f31e60371328d0-caa364ff8415a13753f0.js"/><link as="script" rel="preload" href="/5c3f3ed0ca01001d335c9b0021661d159a6a78f4-f0151228293631dd083a.js"/><link as="script" rel="preload" href="/component---src-templates-blog-post-js-8a2324bd47fe05fd44e5.js"/><link as="fetch" rel="preload" href="/page-data/Lidemy/認識 SQL Injection、XSS、CSRF 等攻擊原理及防範方法/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/63159454.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="site-wrapper "><header class="site-head"><div class="site-head-container"><a class="nav-burger" href="#"><div class="hamburger hamburger--collapse" aria-label="Menu" role="button" aria-controls="navigation"><div class="hamburger-box"><div class="hamburger-inner"></div></div></div></a><div class="site-head-center"><a class="site-head-logo" href="/">Travel in Time.</a></div><div class="site-head-right"><ul class="nav" role="menu"><li class="nav-elements" role="menuitem"><a href="/blog">Blog</a></li><li class="nav-elements" role="menuitem"><a href="/life">Life</a></li><li class="nav-elements" role="menuitem"><a href="/coding">Coding</a></li><li class="nav-elements" role="menuitem"><a href="/archive">Archive</a></li><li class="nav-about" role="menuitem"><a href="/about">About</a></li></ul></div></div></header><main id="site-main" class="site-main"><div id="swup" class="transition-fade"><article class="post-content no-image"><header class="post-content-header"><h1 class="post-content-title">認識 SQL Injection、XSS、CSRF</h1><div><h5 class="post-content-date">Oct 11, 2020</h5><a class="post-content-category" href="/category/程式導師計畫">程式導師計畫</a></div></header><div class="post-content-body"><h3>1. SQL Injection 的攻擊原理以及防範方法</h3>
+data-styled.g32[id="blog-post__CommentWrapper-sc-1hz7w8z-0"]{content:"hYboqo,"}/*!sc*/
+</style><link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC|Source+Sans+Pro:300,400,500,700&amp;display=swap" rel="stylesheet"/><link as="script" rel="preload" href="/webpack-runtime-3af44b7a14c4e7b789b0.js"/><link as="script" rel="preload" href="/framework-2d6b7d2e2be378715b78.js"/><link as="script" rel="preload" href="/app-7200a275e6a5a54ac58c.js"/><link as="script" rel="preload" href="/styles-e9d24b1846c7d6eb9685.js"/><link as="script" rel="preload" href="/78bde0f9cbfb3abf81d5baf6b7f31e60371328d0-caa364ff8415a13753f0.js"/><link as="script" rel="preload" href="/5c3f3ed0ca01001d335c9b0021661d159a6a78f4-f0151228293631dd083a.js"/><link as="script" rel="preload" href="/component---src-templates-blog-post-js-e993954c3e6476bf33bd.js"/><link as="fetch" rel="preload" href="/page-data/Lidemy/認識 SQL Injection、XSS、CSRF 等攻擊原理及防範方法/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/63159454.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="site-wrapper "><header class="site-head"><div class="site-head-container"><a class="nav-burger" href="#"><div class="hamburger hamburger--collapse" aria-label="Menu" role="button" aria-controls="navigation"><div class="hamburger-box"><div class="hamburger-inner"></div></div></div></a><div class="site-head-center"><a class="site-head-logo" href="/">Travel in Time.</a></div><div class="site-head-right"><ul class="nav" role="menu"><li class="nav-elements" role="menuitem"><a href="/blog">Blog</a></li><li class="nav-elements" role="menuitem"><a href="/life">Life</a></li><li class="nav-elements" role="menuitem"><a href="/coding">Coding</a></li><li class="nav-elements" role="menuitem"><a href="/archive">Archive</a></li><li class="nav-about" role="menuitem"><a href="/about">About</a></li></ul></div></div></header><main id="site-main" class="site-main"><div id="swup" class="transition-fade"><article class="post-content no-image"><header class="post-content-header"><h1 class="post-content-title">認識 SQL Injection、XSS、CSRF</h1><div><h5 class="post-content-date">Oct 11, 2020</h5><a class="post-content-category" href="/category/程式導師計畫">程式導師計畫</a></div></header><div class="post-content-body"><h3 id="1-SQL-Injection-的攻擊原理以及防範方法" style="position:relative;">1. SQL Injection 的攻擊原理以及防範方法<a href="#1-SQL-Injection-%E7%9A%84%E6%94%BB%E6%93%8A%E5%8E%9F%E7%90%86%E4%BB%A5%E5%8F%8A%E9%98%B2%E7%AF%84%E6%96%B9%E6%B3%95" aria-label="1 SQL Injection 的攻擊原理以及防範方法 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
 <p>又稱 SQL 隱碼或 SQL 注碼，發生於應用程式與資料庫層的安全漏洞。
 簡單來說，利用在輸入的字串之中夾帶 SQL 指令，因程式設計者<strong>忽略了字元檢查</strong>，這些夾帶進去的惡意指令就會被資料庫伺服器誤認為是正常的 SQL 指令而執行，因此資料庫遭到破壞，讓攻擊者有了擅自竊取、修改、挪動或刪除資料的可能：</p>
 <ul>
 <li>未過濾惡意程式碼的情況</li>
 <li>透過更改語法邏輯或加入特殊指令的方式</li>
 </ul>
-<h4>常見攻擊手法</h4>
+<h4 id="常見攻擊手法" style="position:relative;">常見攻擊手法<a href="#%E5%B8%B8%E8%A6%8B%E6%94%BB%E6%93%8A%E6%89%8B%E6%B3%95" aria-label="常見攻擊手法 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
 <ol>
 <li>略過權限檢查（Authorization Bypass）</li>
 </ol>
-<pre class="grvsc-container default-dark" data-language="sql" data-index="0"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">// 原本</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">SELECT</span><span class="mtk1"> * </span><span class="mtk4">FROM</span><span class="mtk1"> users </span><span class="mtk4">WHERE</span><span class="mtk1"> </span><span class="mtk4">name</span><span class="mtk1"> = </span><span class="mtk8">&#39;name&#39;</span><span class="mtk1"> </span><span class="mtk4">AND</span><span class="mtk1"> </span><span class="mtk4">password</span><span class="mtk1"> = </span><span class="mtk8">&#39;password&#39;</span></span></span></code></pre>
-<p>以註冊登入為例，當有兩個輸入框要求使用者登入帳號密碼，在取得輸入框的值，給後端去驗證，攻擊者可以輸入<code>'OR 1=1 --</code> 來繞開這關程序 =><code>'</code> 讓輸入框內容關閉、<code>OR 1=1</code> 讓條件恆正、<code>--</code> 註解掉後面的程式碼，如此一來就登入資料庫了</p>
-<pre class="grvsc-container default-dark" data-language="php" data-index="1"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk8">&quot;</span><span class="mtk4">SELECT</span><span class="mtk8"> </span><span class="mtk1">*</span><span class="mtk8"> </span><span class="mtk4">FROM</span><span class="mtk8"> customers </span><span class="mtk4">WHERE</span><span class="mtk8"> </span><span class="mtk4">name</span><span class="mtk8"> </span><span class="mtk1">=</span><span class="mtk8">&#39;&#39;</span><span class="mtk4">OR</span><span class="mtk8"> </span><span class="mtk7">1</span><span class="mtk1">=</span><span class="mtk7">1</span><span class="mtk8"> </span><span class="mtk3">--AND password = &#39; -password-&#39; </span></span></span></code></pre>
+<div class="gatsby-highlight" data-language="sql"><pre class="language-sql"><code class="language-sql"><span class="token comment">// 原本</span>
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> users <span class="token keyword">WHERE</span> name <span class="token operator">=</span> <span class="token string">'name'</span> <span class="token operator">AND</span> password <span class="token operator">=</span> <span class="token string">'password'</span></code></pre></div>
+<p>以註冊登入為例，當有兩個輸入框要求使用者登入帳號密碼，在取得輸入框的值，給後端去驗證，攻擊者可以輸入<code class="language-text">&#39;OR 1=1 --</code> 來繞開這關程序 =><code class="language-text">&#39;</code> 讓輸入框內容關閉、<code class="language-text">OR 1=1</code> 讓條件恆正、<code class="language-text">--</code> 註解掉後面的程式碼，如此一來就登入資料庫了</p>
+<div class="gatsby-highlight" data-language="php"><pre class="language-php"><code class="language-php">"<span class="token constant">SELECT</span> <span class="token operator">*</span> <span class="token constant">FROM</span> customers <span class="token constant">WHERE</span> name <span class="token operator">=</span><span class="token string single-quoted-string">''</span><span class="token keyword">OR</span> <span class="token number">1</span><span class="token operator">=</span><span class="token number">1</span> <span class="token operator">--</span><span class="token keyword">AND</span> password <span class="token operator">=</span> <span class="token string single-quoted-string">' -password-'</span> </code></pre></div>
 <ol start="2">
 <li>注入惡意的 SQL 的語法</li>
 </ol>
 <p>攻擊者可以在注入惡意的 SQL 的語法去改變資料庫，或進一步探查其他 table 中的資料，造成個人機密資料、伺服器被攻擊，系統管理員帳戶被竄改等等</p>
 <p><strong>SQL Injection，就是駭客透過修改 SQL 語句，改變他的語意，達成竊取資料/破壞資料的行為</strong></p>
-<h4>如何避免</h4>
+<h4 id="如何避免" style="position:relative;">如何避免<a href="#%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8D" aria-label="如何避免 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
 <ol>
-<li>過瀘字串「'」或「"」</li>
+<li>過瀘字串「‘」或「“」</li>
 <li>限制輸入字元格式並檢查輸入長度、資料格式</li>
 <li>資料庫設定使用者帳號權限，限制非特定使用者無法作資料庫存取</li>
 <li>mysql<em>real</em>eascape_string() 處理（老方法不建議）</li>
 <li>PDO 防止注入，預處理</li>
 </ol>
-<h4>筆記：Prepared Statements 預處理語句</h4>
+<h4 id="筆記：Prepared-Statements-預處理語句" style="position:relative;">筆記：Prepared Statements 預處理語句<a href="#%E7%AD%86%E8%A8%98%EF%BC%9APrepared-Statements-%E9%A0%90%E8%99%95%E7%90%86%E8%AA%9E%E5%8F%A5" aria-label="筆記：Prepared Statements 預處理語句 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
 <p>Prepared Statements 方式，是運用<strong>預處理</strong>的概念來解決這個問題。
 以往的傳統寫法是在程式裡拼接，再發送到 Mysql 中，後者沒辦法對傳入的東西判斷是否正常，但是當我們先發送一份模板到 Mysql Server 做預處理，再傳參數過去，之後不管怎麼注入什麼，Mysql Server 都知道是變量。</p>
 <p>透過編譯 SQL 模板來執行 SQL 指令，能提高 SQL 語句的效能，並且有效阻止 SQL 隱碼攻擊</p>
@@ -100,18 +100,18 @@ data-styled.g30[id="blog-post__CommentWrapper-sc-1hz7w8z-0"]{content:"hYboqo,"}/
 </ol>
 <p>預處理分成兩種方法：mysqli 和 PDO</p>
 <ul>
-<li>方法一：<code>mysqli:prepare()</code></li>
+<li>方法一：<code class="language-text">mysqli:prepare()</code></li>
 </ul>
-<p>先寫出 $sql 語句，用 <code>?</code> 占位符代替變量，之後按照順序加入變數的值執行</p>
-<pre class="grvsc-container default-dark" data-language="php" data-index="2"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk12">$stmt</span><span class="mtk1"> = </span><span class="mtk12">$conn</span><span class="mtk1">-&gt;</span><span class="mtk11">prepare</span><span class="mtk1">(</span><span class="mtk8">&#39;</span><span class="mtk4">SELECT</span><span class="mtk8"> </span><span class="mtk1">*</span><span class="mtk8"> </span><span class="mtk4">FROM</span><span class="mtk8"> employees </span><span class="mtk4">WHERE</span><span class="mtk8"> </span><span class="mtk4">name</span><span class="mtk8"> </span><span class="mtk1">=</span><span class="mtk8"> ? </span><span class="mtk4">AND</span><span class="mtk8"> id </span><span class="mtk1">=</span><span class="mtk8"> ?&#39;</span><span class="mtk1">);</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk12">$stmt</span><span class="mtk1">-&gt;</span><span class="mtk11">bind_param</span><span class="mtk1">(</span><span class="mtk8">&#39;si&#39;</span><span class="mtk1">, </span><span class="mtk12">$name</span><span class="mtk1">, </span><span class="mtk12">$id</span><span class="mtk1">);</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk12">$stmt</span><span class="mtk1">-&gt;</span><span class="mtk11">execute</span><span class="mtk1">();</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk12">$result</span><span class="mtk1"> = </span><span class="mtk12">$stmt</span><span class="mtk1">-&gt;</span><span class="mtk11">get_result</span><span class="mtk1">();</span></span></span></code></pre>
+<p>先寫出 $sql 語句，用 <code class="language-text">?</code> 占位符代替變量，之後按照順序加入變數的值執行</p>
+<div class="gatsby-highlight" data-language="php"><pre class="language-php"><code class="language-php"><span class="token variable">$stmt</span> <span class="token operator">=</span> <span class="token variable">$conn</span><span class="token operator">-></span><span class="token function">prepare</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'SELECT * FROM employees WHERE name = ? AND id = ?'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$stmt</span><span class="token operator">-></span><span class="token function">bind_param</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'si'</span><span class="token punctuation">,</span> <span class="token variable">$name</span><span class="token punctuation">,</span> <span class="token variable">$id</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$stmt</span><span class="token operator">-></span><span class="token function">execute</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token variable">$result</span> <span class="token operator">=</span> <span class="token variable">$stmt</span><span class="token operator">-></span><span class="token function">get_result</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
 <ul>
 <li>方法二：PDO</li>
 </ul>
-<p>使用原理和上面差不多，通過指定參數（像 <code>:name</code> 這樣的命名參數）告訴 Mysql Server 你想過濾它，接著調用 execute() 函數時，prepared statements 會和你剛才指定的參數值結合</p>
+<p>使用原理和上面差不多，通過指定參數（像 <code class="language-text">:name</code> 這樣的命名參數）告訴 Mysql Server 你想過濾它，接著調用 execute() 函數時，prepared statements 會和你剛才指定的參數值結合</p>
 <blockquote>
 <p>設置 PDO 處理器： <strong>ATTR<em>EMULATE</em>PREPARES</strong></p>
 <ul>
@@ -121,22 +121,22 @@ data-styled.g30[id="blog-post__CommentWrapper-sc-1hz7w8z-0"]{content:"hYboqo,"}/
 sql 會分兩次把參數給送給 Mysql，Mysql 根據自身字元集（set names）進行處理</li>
 </ul>
 </blockquote>
-<pre class="grvsc-container default-dark" data-language="php" data-index="3"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk12">$pdo</span><span class="mtk1"> = </span><span class="mtk4">new</span><span class="mtk1"> </span><span class="mtk10">PDO</span><span class="mtk1">(</span><span class="mtk8">&#39;mysql:dbname=dbtest;host=127.0.0.1;charset=utf8&#39;</span><span class="mtk1">, </span><span class="mtk8">&#39;user&#39;</span><span class="mtk1">, </span><span class="mtk8">&#39;pass&#39;</span><span class="mtk1">);</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk12">$pdo</span><span class="mtk1">-&gt;</span><span class="mtk11">setAttribute</span><span class="mtk1">(</span><span class="mtk10">PDO</span><span class="mtk1">::ATTR_EMULATE_PREPARES, </span><span class="mtk4">false</span><span class="mtk1">);   </span><span class="mtk3">//必須設</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk12">$pdo</span><span class="mtk1">-&gt;</span><span class="mtk11">setAttribute</span><span class="mtk1">(</span><span class="mtk10">PDO</span><span class="mtk1">::ATTR_ERRMODE, </span><span class="mtk10">PDO</span><span class="mtk1">::ERRMODE_EXCEPTION);</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk12">$stmt</span><span class="mtk1"> = </span><span class="mtk12">$pdo</span><span class="mtk1">-&gt;</span><span class="mtk11">prepare</span><span class="mtk1">(</span><span class="mtk8">&#39;</span><span class="mtk4">SELECT</span><span class="mtk8"> </span><span class="mtk1">*</span><span class="mtk8"> </span><span class="mtk4">FROM</span><span class="mtk8"> employees </span><span class="mtk4">WHERE</span><span class="mtk8"> </span><span class="mtk4">name</span><span class="mtk8"> </span><span class="mtk1">=</span><span class="mtk8"> :</span><span class="mtk4">name</span><span class="mtk8">&#39;</span><span class="mtk1">);</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk12">$stmt</span><span class="mtk1">-&gt;</span><span class="mtk11">execute</span><span class="mtk1">(</span><span class="mtk11">array</span><span class="mtk1">(</span><span class="mtk8">&#39;:name&#39;</span><span class="mtk1"> =&gt; </span><span class="mtk12">$name</span><span class="mtk1">));</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1"> </span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk15">foreach</span><span class="mtk1"> (</span><span class="mtk12">$stmt</span><span class="mtk1"> as </span><span class="mtk12">$row</span><span class="mtk1">) {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk3">// do something with $row</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span></code></pre>
+<div class="gatsby-highlight" data-language="php"><pre class="language-php"><code class="language-php"><span class="token variable">$pdo</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PDO</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'mysql:dbname=dbtest;host=127.0.0.1;charset=utf8'</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'user'</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'pass'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$pdo</span><span class="token operator">-></span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token class-name static-context">PDO</span><span class="token operator">::</span><span class="token constant">ATTR_EMULATE_PREPARES</span><span class="token punctuation">,</span> <span class="token constant boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">//必須設</span>
+<span class="token variable">$pdo</span><span class="token operator">-></span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token class-name static-context">PDO</span><span class="token operator">::</span><span class="token constant">ATTR_ERRMODE</span><span class="token punctuation">,</span> <span class="token class-name static-context">PDO</span><span class="token operator">::</span><span class="token constant">ERRMODE_EXCEPTION</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token variable">$stmt</span> <span class="token operator">=</span> <span class="token variable">$pdo</span><span class="token operator">-></span><span class="token function">prepare</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'SELECT * FROM employees WHERE name = :name'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$stmt</span><span class="token operator">-></span><span class="token function">execute</span><span class="token punctuation">(</span><span class="token keyword">array</span><span class="token punctuation">(</span><span class="token string single-quoted-string">':name'</span> <span class="token operator">=></span> <span class="token variable">$name</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ 
+<span class="token keyword">foreach</span> <span class="token punctuation">(</span><span class="token variable">$stmt</span> <span class="token keyword">as</span> <span class="token variable">$row</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// do something with $row</span>
+<span class="token punctuation">}</span></code></pre></div>
 <hr>
-<h3>請說明 XSS 的攻擊原理以及防範方法</h3>
-<p>XSS，又稱跨網域攻擊（Cross-Site Scripting），我們都知道可以寫在網頁裡，讓瀏覽器執行的一種程式碼稱為 JavaScript，只要使用 &#x3C;<code>script</code>> 標籤，就可以在裡面撰寫一些 JavaScript 程式碼，讓網頁具有動態、互動的效果，但是</p>
+<h3 id="請說明-XSS-的攻擊原理以及防範方法" style="position:relative;">請說明 XSS 的攻擊原理以及防範方法<a href="#%E8%AB%8B%E8%AA%AA%E6%98%8E-XSS-%E7%9A%84%E6%94%BB%E6%93%8A%E5%8E%9F%E7%90%86%E4%BB%A5%E5%8F%8A%E9%98%B2%E7%AF%84%E6%96%B9%E6%B3%95" aria-label="請說明 XSS 的攻擊原理以及防範方法 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
+<p>XSS，又稱跨網域攻擊（Cross-Site Scripting），我們都知道可以寫在網頁裡，讓瀏覽器執行的一種程式碼稱為 JavaScript，只要使用 &#x3C;<code class="language-text">script</code>> 標籤，就可以在裡面撰寫一些 JavaScript 程式碼，讓網頁具有動態、互動的效果，但是</p>
 <ul>
 <li>Stored XSS（儲存型）
-有使用者可以輸入任意內容的地方，如果沒有確實檢查，一旦鑽漏洞輸入如 &#x3C;<code>script</code>> 等關鍵字就會被當成正常的 HTML 執行，標籤內容也會被視為正常內容而<strong>保存在資料庫</strong>，這種類型就是 Stored XSS</li>
+有使用者可以輸入任意內容的地方，如果沒有確實檢查，一旦鑽漏洞輸入如 &#x3C;<code class="language-text">script</code>> 等關鍵字就會被當成正常的 HTML 執行，標籤內容也會被視為正常內容而<strong>保存在資料庫</strong>，這種類型就是 Stored XSS</li>
 <li>Reflected XSS（反射型）
 由網頁後端直接嵌入由前端使用者所傳送過來的內容造成的，最常見的就是以 <strong>GET 方法</strong>傳送資料給伺服器時，後端沒有過濾掉惡意字元，就直接將內容回應到網頁上</li>
 </ul>
@@ -147,41 +147,41 @@ sql 會分兩次把參數給送給 Mysql，Mysql 根據自身字元集（set nam
 <li>DOM-Based XSS（基於 DOM 的類型）
 DOM 是描述 HTML 文件的表示法，也就是我們常看到的、可以使用 JS 動態產生網頁，而不必透過伺服器</li>
 </ul>
-<h4>如何防範</h4>
-<h5>1. 儲存型和反射型</h5>
+<h4 id="如何防範" style="position:relative;">如何防範<a href="#%E5%A6%82%E4%BD%95%E9%98%B2%E7%AF%84" aria-label="如何防範 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
+<h5 id="1-儲存型和反射型" style="position:relative;">1. 儲存型和反射型<a href="#1-%E5%84%B2%E5%AD%98%E5%9E%8B%E5%92%8C%E5%8F%8D%E5%B0%84%E5%9E%8B" aria-label="1 儲存型和反射型 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h5>
 <ul>
 <li>PHP htmlspecialchars 函數：轉換HTML 特殊符號為僅能顯示用的編碼</li>
 </ul>
-<p>前兩種 Stored、Reflected 由後端進行防範，使用者輸入的內容都需要經過檢查，比如刪除 &#x3C;<code>script</code>>、<code>onerror=</code> 及其他任何可能執行程式碼的字串，或改為純文字顯示，替換字元即可</p>
-<h5>2. DOM-Based 防範</h5>
+<p>前兩種 Stored、Reflected 由後端進行防範，使用者輸入的內容都需要經過檢查，比如刪除 &#x3C;<code class="language-text">script</code>>、<code class="language-text">onerror=</code> 及其他任何可能執行程式碼的字串，或改為純文字顯示，替換字元即可</p>
+<h5 id="2-DOM-Based-防範" style="position:relative;">2. DOM-Based 防範<a href="#2-DOM-Based-%E9%98%B2%E7%AF%84" aria-label="2 DOM Based 防範 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h5>
 <p>由前端來防範，選擇正確的方法和屬性來動態操作 DOM，比如將底下 innerHTML 改為 innerText，因為如果 name 插入 HTML 字串，將會被解析成 DOM 物件</p>
-<pre class="grvsc-container default-dark" data-language="js" data-index="4"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk12">document</span><span class="mtk1">.</span><span class="mtk11">getElementById</span><span class="mtk1">(</span><span class="mtk8">&#39;show_name&#39;</span><span class="mtk1">).</span><span class="mtk12">innerHTML</span><span class="mtk1"> = </span><span class="mtk12">name</span><span class="mtk1">;</span></span></span></code></pre>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js">document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'show_name'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> name<span class="token punctuation">;</span></code></pre></div>
 <hr>
-<h3>請說明 CSRF 的攻擊原理以及防範方法</h3>
+<h3 id="請說明-CSRF-的攻擊原理以及防範方法" style="position:relative;">請說明 CSRF 的攻擊原理以及防範方法<a href="#%E8%AB%8B%E8%AA%AA%E6%98%8E-CSRF-%E7%9A%84%E6%94%BB%E6%93%8A%E5%8E%9F%E7%90%86%E4%BB%A5%E5%8F%8A%E9%98%B2%E7%AF%84%E6%96%B9%E6%B3%95" aria-label="請說明 CSRF 的攻擊原理以及防範方法 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
 <p>CSRF，跨站請求偽造（Cross Site Request Forgery），通過一些技術手段欺騙用戶的瀏覽器，去存取一個自己<strong>曾經認證過的網站</strong>並執行一些操作，如發送郵件、發訊息、甚至財產操作如轉帳和購買商品。</p>
 <p>由於瀏覽器曾經認證過，所以被存取的網站會認為是真正的用戶操作而執行，只能說保證請求發自某個用戶的瀏覽器，卻<strong>不能保證請求本身是用戶自願發出</strong>。</p>
 <blockquote>
-<h4>案例</h4>
+<h4 id="案例" style="position:relative;">案例<a href="#%E6%A1%88%E4%BE%8B" aria-label="案例 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
 </blockquote>
-<pre class="grvsc-container default-dark" data-language="html" data-index="5"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">一家銀行用以執行轉帳操作的URL位址：</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">https://bank.example.com/withdraw?account=AccoutName&amp;amount=1000&amp;for=PayeeName</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">惡意攻擊者可以在另一個網站上放置如下：</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk17">&lt;</span><span class="mtk4">img</span><span class="mtk1"> </span><span class="mtk12">src</span><span class="mtk1">=</span><span class="mtk8">&quot;https://bank.example.com/withdraw?account=Alice&amp;amount=100&amp;for=Badman&quot;</span><span class="mtk17">/&gt;</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">如用戶名 Alice 存取了惡意站點，而她之前剛認證過不久，登入資訊尚未過期，那麼她就會被扣款。</span></span></span></code></pre>
+<div class="gatsby-highlight" data-language="html"><pre class="language-html"><code class="language-html">一家銀行用以執行轉帳操作的URL位址：
+https://bank.example.com/withdraw?account=AccoutName&amp;amount=1000&amp;for=PayeeName
+
+惡意攻擊者可以在另一個網站上放置如下：
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://bank.example.com/withdraw?account=Alice&amp;amount=100&amp;for=Badman<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+
+如用戶名 Alice 存取了惡意站點，而她之前剛認證過不久，登入資訊尚未過期，那麼她就會被扣款。</code></pre></div>
 <p>這種惡意網址形式多樣，藏在網頁的許多地方，也不一定要是攻擊者實際控制的網站，可以放在論壇、部落格等任何用戶生成內容的網站中，即使用戶是存取熟悉的可信網站，也有可能有受攻擊的危險。</p>
 <p>CSRF 無法獲取用戶的帳戶控制權，也不能直接竊取用戶的任何資訊，但他們能做到的，是欺騙用戶的瀏覽器、讓其以用戶的名義執行操作。</p>
-<h4>Server 的防禦</h4>
+<h4 id="Server-的防禦" style="position:relative;">Server 的防禦<a href="#Server-%E7%9A%84%E9%98%B2%E7%A6%A6" aria-label="Server 的防禦 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
 <p>因為是在不同的 domain 底下卻能夠偽造出「使用者本人發出的 request」，CSRF 的核心概念是「Cross Site Request」，因此可以思考 => <strong>如何擋掉從別的 domain 來的請求？</strong></p>
 <ol>
 <li><strong>檢查 Referer 欄位</strong></li>
 </ol>
 <p>request 的 header 裡面會帶一個欄位叫做 referer，代表這個 request 是從哪個地方過來的（請求來源的位址），可以檢查這個欄位看是不是合法的 domain，不是的話直接檔下即可，但這個方法不夠完善的原因是</p>
-<pre class="grvsc-container default-dark" data-language="html" data-index="6"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">* 有些瀏覽器可能不會帶 referer</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">* 有些使用者可能會關閉自動帶 referer</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">* 判定是不是合法 domain 的程式碼可能不夠完善</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">* Referer 欄位被竄改的可能</span></span></span></code></pre>
+<div class="gatsby-highlight" data-language="html"><pre class="language-html"><code class="language-html">* 有些瀏覽器可能不會帶 referer
+* 有些使用者可能會關閉自動帶 referer
+* 判定是不是合法 domain 的程式碼可能不夠完善
+* Referer 欄位被竄改的可能</code></pre></div>
 <ol start="2">
 <li><strong>加上圖形驗證碼、簡訊驗證碼</strong></li>
 </ol>
@@ -190,21 +190,21 @@ DOM 是描述 HTML 文件的表示法，也就是我們常看到的、可以使�
 <li><strong>校驗 token</strong></li>
 </ol>
 <p>防止 CSRF 攻擊，只要確保有些資訊「只有使用者知道」即可，要求在存取敏感數據請求時，用戶瀏覽器提供不儲存在 cookie 中，並且攻擊者無法偽造的數據作為校驗，那麼攻擊者就無法再執行 CSRF 攻擊，校驗 token 值為空或者錯誤時，就拒絕這個可疑的請求。</p>
-<pre class="grvsc-container default-dark" data-language="html" data-index="7"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">* Server 端生成的，在 form 裡面加上一個 hidden 的欄位，叫做 CSRF token，裡面填的值由 server 隨機產生，並且存在 server 中</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">* Server 端生成的，一樣在 form 放 CSRF token，但這次參照值不是存在 Server 裡，而是存在 cookie 裡</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">* Client 端生成的，有些套件（axios）可以設定好 header 和 cookie 的值，之後每一個 request 會自動添加上去</span></span></span></code></pre>
+<div class="gatsby-highlight" data-language="html"><pre class="language-html"><code class="language-html">* Server 端生成的，在 form 裡面加上一個 hidden 的欄位，叫做 CSRF token，裡面填的值由 server 隨機產生，並且存在 server 中
+* Server 端生成的，一樣在 form 放 CSRF token，但這次參照值不是存在 Server 裡，而是存在 cookie 裡
+* Client 端生成的，有些套件（axios）可以設定好 header 和 cookie 的值，之後每一個 request 會自動添加上去</code></pre></div>
 <ol start="4">
 <li><strong>瀏覽器本身的防禦：SameSite cookie</strong></li>
 </ol>
-<pre class="grvsc-container default-dark" data-language="php" data-index="8"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">Set-Cookie: session_id=ewfewjf23o1; SameSite</span></span></span></code></pre>
+<div class="gatsby-highlight" data-language="php"><pre class="language-php"><code class="language-php">Set<span class="token operator">-</span><span class="token argument-name">Cookie</span><span class="token punctuation">:</span> session_id<span class="token operator">=</span>ewfewjf23o1<span class="token punctuation">;</span> SameSite</code></pre></div>
 <ul>
 <li>Strict（默認 SameSite=Strict）
 完全禁止第三方 Cookie，跨網站請求时，任何情况下都不會發送 Cookie。</li>
 </ul>
-<p>換句話說，只有和當前網頁的URL一致，才會帶上 Cookie。如果只允許 same site 使用，不應該在任何的 cross site request 被加上去，像是 <code>&#x3C;a href=""></code>、<code>&#x3C;form></code> 等，從 Google 搜尋結果或其他連結點進某個網站的時候，因為不會帶 cookie 的關係，所以那個網站就會變成是登出狀態，造成不好的使用者體驗。</p>
+<p>換句話說，只有和當前網頁的URL一致，才會帶上 Cookie。如果只允許 same site 使用，不應該在任何的 cross site request 被加上去，像是 <code class="language-text">&lt;a href=&quot;&quot;&gt;</code>、<code class="language-text">&lt;form&gt;</code> 等，從 Google 搜尋結果或其他連結點進某個網站的時候，因為不會帶 cookie 的關係，所以那個網站就會變成是登出狀態，造成不好的使用者體驗。</p>
 <ul>
 <li>Lax
-多數情況也是不發送第三方 Cookie，不過像 <code>&#x3C;a></code>、<code>&#x3C;link rel="prerender"></code>、<code>&#x3C;form method="GET"</code>>` 這些還是會帶上 cookie，比較彈性</li>
+多數情況也是不發送第三方 Cookie，不過像 <code class="language-text">&lt;a&gt;</code>、<code class="language-text">&lt;link rel=&quot;prerender&quot;&gt;</code>、<code class="language-text">&lt;form method=&quot;GET&quot;</code>>` 這些還是會帶上 cookie，比較彈性</li>
 </ul>
 <table>
 <thead>
@@ -218,43 +218,43 @@ DOM 是描述 HTML 文件的表示法，也就是我們常看到的、可以使�
 <tbody>
 <tr>
 <td>a 連結</td>
-<td><code>&#x3C;a href="...></code></td>
+<td><code class="language-text">&lt;a href=&quot;...&gt;</code></td>
 <td>發送 cookie</td>
 <td>發送 cookie</td>
 </tr>
 <tr>
 <td>link 連結</td>
-<td><code>&#x3C;link rel="prerender" href="...></code></td>
+<td><code class="language-text">&lt;link rel=&quot;prerender&quot; href=&quot;...&gt;</code></td>
 <td>發送 cookie</td>
 <td>發送 cookie</td>
 </tr>
 <tr>
 <td>GET 請求</td>
-<td><code>&#x3C;form method="GET" action="..."></code></td>
+<td><code class="language-text">&lt;form method=&quot;GET&quot; action=&quot;...&quot;&gt;</code></td>
 <td>發送 cookie</td>
 <td>發送 cookie</td>
 </tr>
 <tr>
 <td>POST 請求</td>
-<td><code>&#x3C;form method="POST" action="..."></code></td>
+<td><code class="language-text">&lt;form method=&quot;POST&quot; action=&quot;...&quot;&gt;</code></td>
 <td>發送 cookie</td>
 <td>不發送</td>
 </tr>
 <tr>
 <td>iframe</td>
-<td><code>&#x3C;iframe src="...">&#x3C;/iframe></code></td>
+<td><code class="language-text">&lt;iframe src=&quot;...&quot;&gt;&lt;/iframe&gt;</code></td>
 <td>發送 cookie</td>
 <td>不發送</td>
 </tr>
 <tr>
 <td>AJAX</td>
-<td><code>$.get("...")</code></td>
+<td><code class="language-text">$.get(&quot;...&quot;)</code></td>
 <td>發送 cookie</td>
 <td>不發送</td>
 </tr>
 <tr>
 <td>圖片</td>
-<td><code>&#x3C;img src="..."></code></td>
+<td><code class="language-text">&lt;img src=&quot;...&quot;&gt;</code></td>
 <td>發送 cookie</td>
 <td>不發送</td>
 </tr>
@@ -263,7 +263,7 @@ DOM 是描述 HTML 文件的表示法，也就是我們常看到的、可以使�
 <blockquote>
 <p>唯一問題是沒辦法擋掉 GET 形式的 CSRF，這點要注意</p>
 </blockquote>
-<h4>參考資料</h4>
+<h4 id="參考資料" style="position:relative;">參考資料<a href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99" aria-label="參考資料 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
 <ul>
 <li><a href="https://ithelp.ithome.com.tw/articles/10189201">攻擊行為－SQL 資料隱碼攻擊 SQL injection</a></li>
 <li><a href="http://lk1ngaa7.github.io/2016/01/25/pdo-with-mysql/">pdo防止注入的原理</a></li>
@@ -361,22 +361,4 @@ DOM 是描述 HTML 文件的表示法，也就是我們常看到的、可以使�
     opacity: 0.7;
   }
   
-  .default-dark {
-    background-color: #1E1E1E;
-    color: #D4D4D4;
-  }
-  .default-dark .mtk1 { color: #D4D4D4; }
-  .default-dark .mtk4 { color: #569CD6; }
-  .default-dark .mtk8 { color: #CE9178; }
-  .default-dark .mtk7 { color: #B5CEA8; }
-  .default-dark .mtk3 { color: #6A9955; }
-  .default-dark .mtk12 { color: #9CDCFE; }
-  .default-dark .mtk11 { color: #DCDCAA; }
-  .default-dark .mtk10 { color: #4EC9B0; }
-  .default-dark .mtk15 { color: #C586C0; }
-  .default-dark .mtk17 { color: #808080; }
-  .default-dark .grvsc-line-highlighted::before {
-    background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
-    box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
-  }
-</style></div><footer class="post-content-footer"><a class="tag__Tag-ipvvgn-0 jGnann" href="/tags/lidemy">Lidemy</a><div class="blog-post__CommentWrapper-sc-1hz7w8z-0 hYboqo"><div shortname="gatsby-zoeaeen13" config="[object Object]" id="disqus_thread"></div></div></footer></article></div></main><footer class="site-foot">© <!-- -->2021<!-- --> <a href="/">Travel in Time.</a> — Built with<!-- --> <a href="https://gatsbyjs.org" target="_blank" rel="noopener noreferrer">Gatsby</a></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/Lidemy/認識 SQL Injection、XSS、CSRF 等攻擊原理及防範方法/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-e7171f4a9079a629925f.js"],"app":["/app-7200a275e6a5a54ac58c.js"],"component---node-modules-gatsby-plugin-offline-app-shell-js":["/component---node-modules-gatsby-plugin-offline-app-shell-js-2296adb1de2fc003fbd5.js"],"component---src-pages-404-js":["/component---src-pages-404-js-80af0913ab4bf1a275d6.js"],"component---src-pages-about-js":["/component---src-pages-about-js-6b66a56a87e650a6b958.js"],"component---src-pages-archive-js":["/component---src-pages-archive-js-30f3549223c93f147f3d.js"],"component---src-pages-blog-js":["/component---src-pages-blog-js-a14ab5b24463314236a6.js"],"component---src-pages-coding-js":["/component---src-pages-coding-js-ac78486e9211ed681b9b.js"],"component---src-pages-elements-js":["/component---src-pages-elements-js-2887766e1579fc38cea2.js"],"component---src-pages-index-js":["/component---src-pages-index-js-d41a23c6c7a7f282a94e.js"],"component---src-pages-life-js":["/component---src-pages-life-js-87e04ff94fb8d8fa866c.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js-8a2324bd47fe05fd44e5.js"],"component---src-templates-category-page-js":["/component---src-templates-category-page-js-30fbd7cdb9e4722efd6a.js"],"component---src-templates-tag-page-js":["/component---src-templates-tag-page-js-bbab16370d8050b6cbf9.js"]};/*]]>*/</script><script src="/polyfill-e7171f4a9079a629925f.js" nomodule=""></script><script src="/component---src-templates-blog-post-js-8a2324bd47fe05fd44e5.js" async=""></script><script src="/5c3f3ed0ca01001d335c9b0021661d159a6a78f4-f0151228293631dd083a.js" async=""></script><script src="/78bde0f9cbfb3abf81d5baf6b7f31e60371328d0-caa364ff8415a13753f0.js" async=""></script><script src="/styles-e9d24b1846c7d6eb9685.js" async=""></script><script src="/app-7200a275e6a5a54ac58c.js" async=""></script><script src="/framework-2d6b7d2e2be378715b78.js" async=""></script><script src="/webpack-runtime-b79b73c0a761c3e72263.js" async=""></script></body></html>
+</style></div><footer class="post-content-footer"><a class="tag__BlogTag-ipvvgn-0 htfJiN" href="/tags/lidemy">Lidemy</a><div class="blog-post__CommentWrapper-sc-1hz7w8z-0 hYboqo"><div shortname="gatsby-zoeaeen13" config="[object Object]" id="disqus_thread"></div></div></footer></article></div></main><footer class="site-foot">© <!-- -->2021<!-- --> <a href="/">Travel in Time.</a> — Built with<!-- --> <a href="https://gatsbyjs.org" target="_blank" rel="noopener noreferrer">Gatsby</a></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/Lidemy/認識 SQL Injection、XSS、CSRF 等攻擊原理及防範方法/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-e7171f4a9079a629925f.js"],"app":["/app-7200a275e6a5a54ac58c.js"],"component---node-modules-gatsby-plugin-offline-app-shell-js":["/component---node-modules-gatsby-plugin-offline-app-shell-js-2296adb1de2fc003fbd5.js"],"component---src-pages-404-js":["/component---src-pages-404-js-80af0913ab4bf1a275d6.js"],"component---src-pages-about-js":["/component---src-pages-about-js-6b66a56a87e650a6b958.js"],"component---src-pages-archive-js":["/component---src-pages-archive-js-30f3549223c93f147f3d.js"],"component---src-pages-blog-js":["/component---src-pages-blog-js-a14ab5b24463314236a6.js"],"component---src-pages-coding-js":["/component---src-pages-coding-js-ac78486e9211ed681b9b.js"],"component---src-pages-elements-js":["/component---src-pages-elements-js-2887766e1579fc38cea2.js"],"component---src-pages-index-js":["/component---src-pages-index-js-d41a23c6c7a7f282a94e.js"],"component---src-pages-life-js":["/component---src-pages-life-js-87e04ff94fb8d8fa866c.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js-e993954c3e6476bf33bd.js"],"component---src-templates-category-page-js":["/component---src-templates-category-page-js-30fbd7cdb9e4722efd6a.js"],"component---src-templates-tag-page-js":["/component---src-templates-tag-page-js-690cfcbd91c54a851f94.js"]};/*]]>*/</script><script src="/polyfill-e7171f4a9079a629925f.js" nomodule=""></script><script src="/component---src-templates-blog-post-js-e993954c3e6476bf33bd.js" async=""></script><script src="/5c3f3ed0ca01001d335c9b0021661d159a6a78f4-f0151228293631dd083a.js" async=""></script><script src="/78bde0f9cbfb3abf81d5baf6b7f31e60371328d0-caa364ff8415a13753f0.js" async=""></script><script src="/styles-e9d24b1846c7d6eb9685.js" async=""></script><script src="/app-7200a275e6a5a54ac58c.js" async=""></script><script src="/framework-2d6b7d2e2be378715b78.js" async=""></script><script src="/webpack-runtime-3af44b7a14c4e7b789b0.js" async=""></script></body></html>

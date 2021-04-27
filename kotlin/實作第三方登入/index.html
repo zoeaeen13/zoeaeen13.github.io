@@ -53,88 +53,88 @@
         }
       }
     })
-  </script><link rel="alternate" type="application/rss+xml" href="/rss.xml"/><link rel="icon" href="/favicon-32x32.png?v=6c1afc0e3c2660e267f5f3cecef47589" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><meta name="theme-color" content="#663399"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=6c1afc0e3c2660e267f5f3cecef47589"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=6c1afc0e3c2660e267f5f3cecef47589"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=6c1afc0e3c2660e267f5f3cecef47589"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=6c1afc0e3c2660e267f5f3cecef47589"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=6c1afc0e3c2660e267f5f3cecef47589"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=6c1afc0e3c2660e267f5f3cecef47589"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=6c1afc0e3c2660e267f5f3cecef47589"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=6c1afc0e3c2660e267f5f3cecef47589"/><title data-react-helmet="true">Android - 實作第三方登入 | Travel in Time.</title><meta data-react-helmet="true" name="description" content="之前 side-project 有稍微研究，最近案子需求又重新看了一次，乾脆整理起來。 整體來說，Facebook 第三方登入相對容易，Google 和 LINE 則要花時間申請帳號和驗證，需要進行不少步驟，網路上資料很多，就我蒐集到比較清楚的部分來實作。 Facebook…"/><meta data-react-helmet="true" property="og:title" content="Android - 實作第三方登入"/><meta data-react-helmet="true" property="og:description" content="之前 side-project 有稍微研究，最近案子需求又重新看了一次，乾脆整理起來。 整體來說，Facebook 第三方登入相對容易，Google 和 LINE 則要花時間申請帳號和驗證，需要進行不少步驟，網路上資料很多，就我蒐集到比較清楚的部分來實作。 Facebook…"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:creator" content="Zoe Yu"/><meta data-react-helmet="true" name="twitter:title" content="Android - 實作第三方登入"/><meta data-react-helmet="true" name="twitter:description" content="之前 side-project 有稍微研究，最近案子需求又重新看了一次，乾脆整理起來。 整體來說，Facebook 第三方登入相對容易，Google 和 LINE 則要花時間申請帳號和驗證，需要進行不少步驟，網路上資料很多，就我蒐集到比較清楚的部分來實作。 Facebook…"/><style data-styled="" data-styled-version="5.2.3">.jGnann{padding:8px 24px;margin-right:16px;font-size:12px;margin-bottom:16px;font-weight:500;-webkit-letter-spacing:.5px;-moz-letter-spacing:.5px;-ms-letter-spacing:.5px;letter-spacing:.5px;line-height:24px;color:#181818;border:1px solid #ECECEC;border-radius:4px;}/*!sc*/
-.jGnann:hover{color:#C5322E;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
-data-styled.g29[id="tag__Tag-ipvvgn-0"]{content:"jGnann,"}/*!sc*/
+  </script><link rel="alternate" type="application/rss+xml" href="/rss.xml"/><link rel="icon" href="/favicon-32x32.png?v=6c1afc0e3c2660e267f5f3cecef47589" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><meta name="theme-color" content="#663399"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=6c1afc0e3c2660e267f5f3cecef47589"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=6c1afc0e3c2660e267f5f3cecef47589"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=6c1afc0e3c2660e267f5f3cecef47589"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=6c1afc0e3c2660e267f5f3cecef47589"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=6c1afc0e3c2660e267f5f3cecef47589"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=6c1afc0e3c2660e267f5f3cecef47589"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=6c1afc0e3c2660e267f5f3cecef47589"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=6c1afc0e3c2660e267f5f3cecef47589"/><title data-react-helmet="true">Android - 實作第三方登入 | Travel in Time.</title><meta data-react-helmet="true" name="description" content="之前 side-project 有稍微研究，最近案子需求又重新看了一次，乾脆整理起來。 整體來說，Facebook 第三方登入相對容易，Google 和 LINE 則要花時間申請帳號和驗證，需要進行不少步驟，網路上資料很多，就我蒐集到比較清楚的部分來實作。 Facebook…"/><meta data-react-helmet="true" property="og:title" content="Android - 實作第三方登入"/><meta data-react-helmet="true" property="og:description" content="之前 side-project 有稍微研究，最近案子需求又重新看了一次，乾脆整理起來。 整體來說，Facebook 第三方登入相對容易，Google 和 LINE 則要花時間申請帳號和驗證，需要進行不少步驟，網路上資料很多，就我蒐集到比較清楚的部分來實作。 Facebook…"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:creator" content="Zoe Yu"/><meta data-react-helmet="true" name="twitter:title" content="Android - 實作第三方登入"/><meta data-react-helmet="true" name="twitter:description" content="之前 side-project 有稍微研究，最近案子需求又重新看了一次，乾脆整理起來。 整體來說，Facebook 第三方登入相對容易，Google 和 LINE 則要花時間申請帳號和驗證，需要進行不少步驟，網路上資料很多，就我蒐集到比較清楚的部分來實作。 Facebook…"/><style data-styled="" data-styled-version="5.2.3">.htfJiN{padding:8px 24px;margin-right:16px;font-size:12px;margin-bottom:16px;font-weight:500;-webkit-letter-spacing:.5px;-moz-letter-spacing:.5px;-ms-letter-spacing:.5px;letter-spacing:.5px;line-height:24px;color:#181818;border:1px solid #ECECEC;border-radius:4px;}/*!sc*/
+.htfJiN:hover{color:#C5322E;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+data-styled.g29[id="tag__BlogTag-ipvvgn-0"]{content:"htfJiN,"}/*!sc*/
 .hYboqo{margin:10vh 0;padding:20px;background:#F6F6F6;}/*!sc*/
-data-styled.g30[id="blog-post__CommentWrapper-sc-1hz7w8z-0"]{content:"hYboqo,"}/*!sc*/
-</style><link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC|Source+Sans+Pro:300,400,500,700&amp;display=swap" rel="stylesheet"/><link as="script" rel="preload" href="/webpack-runtime-b79b73c0a761c3e72263.js"/><link as="script" rel="preload" href="/framework-2d6b7d2e2be378715b78.js"/><link as="script" rel="preload" href="/app-7200a275e6a5a54ac58c.js"/><link as="script" rel="preload" href="/styles-e9d24b1846c7d6eb9685.js"/><link as="script" rel="preload" href="/78bde0f9cbfb3abf81d5baf6b7f31e60371328d0-caa364ff8415a13753f0.js"/><link as="script" rel="preload" href="/5c3f3ed0ca01001d335c9b0021661d159a6a78f4-f0151228293631dd083a.js"/><link as="script" rel="preload" href="/component---src-templates-blog-post-js-8a2324bd47fe05fd44e5.js"/><link as="fetch" rel="preload" href="/page-data/kotlin/實作第三方登入/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/63159454.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="site-wrapper "><header class="site-head"><div class="site-head-container"><a class="nav-burger" href="#"><div class="hamburger hamburger--collapse" aria-label="Menu" role="button" aria-controls="navigation"><div class="hamburger-box"><div class="hamburger-inner"></div></div></div></a><div class="site-head-center"><a class="site-head-logo" href="/">Travel in Time.</a></div><div class="site-head-right"><ul class="nav" role="menu"><li class="nav-elements" role="menuitem"><a href="/blog">Blog</a></li><li class="nav-elements" role="menuitem"><a href="/life">Life</a></li><li class="nav-elements" role="menuitem"><a href="/coding">Coding</a></li><li class="nav-elements" role="menuitem"><a href="/archive">Archive</a></li><li class="nav-about" role="menuitem"><a href="/about">About</a></li></ul></div></div></header><main id="site-main" class="site-main"><div id="swup" class="transition-fade"><article class="post-content no-image"><header class="post-content-header"><h1 class="post-content-title">Android - 實作第三方登入</h1><div><h5 class="post-content-date">Feb 11, 2020</h5><a class="post-content-category" href="/category/android">Android</a></div></header><div class="post-content-body"><p>之前 side-project 有稍微研究，最近案子需求又重新看了一次，乾脆整理起來。</p>
+data-styled.g32[id="blog-post__CommentWrapper-sc-1hz7w8z-0"]{content:"hYboqo,"}/*!sc*/
+</style><link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC|Source+Sans+Pro:300,400,500,700&amp;display=swap" rel="stylesheet"/><link as="script" rel="preload" href="/webpack-runtime-3af44b7a14c4e7b789b0.js"/><link as="script" rel="preload" href="/framework-2d6b7d2e2be378715b78.js"/><link as="script" rel="preload" href="/app-7200a275e6a5a54ac58c.js"/><link as="script" rel="preload" href="/styles-e9d24b1846c7d6eb9685.js"/><link as="script" rel="preload" href="/78bde0f9cbfb3abf81d5baf6b7f31e60371328d0-caa364ff8415a13753f0.js"/><link as="script" rel="preload" href="/5c3f3ed0ca01001d335c9b0021661d159a6a78f4-f0151228293631dd083a.js"/><link as="script" rel="preload" href="/component---src-templates-blog-post-js-e993954c3e6476bf33bd.js"/><link as="fetch" rel="preload" href="/page-data/kotlin/實作第三方登入/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/63159454.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="site-wrapper "><header class="site-head"><div class="site-head-container"><a class="nav-burger" href="#"><div class="hamburger hamburger--collapse" aria-label="Menu" role="button" aria-controls="navigation"><div class="hamburger-box"><div class="hamburger-inner"></div></div></div></a><div class="site-head-center"><a class="site-head-logo" href="/">Travel in Time.</a></div><div class="site-head-right"><ul class="nav" role="menu"><li class="nav-elements" role="menuitem"><a href="/blog">Blog</a></li><li class="nav-elements" role="menuitem"><a href="/life">Life</a></li><li class="nav-elements" role="menuitem"><a href="/coding">Coding</a></li><li class="nav-elements" role="menuitem"><a href="/archive">Archive</a></li><li class="nav-about" role="menuitem"><a href="/about">About</a></li></ul></div></div></header><main id="site-main" class="site-main"><div id="swup" class="transition-fade"><article class="post-content no-image"><header class="post-content-header"><h1 class="post-content-title">Android - 實作第三方登入</h1><div><h5 class="post-content-date">Feb 11, 2020</h5><a class="post-content-category" href="/category/android">Android</a></div></header><div class="post-content-body"><p>之前 side-project 有稍微研究，最近案子需求又重新看了一次，乾脆整理起來。</p>
 <p>整體來說，<a href="#Facebook%E7%B0%A1%E6%98%93%E7%99%BB%E5%85%A5%E5%81%9A%E6%B3%95">Facebook 第三方登入</a>相對容易，<a href="#Google%E7%99%BB%E5%85%A5">Google</a> 和 <a href="#LINE%E7%99%BB%E5%85%A5">LINE</a> 則要花時間申請帳號和驗證，需要進行不少步驟，網路上資料很多，就我蒐集到比較清楚的部分來實作。</p>
 <hr>
 <hr>
-<h2>Facebook簡易登入做法</h2>
+<h2 id="Facebook簡易登入做法" style="position:relative;">Facebook簡易登入做法<a href="#Facebook%E7%B0%A1%E6%98%93%E7%99%BB%E5%85%A5%E5%81%9A%E6%B3%95" aria-label="Facebook簡易登入做法 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
 <p>參考這篇 <a href="https://developers.facebook.com/docs/facebook-login/android?locale=zh_TW">Android 專用 Facebook 登入</a>，基本上按照文件一步一步就可以完成</p>
 <p>在 <strong>XML</strong> 使用，已包裝 LoginManager 可用功能的 UI 元件</p>
-<pre class="grvsc-container default-dark" data-language="java" data-index="0"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1"> &lt;</span><span class="mtk12">com</span><span class="mtk1">.</span><span class="mtk12">facebook</span><span class="mtk1">.</span><span class="mtk12">login</span><span class="mtk1">.</span><span class="mtk12">widget</span><span class="mtk1">.</span><span class="mtk12">LoginButton</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    android</span><span class="mtk15">:</span><span class="mtk1">id=</span><span class="mtk8">&quot;@+id/btn_facebook_login&quot;</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    android</span><span class="mtk15">:</span><span class="mtk1">layout_width=</span><span class="mtk8">&quot;300dp&quot;</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    android</span><span class="mtk15">:</span><span class="mtk1">layout_height=</span><span class="mtk8">&quot;300dp&quot;</span><span class="mtk1">/&gt;</span></span></span></code></pre>
+<div class="gatsby-highlight" data-language="java"><pre class="language-java"><code class="language-java"> <span class="token operator">&lt;</span><span class="token class-name"><span class="token namespace">com<span class="token punctuation">.</span>facebook<span class="token punctuation">.</span>login<span class="token punctuation">.</span>widget<span class="token punctuation">.</span></span>LoginButton</span>
+    android<span class="token operator">:</span>id<span class="token operator">=</span><span class="token string">"@+id/btn_facebook_login"</span>
+    android<span class="token operator">:</span>layout_width<span class="token operator">=</span><span class="token string">"300dp"</span>
+    android<span class="token operator">:</span>layout_height<span class="token operator">=</span><span class="token string">"300dp"</span><span class="token operator">/</span><span class="token operator">></span></code></pre></div>
 <p><strong>註冊 Callback</strong>
 初始化時建立 CallbackManager</p>
-<pre class="grvsc-container default-dark" data-language="java" data-index="1"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">lateinit </span><span class="mtk4">var</span><span class="mtk1"> </span><span class="mtk12">callbackManager</span><span class="mtk15">:</span><span class="mtk1"> </span><span class="mtk10">CallbackManager</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">override fun </span><span class="mtk11">onCreate</span><span class="mtk1">(savedInstanceState</span><span class="mtk15">:</span><span class="mtk1"> Bundle</span><span class="mtk15">?</span><span class="mtk1">) {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">super</span><span class="mtk1">.</span><span class="mtk11">onCreate</span><span class="mtk1">(savedInstanceState)</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk11">setContentView</span><span class="mtk1">(</span><span class="mtk12">R</span><span class="mtk1">.</span><span class="mtk12">layout</span><span class="mtk1">.</span><span class="mtk12">activity_login</span><span class="mtk1">)</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk3">//建立 CallbackManager</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    callbackManager = </span><span class="mtk12">CallbackManager</span><span class="mtk1">.</span><span class="mtk12">Factory</span><span class="mtk1">.</span><span class="mtk11">create</span><span class="mtk1">()</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">...</span></span></span></code></pre>
+<div class="gatsby-highlight" data-language="java"><pre class="language-java"><code class="language-java">lateinit <span class="token keyword">var</span> callbackManager<span class="token operator">:</span> <span class="token class-name">CallbackManager</span>
+
+override fun <span class="token function">onCreate</span><span class="token punctuation">(</span>savedInstanceState<span class="token operator">:</span> <span class="token class-name">Bundle</span><span class="token operator">?</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">onCreate</span><span class="token punctuation">(</span>savedInstanceState<span class="token punctuation">)</span>
+    <span class="token function">setContentView</span><span class="token punctuation">(</span><span class="token class-name">R</span><span class="token punctuation">.</span>layout<span class="token punctuation">.</span>activity_login<span class="token punctuation">)</span>
+    
+    <span class="token comment">//建立 CallbackManager</span>
+    callbackManager <span class="token operator">=</span> <span class="token class-name">CallbackManager<span class="token punctuation">.</span>Factory</span><span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span></code></pre></div>
 <p>在 onCreate() 或 onCreateView() 方法中註冊回呼，自定義 LoginButton，登入成功，LoginResult 參數會具有新的 AccessToken </p>
-<pre class="grvsc-container default-dark" data-language="java" data-index="2"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk12">loginButton</span><span class="mtk1">.</span><span class="mtk11">setReadPermissions</span><span class="mtk1">(</span><span class="mtk8">&quot;email&quot;</span><span class="mtk1">)</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk3">// 如果在 fragment 中使用</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk12">loginButton</span><span class="mtk1">.</span><span class="mtk11">setFragment</span><span class="mtk1">(</span><span class="mtk4">this</span><span class="mtk1">)</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk3">// 註冊回呼</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk12">btn_facebook_login</span><span class="mtk1">.</span><span class="mtk11">registerCallback</span><span class="mtk1">(callbackManager,</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        object </span><span class="mtk15">:</span><span class="mtk1"> </span><span class="mtk10">FacebookCallback</span><span class="mtk1">&lt;LoginResult&gt; {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">            override fun </span><span class="mtk11">onSuccess</span><span class="mtk1">(result</span><span class="mtk15">:</span><span class="mtk1"> LoginResult</span><span class="mtk15">?</span><span class="mtk1">) {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">                </span><span class="mtk3">// 取得 token 和 userID</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">                val token = result!!.</span><span class="mtk12">accessToken</span><span class="mtk1">.</span><span class="mtk12">token</span><span class="mtk1">.</span><span class="mtk11">toString</span><span class="mtk1">()</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">                val userId = </span><span class="mtk12">result</span><span class="mtk1">.</span><span class="mtk12">accessToken</span><span class="mtk1">.</span><span class="mtk12">userId</span><span class="mtk1">.</span><span class="mtk11">toString</span><span class="mtk1">()</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">            }</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">            override fun </span><span class="mtk11">onCancel</span><span class="mtk1">() {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">            }</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">            override fun </span><span class="mtk11">onError</span><span class="mtk1">(error</span><span class="mtk15">:</span><span class="mtk1"> FacebookException</span><span class="mtk15">?</span><span class="mtk1">) {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">            }</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        })</span></span></span></code></pre>
+<div class="gatsby-highlight" data-language="java"><pre class="language-java"><code class="language-java">loginButton<span class="token punctuation">.</span><span class="token function">setReadPermissions</span><span class="token punctuation">(</span><span class="token string">"email"</span><span class="token punctuation">)</span>
+    
+    <span class="token comment">// 如果在 fragment 中使用</span>
+    loginButton<span class="token punctuation">.</span><span class="token function">setFragment</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
+    
+    <span class="token comment">// 註冊回呼</span>
+    btn_facebook_login<span class="token punctuation">.</span><span class="token function">registerCallback</span><span class="token punctuation">(</span>callbackManager<span class="token punctuation">,</span>
+        object <span class="token operator">:</span> <span class="token class-name">FacebookCallback</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">LoginResult</span><span class="token punctuation">></span></span> <span class="token punctuation">{</span>
+            override fun <span class="token function">onSuccess</span><span class="token punctuation">(</span>result<span class="token operator">:</span> <span class="token class-name">LoginResult</span><span class="token operator">?</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token comment">// 取得 token 和 userID</span>
+                val token <span class="token operator">=</span> result<span class="token operator">!</span><span class="token operator">!</span><span class="token punctuation">.</span>accessToken<span class="token punctuation">.</span>token<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                val userId <span class="token operator">=</span> result<span class="token punctuation">.</span>accessToken<span class="token punctuation">.</span>userId<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+            override fun <span class="token function">onCancel</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token punctuation">}</span>
+            override fun <span class="token function">onError</span><span class="token punctuation">(</span>error<span class="token operator">:</span> <span class="token class-name">FacebookException</span><span class="token operator">?</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre></div>
 <p>要在 onActivityResult 方式中呼叫 callbackManager.onActivityResult，才可以從 LoginManager 取得結果</p>
-<pre class="grvsc-container default-dark" data-language="java" data-index="3"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">override fun </span><span class="mtk11">onActivityResult</span><span class="mtk1">(requestCode</span><span class="mtk15">:</span><span class="mtk1"> Int, resultCode</span><span class="mtk15">:</span><span class="mtk1"> Int, data</span><span class="mtk15">:</span><span class="mtk1"> Intent</span><span class="mtk15">?</span><span class="mtk1">) {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">super</span><span class="mtk1">.</span><span class="mtk11">onActivityResult</span><span class="mtk1">(requestCode, resultCode, data)</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk3">//callbackManager 會將登入結果傳送至 LoginManager</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk12">callbackManager</span><span class="mtk1">.</span><span class="mtk11">onActivityResult</span><span class="mtk1">(requestCode, resultCode, data)</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span></code></pre>
+<div class="gatsby-highlight" data-language="java"><pre class="language-java"><code class="language-java">override fun <span class="token function">onActivityResult</span><span class="token punctuation">(</span>requestCode<span class="token operator">:</span> <span class="token class-name">Int</span><span class="token punctuation">,</span> resultCode<span class="token operator">:</span> <span class="token class-name">Int</span><span class="token punctuation">,</span> data<span class="token operator">:</span> <span class="token class-name">Intent</span><span class="token operator">?</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">onActivityResult</span><span class="token punctuation">(</span>requestCode<span class="token punctuation">,</span> resultCode<span class="token punctuation">,</span> data<span class="token punctuation">)</span>
+        
+        <span class="token comment">//callbackManager 會將登入結果傳送至 LoginManager</span>
+        callbackManager<span class="token punctuation">.</span><span class="token function">onActivityResult</span><span class="token punctuation">(</span>requestCode<span class="token punctuation">,</span> resultCode<span class="token punctuation">,</span> data<span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre></div>
 <p><strong>&#x3C;尚未使用過></strong>
 使用 SDK 從快取或應用程式書籤載入 </p>
 <ul>
 <li>AccessToken.getCurrentAccessToken</li>
 <li>Profile.getCurrentProfile()</li>
 </ul>
-<p>在程式重新啟動時，於 Activity 的 <code>onCreate</code> 方法中先檢查是否已登入、是否仍具有效性</p>
-<pre class="grvsc-container default-dark" data-language="java" data-index="4"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">val accessToken = </span><span class="mtk12">AccessToken</span><span class="mtk1">.</span><span class="mtk11">getCurrentAccessToken</span><span class="mtk1">()</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">val isLoggedIn</span><span class="mtk15">:</span><span class="mtk1"> </span><span class="mtk10">boolean</span><span class="mtk1"> = accessToken != </span><span class="mtk4">null</span><span class="mtk1"> &amp;&amp; !</span><span class="mtk12">accessToken</span><span class="mtk1">.</span><span class="mtk11">isExpired</span><span class="mtk1">()</span></span></span></code></pre>
-<p>之後便可執行實際登入，例如寫在自訂按鈕的 <code>OnClickListener</code> 中</p>
-<pre class="grvsc-container default-dark" data-language="java" data-index="5"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk12">LoginManager</span><span class="mtk1">.</span><span class="mtk11">getInstance</span><span class="mtk1">().</span><span class="mtk11">logInWithReadPermissions</span><span class="mtk1">(</span><span class="mtk4">this</span><span class="mtk1">, </span><span class="mtk12">Arrays</span><span class="mtk1">.</span><span class="mtk11">asList</span><span class="mtk1">(</span><span class="mtk8">&quot;public_profile&quot;</span><span class="mtk1">));</span></span></span></code></pre>
+<p>在程式重新啟動時，於 Activity 的 <code class="language-text">onCreate</code> 方法中先檢查是否已登入、是否仍具有效性</p>
+<div class="gatsby-highlight" data-language="java"><pre class="language-java"><code class="language-java">val accessToken <span class="token operator">=</span> <span class="token class-name">AccessToken</span><span class="token punctuation">.</span><span class="token function">getCurrentAccessToken</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+val isLoggedIn<span class="token operator">:</span> <span class="token keyword">boolean</span> <span class="token operator">=</span> accessToken <span class="token operator">!=</span> <span class="token keyword">null</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>accessToken<span class="token punctuation">.</span><span class="token function">isExpired</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre></div>
+<p>之後便可執行實際登入，例如寫在自訂按鈕的 <code class="language-text">OnClickListener</code> 中</p>
+<div class="gatsby-highlight" data-language="java"><pre class="language-java"><code class="language-java"><span class="token class-name">LoginManager</span><span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">logInWithReadPermissions</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span><span class="token string">"public_profile"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
 <hr>
-<h2>Google登入</h2>
+<h2 id="Google登入" style="position:relative;">Google登入<a href="#Google%E7%99%BB%E5%85%A5" aria-label="Google登入 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
 <p>流程滿多，會有點複雜，可以參考下面兩篇，前面的配置就略過，筆記一下步驟</p>
 <ol>
 <li>
-<p><strong>XML</strong>裡面放 Google 登入按鈕， 只有提供登入、沒有登出按鈕...只好自己刻一個</p>
-<pre class="grvsc-container default-dark" data-language="java" data-index="6"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">&lt;</span><span class="mtk12">com</span><span class="mtk1">.</span><span class="mtk12">google</span><span class="mtk1">.</span><span class="mtk12">android</span><span class="mtk1">.</span><span class="mtk12">gms</span><span class="mtk1">.</span><span class="mtk12">common</span><span class="mtk1">.</span><span class="mtk12">SignInButton</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">android</span><span class="mtk15">:</span><span class="mtk1">id=</span><span class="mtk8">&quot;@+id/btn_google_login&quot;</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">android</span><span class="mtk15">:</span><span class="mtk1">layout_width=</span><span class="mtk8">&quot;wrap_content&quot;</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">android</span><span class="mtk15">:</span><span class="mtk1">layout_height=</span><span class="mtk8">&quot;wrap_content&quot;</span><span class="mtk1">/&gt;</span></span></span></code></pre>
+<p><strong>XML</strong>裡面放 Google 登入按鈕， 只有提供登入、沒有登出按鈕…只好自己刻一個</p>
+<div class="gatsby-highlight" data-language="java"><pre class="language-java"><code class="language-java"><span class="token operator">&lt;</span><span class="token class-name"><span class="token namespace">com<span class="token punctuation">.</span>google<span class="token punctuation">.</span>android<span class="token punctuation">.</span>gms<span class="token punctuation">.</span>common<span class="token punctuation">.</span></span>SignInButton</span>
+android<span class="token operator">:</span>id<span class="token operator">=</span><span class="token string">"@+id/btn_google_login"</span>
+android<span class="token operator">:</span>layout_width<span class="token operator">=</span><span class="token string">"wrap_content"</span>
+android<span class="token operator">:</span>layout_height<span class="token operator">=</span><span class="token string">"wrap_content"</span><span class="token operator">/</span><span class="token operator">></span></code></pre></div>
 </li>
 <li>
-<p>在<code>build.gradle</code> implement</p>
-<pre class="grvsc-container default-dark" data-language="java" data-index="7"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">dependencies {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">...</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">implementation </span><span class="mtk8">&#39;com.google.android.gms:play-services-auth:17.0.0&#39;</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">...</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">} </span></span></span></code></pre>
+<p>在<code class="language-text">build.gradle</code> implement</p>
+<div class="gatsby-highlight" data-language="java"><pre class="language-java"><code class="language-java">dependencies <span class="token punctuation">{</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+implementation <span class="token string">'com.google.android.gms:play-services-auth:17.0.0'</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span> </code></pre></div>
 </li>
 <li>這部分實作主要是參考這份<a href="https://developers.google.com/identity/sign-in/android/sign-in#add_the_google_sign-in_button_to_your_app">官方文件</a>，得先去 <a href="https://console.developers.google.com/api">Goodle APIs</a> 新增專案，如果你專案弄好、卻忘了配置一些資訊，在 <a href="https://developers.google.com/identity/sign-in/android/start-integrating">Try Sign-In for Android</a>補上
 <img src="https://i.imgur.com/xzksyPl.png"></li>
@@ -143,113 +143,113 @@ data-styled.g30[id="blog-post__CommentWrapper-sc-1hz7w8z-0"]{content:"hYboqo,"}/
 <img src="https://i.imgur.com/9337nui.png"></p>
 <p>要填入包名和SHA-1，完成這兩個才會拿到 <strong>Client ID</strong>，有它才能取得 Token 呀！</p>
 <ul>
-<li>包名(Package Name) 在 <code>build.gradle</code> 找</li>
+<li>包名(Package Name) 在 <code class="language-text">build.gradle</code> 找</li>
 <li>SHA-1 值</li>
 </ul>
 <p><img src="https://i.imgur.com/XfpEgs6.png"></p>
-<h3>如何取得 SHA-1 值</h3>
-<p>不一定要輸入指令，只要在 Android Studio 右側點選 <code>Tasks -> Android -> SigningResport</code>就會出現囉</p>
+<h3 id="如何取得-SHA-1-值" style="position:relative;">如何取得 SHA-1 值<a href="#%E5%A6%82%E4%BD%95%E5%8F%96%E5%BE%97-SHA-1-%E5%80%BC" aria-label="如何取得 SHA 1 值 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
+<p>不一定要輸入指令，只要在 Android Studio 右側點選 <code class="language-text">Tasks -&gt; Android -&gt; SigningResport</code>就會出現囉</p>
 <p><img src="https://i.imgur.com/kgVYTgS.png"></p>
 <p><img src="https://i.imgur.com/xwjwOrK.png"></p>
 <hr>
 <ol start="4">
-<li>拿到 Client ID 之後就可以回到程式碼，登入設置如下，就是填入 "serverClientId"</li>
+<li>拿到 Client ID 之後就可以回到程式碼，登入設置如下，就是填入 “serverClientId”</li>
 </ol>
-<pre class="grvsc-container default-dark" data-language="java" data-index="8"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">//Google登入</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">private</span><span class="mtk1"> fun </span><span class="mtk11">google_login</span><span class="mtk1">(){</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk3">//建立 GoogleSignInOptions</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    val mGoogleSignInOptions = </span><span class="mtk12">GoogleSignInOptions</span><span class="mtk1">.</span><span class="mtk11">Builder</span><span class="mtk1">(</span><span class="mtk12">GoogleSignInOptions</span><span class="mtk1">.</span><span class="mtk12">DEFAULT_SIGN_IN</span><span class="mtk1">)</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        .</span><span class="mtk11">requestServerAuthCode</span><span class="mtk1">(</span><span class="mtk8">&quot;serverClientId&quot;</span><span class="mtk1">)</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        .</span><span class="mtk11">requestIdToken</span><span class="mtk1">(</span><span class="mtk8">&quot;serverClientId&quot;</span><span class="mtk1">)</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        .</span><span class="mtk11">requestEmail</span><span class="mtk1">()</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        .</span><span class="mtk11">build</span><span class="mtk1">()</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    val mgoogleApiClient = </span><span class="mtk10">GoogleApiClient</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        .</span><span class="mtk11">Builder</span><span class="mtk1">(</span><span class="mtk4">this</span><span class="mtk1">)</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        .</span><span class="mtk11">addApi</span><span class="mtk1">(</span><span class="mtk12">Auth</span><span class="mtk1">.</span><span class="mtk12">GOOGLE_SIGN_IN_API</span><span class="mtk1">, mGoogleSignInOptions)</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        .</span><span class="mtk11">build</span><span class="mtk1">()</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    val signInIntent= </span><span class="mtk12">Auth</span><span class="mtk1">.</span><span class="mtk12">GoogleSignInApi</span><span class="mtk1">.</span><span class="mtk11">getSignInIntent</span><span class="mtk1">(mgoogleApiClient)</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk11">startActivityForResult</span><span class="mtk1">(signInIntent, REQ_GOOGLE_LOGI)</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span></code></pre>
+<div class="gatsby-highlight" data-language="java"><pre class="language-java"><code class="language-java"><span class="token comment">//Google登入</span>
+<span class="token keyword">private</span> fun <span class="token function">google_login</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">//建立 GoogleSignInOptions</span>
+    val mGoogleSignInOptions <span class="token operator">=</span> <span class="token class-name">GoogleSignInOptions<span class="token punctuation">.</span>Builder</span><span class="token punctuation">(</span><span class="token class-name">GoogleSignInOptions</span><span class="token punctuation">.</span>DEFAULT_SIGN_IN<span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">requestServerAuthCode</span><span class="token punctuation">(</span><span class="token string">"serverClientId"</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">requestIdToken</span><span class="token punctuation">(</span><span class="token string">"serverClientId"</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">requestEmail</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    val mgoogleApiClient <span class="token operator">=</span> <span class="token class-name">GoogleApiClient
+        <span class="token punctuation">.</span>Builder</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">addApi</span><span class="token punctuation">(</span><span class="token class-name">Auth</span><span class="token punctuation">.</span>GOOGLE_SIGN_IN_API<span class="token punctuation">,</span> mGoogleSignInOptions<span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    val signInIntent<span class="token operator">=</span> <span class="token class-name">Auth<span class="token punctuation">.</span>GoogleSignInApi</span><span class="token punctuation">.</span><span class="token function">getSignInIntent</span><span class="token punctuation">(</span>mgoogleApiClient<span class="token punctuation">)</span>
+    <span class="token function">startActivityForResult</span><span class="token punctuation">(</span>signInIntent<span class="token punctuation">,</span> REQ_GOOGLE_LOGI<span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre></div>
 <p>我搞不清楚 requestServerAuthCode 和 requestIdToken 差在哪裡，查了一下才知道，<a href="https://stackoverflow.com/questions/39668773/what-is-diff-between-requestidtoken-and-requestserverauthcode-in-google-singnin">參考</a></p>
-<pre class="grvsc-container default-dark" data-language="java" data-index="9"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">//Google登出</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">private</span><span class="mtk1"> fun </span><span class="mtk11">google_logOut</span><span class="mtk1">() {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    val gso = </span><span class="mtk10">GoogleSignInOptions</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        .</span><span class="mtk11">Builder</span><span class="mtk1">(</span><span class="mtk12">GoogleSignInOptions</span><span class="mtk1">.</span><span class="mtk12">DEFAULT_SIGN_IN</span><span class="mtk1">)</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        .</span><span class="mtk11">requestIdToken</span><span class="mtk1">(</span><span class="mtk8">&quot;serverClientId&quot;</span><span class="mtk1">)</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        .</span><span class="mtk11">requestEmail</span><span class="mtk1">()</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        .</span><span class="mtk11">build</span><span class="mtk1">()</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    mGoogleSignInClient = </span><span class="mtk12">GoogleSignIn</span><span class="mtk1">.</span><span class="mtk11">getClient</span><span class="mtk1">(</span><span class="mtk4">this</span><span class="mtk1">, gso)</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk12">mGoogleSignInClient</span><span class="mtk1">.</span><span class="mtk11">signOut</span><span class="mtk1">()</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span></code></pre>
+<div class="gatsby-highlight" data-language="java"><pre class="language-java"><code class="language-java"><span class="token comment">//Google登出</span>
+<span class="token keyword">private</span> fun <span class="token function">google_logOut</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    val gso <span class="token operator">=</span> <span class="token class-name">GoogleSignInOptions
+        <span class="token punctuation">.</span>Builder</span><span class="token punctuation">(</span><span class="token class-name">GoogleSignInOptions</span><span class="token punctuation">.</span>DEFAULT_SIGN_IN<span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">requestIdToken</span><span class="token punctuation">(</span><span class="token string">"serverClientId"</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">requestEmail</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    mGoogleSignInClient <span class="token operator">=</span> <span class="token class-name">GoogleSignIn</span><span class="token punctuation">.</span><span class="token function">getClient</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> gso<span class="token punctuation">)</span>
+    mGoogleSignInClient<span class="token punctuation">.</span><span class="token function">signOut</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre></div>
 <p>接收 Google 回傳結果</p>
-<pre class="grvsc-container default-dark" data-language="java" data-index="10"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">override fun </span><span class="mtk11">onActivityResult</span><span class="mtk1">(requestCode</span><span class="mtk15">:</span><span class="mtk1"> Int, resultCode</span><span class="mtk15">:</span><span class="mtk1"> Int, data</span><span class="mtk15">:</span><span class="mtk1"> Intent</span><span class="mtk15">?</span><span class="mtk1">) {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">super</span><span class="mtk1">.</span><span class="mtk11">onActivityResult</span><span class="mtk1">(requestCode, resultCode, data)</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk15">if</span><span class="mtk1"> (requestCode == REQ_GOOGLE_LOGIN &amp;&amp; data != </span><span class="mtk4">null</span><span class="mtk1">) {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        val task = </span><span class="mtk12">GoogleSignIn</span><span class="mtk1">.</span><span class="mtk11">getSignedInAccountFromIntent</span><span class="mtk1">(data)</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk11">handleGoogleResult</span><span class="mtk1">(task)</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">//解析google回傳結果</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">private</span><span class="mtk1"> fun </span><span class="mtk11">handleGoogleResult</span><span class="mtk1">(task</span><span class="mtk15">:</span><span class="mtk1"> </span><span class="mtk10">Task</span><span class="mtk1">&lt;GoogleSignInAccount&gt;) {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    val account = </span><span class="mtk12">task</span><span class="mtk1">.</span><span class="mtk11">getResult</span><span class="mtk1">(ApiException</span><span class="mtk15">::</span><span class="mtk12">class</span><span class="mtk1">.</span><span class="mtk12">java</span><span class="mtk1">)</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    val getEmail = account!!.</span><span class="mtk12">email</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    val getidToken = </span><span class="mtk12">account</span><span class="mtk1">.</span><span class="mtk12">idToken</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk3">//由後端去驗證token</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span></code></pre>
+<div class="gatsby-highlight" data-language="java"><pre class="language-java"><code class="language-java">override fun <span class="token function">onActivityResult</span><span class="token punctuation">(</span>requestCode<span class="token operator">:</span> <span class="token class-name">Int</span><span class="token punctuation">,</span> resultCode<span class="token operator">:</span> <span class="token class-name">Int</span><span class="token punctuation">,</span> data<span class="token operator">:</span> <span class="token class-name">Intent</span><span class="token operator">?</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">onActivityResult</span><span class="token punctuation">(</span>requestCode<span class="token punctuation">,</span> resultCode<span class="token punctuation">,</span> data<span class="token punctuation">)</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>requestCode <span class="token operator">==</span> REQ_GOOGLE_LOGIN <span class="token operator">&amp;&amp;</span> data <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        val task <span class="token operator">=</span> <span class="token class-name">GoogleSignIn</span><span class="token punctuation">.</span><span class="token function">getSignedInAccountFromIntent</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+        <span class="token function">handleGoogleResult</span><span class="token punctuation">(</span>task<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">//解析google回傳結果</span>
+<span class="token keyword">private</span> fun <span class="token function">handleGoogleResult</span><span class="token punctuation">(</span>task<span class="token operator">:</span> <span class="token class-name">Task</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">GoogleSignInAccount</span><span class="token punctuation">></span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    val account <span class="token operator">=</span> task<span class="token punctuation">.</span><span class="token function">getResult</span><span class="token punctuation">(</span><span class="token class-name">ApiException</span><span class="token operator">::</span><span class="token keyword">class</span><span class="token punctuation">.</span>java<span class="token punctuation">)</span>
+    val getEmail <span class="token operator">=</span> account<span class="token operator">!</span><span class="token operator">!</span><span class="token punctuation">.</span>email
+    val getidToken <span class="token operator">=</span> account<span class="token punctuation">.</span>idToken
+    <span class="token comment">//由後端去驗證token</span>
+<span class="token punctuation">}</span></code></pre></div>
 <hr>
-<h3>Google登入問題</h3>
+<h3 id="Google登入問題" style="position:relative;">Google登入問題<a href="#Google%E7%99%BB%E5%85%A5%E5%95%8F%E9%A1%8C" aria-label="Google登入問題 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
 <ul>
-<li><strong><code>com.google.android.gms.common.api.ApiException：10</code> 提供未知的客户端ID</strong></li>
+<li><strong><code class="language-text">com.google.android.gms.common.api.ApiException：10</code> 提供未知的客户端ID</strong></li>
 </ul>
-<p>出現 <code>10</code> 錯誤為配置不正確，表示為開發人員的錯誤，可能沒有提供 SHA-1 或是未回應對 idToken 的請求，檢查 <code>requestIdToken(getString(R.string.google_app_id))</code> 有無正確填入。</p>
+<p>出現 <code class="language-text">10</code> 錯誤為配置不正確，表示為開發人員的錯誤，可能沒有提供 SHA-1 或是未回應對 idToken 的請求，檢查 <code class="language-text">requestIdToken(getString(R.string.google_app_id))</code> 有無正確填入。</p>
 <ul>
-<li><strong><code>com.google.android.gms.common.api.ApiException：12500</code></strong>
-一直出現 <code>12500</code> 錯誤，這個真的很難偵錯原因，花了快兩個小時才找到問題解答，參考這篇 <a href="https://stackoverflow.com/questions/34068065/error-12500-in-google-sign-in-8-3-0-when-requesting-requestserverauthcode">error 12500 in google sign in</a> 或 <a href="https://t.codebug.vip/questions-1254036.htm">android:Firebase Google Auth無法使用 ApiException：12500</a>，網上眾說紛紜，發現自己是因為兩種錯誤而造成：</li>
+<li><strong><code class="language-text">com.google.android.gms.common.api.ApiException：12500</code></strong>
+一直出現 <code class="language-text">12500</code> 錯誤，這個真的很難偵錯原因，花了快兩個小時才找到問題解答，參考這篇 <a href="https://stackoverflow.com/questions/34068065/error-12500-in-google-sign-in-8-3-0-when-requesting-requestserverauthcode">error 12500 in google sign in</a> 或 <a href="https://t.codebug.vip/questions-1254036.htm">android:Firebase Google Auth無法使用 ApiException：12500</a>，網上眾說紛紜，發現自己是因為兩種錯誤而造成：</li>
 </ul>
 <hr>
 <p><strong>Web Client ID</strong> 出錯</p>
 <ol>
 <li>打開 <a href="https://console.developers.google.com/apis/">Google API Console</a> 左上角<strong>選擇專案</strong></li>
 <li>按左側「憑證」，會看到 OAuth 2.0 用戶端 ID</li>
-<li>確保你在 <code>requestServerAuthCode</code> 方法裡填入的是 <strong>Web Client Id</strong>，而不是 Android</li>
+<li>確保你在 <code class="language-text">requestServerAuthCode</code> 方法裡填入的是 <strong>Web Client Id</strong>，而不是 Android</li>
 </ol>
 <p>原因出在輸入 SHA1 後會產生 <strong>Android</strong> 和 <strong>webclient</strong> 兩個 Client ID：
 a SHA1 code created both an Android oauth client and a webclient in google developers console.</p>
 <p><img src="https://i.imgur.com/pMGwlBa.png"></p>
 <hr>
 <p><strong>不同的除錯 SHA1-key</strong> 出錯
-找了好久才發現 android 會生成不同的 SHA1 值，因為我打包用的是 release mode，但是一直填到 debug 的 SHA1-key...</p>
+找了好久才發現 android 會生成不同的 SHA1 值，因為我打包用的是 release mode，但是一直填到 debug 的 SHA1-key…</p>
 <p><img src="https://i.imgur.com/AYVt6FR.png"></p>
 <hr>
-<h2>LINE登入</h2>
+<h2 id="LINE登入" style="position:relative;">LINE登入<a href="#LINE%E7%99%BB%E5%85%A5" aria-label="LINE登入 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
 <p>Line 登入實作網路上資料不多，最好就是直接參考<a href="https://developers.line.biz/en/docs/android-sdk/integrate-line-login/#add-line-sdk-dependency">官方作法</a></p>
 <ol>
-<li>在 <code>build.gradle</code> 添加 LINE SDK</li>
+<li>在 <code class="language-text">build.gradle</code> 添加 LINE SDK</li>
 </ol>
-<pre class="grvsc-container default-dark" data-language="java" data-index="11"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">repositories {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">   ...</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">   </span><span class="mtk11">jcenter</span><span class="mtk1">()</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">dependencies {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    ...</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    implementation </span><span class="mtk8">&#39;com.linecorp:linesdk:5.0.1&#39;</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    ...</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">} </span></span></span></code></pre>
-<p>添加 Android 編譯項目，可使用<code>Java 1.8 support</code></p>
-<pre class="grvsc-container default-dark" data-language="java" data-index="12"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">android {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">...</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  compileOptions {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        sourceCompatibility </span><span class="mtk12">JavaVersion</span><span class="mtk1">.</span><span class="mtk12">VERSION_1_8</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        targetCompatibility </span><span class="mtk12">JavaVersion</span><span class="mtk1">.</span><span class="mtk12">VERSION_1_8</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    }</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">...</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span></code></pre>
+<div class="gatsby-highlight" data-language="java"><pre class="language-java"><code class="language-java">repositories <span class="token punctuation">{</span>
+   <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+   <span class="token function">jcenter</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+dependencies <span class="token punctuation">{</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    implementation <span class="token string">'com.linecorp:linesdk:5.0.1'</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span> </code></pre></div>
+<p>添加 Android 編譯項目，可使用<code class="language-text">Java 1.8 support</code></p>
+<div class="gatsby-highlight" data-language="java"><pre class="language-java"><code class="language-java">android <span class="token punctuation">{</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+  compileOptions <span class="token punctuation">{</span>
+        sourceCompatibility <span class="token class-name">JavaVersion</span><span class="token punctuation">.</span>VERSION_1_8
+        targetCompatibility <span class="token class-name">JavaVersion</span><span class="token punctuation">.</span>VERSION_1_8
+    <span class="token punctuation">}</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span></code></pre></div>
 <ol start="2">
-<li>去 <code>manifest</code> 加入網路權限</li>
+<li>去 <code class="language-text">manifest</code> 加入網路權限</li>
 </ol>
-<pre class="grvsc-container default-dark" data-language="java" data-index="13"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">&lt;uses-permission android</span><span class="mtk15">:</span><span class="mtk1">name=</span><span class="mtk8">&quot;android.permission.INTERNET&quot;</span><span class="mtk1"> /&gt;</span></span></span></code></pre>
+<div class="gatsby-highlight" data-language="java"><pre class="language-java"><code class="language-java"><span class="token operator">&lt;</span><span class="token keyword">uses</span><span class="token operator">-</span>permission android<span class="token operator">:</span>name<span class="token operator">=</span><span class="token string">"android.permission.INTERNET"</span> <span class="token operator">/</span><span class="token operator">></span></code></pre></div>
 <ol start="3">
 <li>設定檔好了後，接著在 <a href="https://developers.line.biz/zh-hant/?status=success">LINE Developer</a> 登入，如果是第一次登就要註冊開發者，登入後須建立一個 Provider，像是 APP 開發團隊或公司名稱，跟個人資訊無關的。</li>
 <li>然後在你建立的 Provider 中，新增一個頻道(channel)，會出現一個像功能列的選單，就是這支頻道是用來做什麼的，因為我們是要用第三方登入就選 <strong>LINE Login</strong></li>
@@ -259,79 +259,79 @@ a SHA1 code created both an Android oauth client and a webclient in google devel
 <li>基本要填的就是 Channel name、Channel description、Email　三項，然後去設定(LINE Login)選擇 <strong>Mobile APP</strong>，填入包裹名稱</li>
 </ol>
 <p><img src="https://i.imgur.com/9SwgPdL.png"></p>
-<p>也就是 <code>build.gradle</code> 裡面的　<strong>applicationId</strong></p>
+<p>也就是 <code class="language-text">build.gradle</code> 裡面的　<strong>applicationId</strong></p>
 <p><img src="https://i.imgur.com/fhavrwO.png"></p>
 <p>如果還不太理解，可以在 <a href="https://developers.line.biz/en/docs/messaging-api/getting-started/#creating-a-channel">Getting started with the Messaging API</a> 查看步驟，填完這些你就可以得到 Channel ID 和 Channel secret 等資料，等下前者是要用來設置參數的。</p>
 <hr>
 <p>前置作業完成了，來實作程式碼的部分，在 XML 上新增一個按鈕，因為 LINE 有提供內建的登入按鈕，這裡就直接使用：</p>
-<pre class="grvsc-container default-dark" data-language="java" data-index="14"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">&lt;</span><span class="mtk12">com</span><span class="mtk1">.</span><span class="mtk12">linecorp</span><span class="mtk1">.</span><span class="mtk12">linesdk</span><span class="mtk1">.</span><span class="mtk12">widget</span><span class="mtk1">.</span><span class="mtk12">LoginButton</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    android</span><span class="mtk15">:</span><span class="mtk1">id=</span><span class="mtk8">&quot;@+id/line_login_btn&quot;</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    android</span><span class="mtk15">:</span><span class="mtk1">layout_width=</span><span class="mtk8">&quot;match_parent&quot;</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    android</span><span class="mtk15">:</span><span class="mtk1">layout_height=</span><span class="mtk8">&quot;wrap_content&quot;</span><span class="mtk1"> /&gt;</span></span></span></code></pre>
+<div class="gatsby-highlight" data-language="java"><pre class="language-java"><code class="language-java"><span class="token operator">&lt;</span><span class="token class-name"><span class="token namespace">com<span class="token punctuation">.</span>linecorp<span class="token punctuation">.</span>linesdk<span class="token punctuation">.</span>widget<span class="token punctuation">.</span></span>LoginButton</span>
+    android<span class="token operator">:</span>id<span class="token operator">=</span><span class="token string">"@+id/line_login_btn"</span>
+    android<span class="token operator">:</span>layout_width<span class="token operator">=</span><span class="token string">"match_parent"</span>
+    android<span class="token operator">:</span>layout_height<span class="token operator">=</span><span class="token string">"wrap_content"</span> <span class="token operator">/</span><span class="token operator">></span></code></pre></div>
 <p>大概長這個樣子
 <img src="https://i.imgur.com/ozwNiHX.png"></p>
 <p>Activity 的部分，為 LINE 登入按鈕設置必要的參數、監聽器，比較注意的是</p>
-<pre class="grvsc-container default-dark" data-language="java" data-index="15"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">//LINE登入按鈕設定</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">lateinit </span><span class="mtk4">var</span><span class="mtk1"> </span><span class="mtk12">params</span><span class="mtk15">:</span><span class="mtk1"> </span><span class="mtk10">LineAuthenticationParams</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">...</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">private</span><span class="mtk1"> fun </span><span class="mtk11">setLineLogin</span><span class="mtk1">(){</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    val loginDelegate = </span><span class="mtk12">LoginDelegate</span><span class="mtk1">.</span><span class="mtk12">Factory</span><span class="mtk1">.</span><span class="mtk11">create</span><span class="mtk1">()</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk3">//放入ChannelId 字串</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk12">btn_line_login</span><span class="mtk1">.</span><span class="mtk11">setChannelId</span><span class="mtk1">(</span><span class="mtk8">&quot;1653832701&quot;</span><span class="mtk1">)</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk3">//是否只透過LINE APP，或可以透過網頁</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk12">btn_line_login</span><span class="mtk1">.</span><span class="mtk11">enableLineAppAuthentication</span><span class="mtk1">(</span><span class="mtk4">true</span><span class="mtk1">)</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk3">//params 寫登入後請求的權限範圍</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    params = </span><span class="mtk12">LineAuthenticationParams</span><span class="mtk1">.</span><span class="mtk11">Builder</span><span class="mtk1">()</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        .</span><span class="mtk11">scopes</span><span class="mtk1">(</span><span class="mtk12">Arrays</span><span class="mtk1">.</span><span class="mtk11">asList</span><span class="mtk1">(</span><span class="mtk12">Scope</span><span class="mtk1">.</span><span class="mtk12">PROFILE</span><span class="mtk1">))</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        .</span><span class="mtk11">build</span><span class="mtk1">()</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk3">//Login按鈕參數和監聽器</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk12">btn_line_login</span><span class="mtk1">.</span><span class="mtk11">setAuthenticationParams</span><span class="mtk1">(params)</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk12">btn_line_login</span><span class="mtk1">.</span><span class="mtk11">setLoginDelegate</span><span class="mtk1">(loginDelegate)</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk12">btn_line_login</span><span class="mtk1">.</span><span class="mtk11">addLoginListener</span><span class="mtk1">(object</span><span class="mtk15">:</span><span class="mtk1"> LoginListener{</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        override fun </span><span class="mtk11">onLoginSuccess</span><span class="mtk1">(result</span><span class="mtk15">:</span><span class="mtk1"> LineLoginResult) {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">            </span><span class="mtk12">Toast</span><span class="mtk1">.</span><span class="mtk11">makeText</span><span class="mtk1">(</span><span class="mtk4">this</span><span class="mtk1">@</span><span class="mtk10">MainActivity</span><span class="mtk1">, </span><span class="mtk8">&quot;Login success&quot;</span><span class="mtk1">, </span><span class="mtk12">Toast</span><span class="mtk1">.</span><span class="mtk12">LENGTH_SHORT</span><span class="mtk1">).</span><span class="mtk11">show</span><span class="mtk1">()</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        }</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        override fun </span><span class="mtk11">onLoginFailure</span><span class="mtk1">(result</span><span class="mtk15">:</span><span class="mtk1"> LineLoginResult</span><span class="mtk15">?</span><span class="mtk1">) {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">            </span><span class="mtk12">Toast</span><span class="mtk1">.</span><span class="mtk11">makeText</span><span class="mtk1">(</span><span class="mtk4">this</span><span class="mtk1">@</span><span class="mtk10">MainActivity</span><span class="mtk1">, </span><span class="mtk8">&quot;Login failure&quot;</span><span class="mtk1">, </span><span class="mtk12">Toast</span><span class="mtk1">.</span><span class="mtk12">LENGTH_SHORT</span><span class="mtk1">).</span><span class="mtk11">show</span><span class="mtk1">();</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        }</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    })</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span></code></pre>
+<div class="gatsby-highlight" data-language="java"><pre class="language-java"><code class="language-java"><span class="token comment">//LINE登入按鈕設定</span>
+lateinit <span class="token keyword">var</span> params<span class="token operator">:</span> <span class="token class-name">LineAuthenticationParams</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token keyword">private</span> fun <span class="token function">setLineLogin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    val loginDelegate <span class="token operator">=</span> <span class="token class-name">LoginDelegate<span class="token punctuation">.</span>Factory</span><span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    
+    <span class="token comment">//放入ChannelId 字串</span>
+    btn_line_login<span class="token punctuation">.</span><span class="token function">setChannelId</span><span class="token punctuation">(</span><span class="token string">"1653832701"</span><span class="token punctuation">)</span>
+    <span class="token comment">//是否只透過LINE APP，或可以透過網頁</span>
+    btn_line_login<span class="token punctuation">.</span><span class="token function">enableLineAppAuthentication</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span>
+    <span class="token comment">//params 寫登入後請求的權限範圍</span>
+    params <span class="token operator">=</span> <span class="token class-name">LineAuthenticationParams<span class="token punctuation">.</span>Builder</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">scopes</span><span class="token punctuation">(</span><span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span><span class="token class-name">Scope</span><span class="token punctuation">.</span>PROFILE<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    
+    <span class="token comment">//Login按鈕參數和監聽器</span>
+    btn_line_login<span class="token punctuation">.</span><span class="token function">setAuthenticationParams</span><span class="token punctuation">(</span>params<span class="token punctuation">)</span>
+    btn_line_login<span class="token punctuation">.</span><span class="token function">setLoginDelegate</span><span class="token punctuation">(</span>loginDelegate<span class="token punctuation">)</span>
+    btn_line_login<span class="token punctuation">.</span><span class="token function">addLoginListener</span><span class="token punctuation">(</span>object<span class="token operator">:</span> <span class="token class-name">LoginListener</span><span class="token punctuation">{</span>
+        override fun <span class="token function">onLoginSuccess</span><span class="token punctuation">(</span>result<span class="token operator">:</span> <span class="token class-name">LineLoginResult</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token class-name">Toast</span><span class="token punctuation">.</span><span class="token function">makeText</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token annotation punctuation">@MainActivity</span><span class="token punctuation">,</span> <span class="token string">"Login success"</span><span class="token punctuation">,</span> <span class="token class-name">Toast</span><span class="token punctuation">.</span>LENGTH_SHORT<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        override fun <span class="token function">onLoginFailure</span><span class="token punctuation">(</span>result<span class="token operator">:</span> <span class="token class-name">LineLoginResult</span><span class="token operator">?</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token class-name">Toast</span><span class="token punctuation">.</span><span class="token function">makeText</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token annotation punctuation">@MainActivity</span><span class="token punctuation">,</span> <span class="token string">"Login failure"</span><span class="token punctuation">,</span> <span class="token class-name">Toast</span><span class="token punctuation">.</span>LENGTH_SHORT<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre></div>
 <p><strong>🔔開始 LINE 登錄</strong>
 這裡可以有兩種寫法，選擇導入 LINE APP 或是直接開啟 WebView，之後有空補上邏輯，自動判斷使用者是否有裝上某應用程式</p>
-<pre class="grvsc-container default-dark" data-language="java" data-index="16"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">//使用應用程序登入 #1</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk12">btn_line_login</span><span class="mtk1">.</span><span class="mtk12">setOnClickListener</span><span class="mtk1">{</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    val loginIntent = </span><span class="mtk12">LineLoginApi</span><span class="mtk1">.</span><span class="mtk11">getLoginIntent</span><span class="mtk1">(</span><span class="mtk4">this</span><span class="mtk1">, </span><span class="mtk8">&quot;1653832701&quot;</span><span class="mtk1">, params)</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk11">startActivityForResult</span><span class="mtk1">(loginIntent, REQ_LINE_CODE)</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">//瀏覽器的LINE登入 #2</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk12">btn_line_login</span><span class="mtk1">.</span><span class="mtk12">setOnClickListener</span><span class="mtk1">{</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    val loginIntent = </span><span class="mtk12">LineLoginApi</span><span class="mtk1">.</span><span class="mtk11">getLoginIntentWithoutLineAppAuth</span><span class="mtk1">(</span><span class="mtk4">this</span><span class="mtk1">, </span><span class="mtk8">&quot;1653832701&quot;</span><span class="mtk1">, params)</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk11">startActivityForResult</span><span class="mtk1">(loginIntent, REQ_LINE_CODE)</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span></code></pre>
-<p>接收 LINE 登入回傳結果，以 <code>onActivityResult()</code> 方法返回，可取得用戶資訊和 <strong>Token</strong></p>
-<pre class="grvsc-container default-dark" data-language="java" data-index="17"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">override fun </span><span class="mtk11">onActivityResult</span><span class="mtk1">(requestCode</span><span class="mtk15">:</span><span class="mtk1"> Int, resultCode</span><span class="mtk15">:</span><span class="mtk1"> Int, data</span><span class="mtk15">:</span><span class="mtk1"> Intent</span><span class="mtk15">?</span><span class="mtk1">) {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">super</span><span class="mtk1">.</span><span class="mtk11">onActivityResult</span><span class="mtk1">(requestCode, resultCode, data)</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk15">if</span><span class="mtk1"> (requestCode == REQ_LINE_CODE &amp;&amp; data != </span><span class="mtk4">null</span><span class="mtk1">){</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    val result = </span><span class="mtk12">LineLoginApi</span><span class="mtk1">.</span><span class="mtk11">getLoginResultFromIntent</span><span class="mtk1">(data)</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk11">when</span><span class="mtk1"> (</span><span class="mtk12">result</span><span class="mtk1">.</span><span class="mtk12">responseCode</span><span class="mtk1">) {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk3">//回應成功</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk12">LineApiResponseCode</span><span class="mtk1">.</span><span class="mtk12">SUCCESS</span><span class="mtk1"> </span><span class="mtk4">-&gt;</span><span class="mtk1"> {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">            val userId = </span><span class="mtk12">result</span><span class="mtk1">.</span><span class="mtk12">lineProfile</span><span class="mtk1">!!.</span><span class="mtk12">userId</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">            val displayName = </span><span class="mtk12">result</span><span class="mtk1">.</span><span class="mtk12">lineProfile</span><span class="mtk1">!!.</span><span class="mtk12">displayName</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">            val accessToken = </span><span class="mtk12">result</span><span class="mtk1">.</span><span class="mtk11">getLineCredential</span><span class="mtk1">()!!.</span><span class="mtk11">getAccessToken</span><span class="mtk1">().</span><span class="mtk11">getTokenString</span><span class="mtk1">()</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        }</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk3">//回應失敗</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk12">LineApiResponseCode</span><span class="mtk1">.</span><span class="mtk12">CANCEL</span><span class="mtk1"> </span><span class="mtk4">-&gt;</span><span class="mtk1"> {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">            </span><span class="mtk12">Log</span><span class="mtk1">.</span><span class="mtk11">e</span><span class="mtk1">(</span><span class="mtk8">&quot;ljwx-line-cancel-&quot;</span><span class="mtk1">, </span><span class="mtk8">&quot;cancel&quot;</span><span class="mtk1">)</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        }</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk15">else</span><span class="mtk1"> </span><span class="mtk4">-&gt;</span><span class="mtk1"> {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">            </span><span class="mtk15">return</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        }</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    }</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span></code></pre>
+<div class="gatsby-highlight" data-language="java"><pre class="language-java"><code class="language-java"><span class="token comment">//使用應用程序登入 #1</span>
+btn_line_login<span class="token punctuation">.</span>setOnClickListener<span class="token punctuation">{</span>
+    val loginIntent <span class="token operator">=</span> <span class="token class-name">LineLoginApi</span><span class="token punctuation">.</span><span class="token function">getLoginIntent</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token string">"1653832701"</span><span class="token punctuation">,</span> params<span class="token punctuation">)</span>
+    <span class="token function">startActivityForResult</span><span class="token punctuation">(</span>loginIntent<span class="token punctuation">,</span> REQ_LINE_CODE<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment">//瀏覽器的LINE登入 #2</span>
+btn_line_login<span class="token punctuation">.</span>setOnClickListener<span class="token punctuation">{</span>
+    val loginIntent <span class="token operator">=</span> <span class="token class-name">LineLoginApi</span><span class="token punctuation">.</span><span class="token function">getLoginIntentWithoutLineAppAuth</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token string">"1653832701"</span><span class="token punctuation">,</span> params<span class="token punctuation">)</span>
+    <span class="token function">startActivityForResult</span><span class="token punctuation">(</span>loginIntent<span class="token punctuation">,</span> REQ_LINE_CODE<span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>接收 LINE 登入回傳結果，以 <code class="language-text">onActivityResult()</code> 方法返回，可取得用戶資訊和 <strong>Token</strong></p>
+<div class="gatsby-highlight" data-language="java"><pre class="language-java"><code class="language-java">override fun <span class="token function">onActivityResult</span><span class="token punctuation">(</span>requestCode<span class="token operator">:</span> <span class="token class-name">Int</span><span class="token punctuation">,</span> resultCode<span class="token operator">:</span> <span class="token class-name">Int</span><span class="token punctuation">,</span> data<span class="token operator">:</span> <span class="token class-name">Intent</span><span class="token operator">?</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">onActivityResult</span><span class="token punctuation">(</span>requestCode<span class="token punctuation">,</span> resultCode<span class="token punctuation">,</span> data<span class="token punctuation">)</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>requestCode <span class="token operator">==</span> REQ_LINE_CODE <span class="token operator">&amp;&amp;</span> data <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    val result <span class="token operator">=</span> <span class="token class-name">LineLoginApi</span><span class="token punctuation">.</span><span class="token function">getLoginResultFromIntent</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+    when <span class="token punctuation">(</span>result<span class="token punctuation">.</span>responseCode<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">//回應成功</span>
+        <span class="token class-name">LineApiResponseCode</span><span class="token punctuation">.</span>SUCCESS <span class="token operator">-></span> <span class="token punctuation">{</span>
+            val userId <span class="token operator">=</span> result<span class="token punctuation">.</span>lineProfile<span class="token operator">!</span><span class="token operator">!</span><span class="token punctuation">.</span>userId
+            val displayName <span class="token operator">=</span> result<span class="token punctuation">.</span>lineProfile<span class="token operator">!</span><span class="token operator">!</span><span class="token punctuation">.</span>displayName
+            val accessToken <span class="token operator">=</span> result<span class="token punctuation">.</span><span class="token function">getLineCredential</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">!</span><span class="token operator">!</span><span class="token punctuation">.</span><span class="token function">getAccessToken</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTokenString</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment">//回應失敗</span>
+        <span class="token class-name">LineApiResponseCode</span><span class="token punctuation">.</span>CANCEL <span class="token operator">-></span> <span class="token punctuation">{</span>
+            <span class="token class-name">Log</span><span class="token punctuation">.</span><span class="token function">e</span><span class="token punctuation">(</span><span class="token string">"ljwx-line-cancel-"</span><span class="token punctuation">,</span> <span class="token string">"cancel"</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">else</span> <span class="token operator">-></span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
 <style class="grvsc-styles">
   .grvsc-container {
     overflow: auto;
@@ -421,20 +421,4 @@ a SHA1 code created both an Android oauth client and a webclient in google devel
     opacity: 0.7;
   }
   
-  .default-dark {
-    background-color: #1E1E1E;
-    color: #D4D4D4;
-  }
-  .default-dark .mtk1 { color: #D4D4D4; }
-  .default-dark .mtk12 { color: #9CDCFE; }
-  .default-dark .mtk15 { color: #C586C0; }
-  .default-dark .mtk8 { color: #CE9178; }
-  .default-dark .mtk4 { color: #569CD6; }
-  .default-dark .mtk10 { color: #4EC9B0; }
-  .default-dark .mtk11 { color: #DCDCAA; }
-  .default-dark .mtk3 { color: #6A9955; }
-  .default-dark .grvsc-line-highlighted::before {
-    background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
-    box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
-  }
-</style></div><footer class="post-content-footer"><a class="tag__Tag-ipvvgn-0 jGnann" href="/tags/kotlin">Kotlin</a><div class="blog-post__CommentWrapper-sc-1hz7w8z-0 hYboqo"><div shortname="gatsby-zoeaeen13" config="[object Object]" id="disqus_thread"></div></div></footer></article></div></main><footer class="site-foot">© <!-- -->2021<!-- --> <a href="/">Travel in Time.</a> — Built with<!-- --> <a href="https://gatsbyjs.org" target="_blank" rel="noopener noreferrer">Gatsby</a></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/kotlin/實作第三方登入/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-e7171f4a9079a629925f.js"],"app":["/app-7200a275e6a5a54ac58c.js"],"component---node-modules-gatsby-plugin-offline-app-shell-js":["/component---node-modules-gatsby-plugin-offline-app-shell-js-2296adb1de2fc003fbd5.js"],"component---src-pages-404-js":["/component---src-pages-404-js-80af0913ab4bf1a275d6.js"],"component---src-pages-about-js":["/component---src-pages-about-js-6b66a56a87e650a6b958.js"],"component---src-pages-archive-js":["/component---src-pages-archive-js-30f3549223c93f147f3d.js"],"component---src-pages-blog-js":["/component---src-pages-blog-js-a14ab5b24463314236a6.js"],"component---src-pages-coding-js":["/component---src-pages-coding-js-ac78486e9211ed681b9b.js"],"component---src-pages-elements-js":["/component---src-pages-elements-js-2887766e1579fc38cea2.js"],"component---src-pages-index-js":["/component---src-pages-index-js-d41a23c6c7a7f282a94e.js"],"component---src-pages-life-js":["/component---src-pages-life-js-87e04ff94fb8d8fa866c.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js-8a2324bd47fe05fd44e5.js"],"component---src-templates-category-page-js":["/component---src-templates-category-page-js-30fbd7cdb9e4722efd6a.js"],"component---src-templates-tag-page-js":["/component---src-templates-tag-page-js-bbab16370d8050b6cbf9.js"]};/*]]>*/</script><script src="/polyfill-e7171f4a9079a629925f.js" nomodule=""></script><script src="/component---src-templates-blog-post-js-8a2324bd47fe05fd44e5.js" async=""></script><script src="/5c3f3ed0ca01001d335c9b0021661d159a6a78f4-f0151228293631dd083a.js" async=""></script><script src="/78bde0f9cbfb3abf81d5baf6b7f31e60371328d0-caa364ff8415a13753f0.js" async=""></script><script src="/styles-e9d24b1846c7d6eb9685.js" async=""></script><script src="/app-7200a275e6a5a54ac58c.js" async=""></script><script src="/framework-2d6b7d2e2be378715b78.js" async=""></script><script src="/webpack-runtime-b79b73c0a761c3e72263.js" async=""></script></body></html>
+</style></div><footer class="post-content-footer"><a class="tag__BlogTag-ipvvgn-0 htfJiN" href="/tags/kotlin">Kotlin</a><div class="blog-post__CommentWrapper-sc-1hz7w8z-0 hYboqo"><div shortname="gatsby-zoeaeen13" config="[object Object]" id="disqus_thread"></div></div></footer></article></div></main><footer class="site-foot">© <!-- -->2021<!-- --> <a href="/">Travel in Time.</a> — Built with<!-- --> <a href="https://gatsbyjs.org" target="_blank" rel="noopener noreferrer">Gatsby</a></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/kotlin/實作第三方登入/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-e7171f4a9079a629925f.js"],"app":["/app-7200a275e6a5a54ac58c.js"],"component---node-modules-gatsby-plugin-offline-app-shell-js":["/component---node-modules-gatsby-plugin-offline-app-shell-js-2296adb1de2fc003fbd5.js"],"component---src-pages-404-js":["/component---src-pages-404-js-80af0913ab4bf1a275d6.js"],"component---src-pages-about-js":["/component---src-pages-about-js-6b66a56a87e650a6b958.js"],"component---src-pages-archive-js":["/component---src-pages-archive-js-30f3549223c93f147f3d.js"],"component---src-pages-blog-js":["/component---src-pages-blog-js-a14ab5b24463314236a6.js"],"component---src-pages-coding-js":["/component---src-pages-coding-js-ac78486e9211ed681b9b.js"],"component---src-pages-elements-js":["/component---src-pages-elements-js-2887766e1579fc38cea2.js"],"component---src-pages-index-js":["/component---src-pages-index-js-d41a23c6c7a7f282a94e.js"],"component---src-pages-life-js":["/component---src-pages-life-js-87e04ff94fb8d8fa866c.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js-e993954c3e6476bf33bd.js"],"component---src-templates-category-page-js":["/component---src-templates-category-page-js-30fbd7cdb9e4722efd6a.js"],"component---src-templates-tag-page-js":["/component---src-templates-tag-page-js-690cfcbd91c54a851f94.js"]};/*]]>*/</script><script src="/polyfill-e7171f4a9079a629925f.js" nomodule=""></script><script src="/component---src-templates-blog-post-js-e993954c3e6476bf33bd.js" async=""></script><script src="/5c3f3ed0ca01001d335c9b0021661d159a6a78f4-f0151228293631dd083a.js" async=""></script><script src="/78bde0f9cbfb3abf81d5baf6b7f31e60371328d0-caa364ff8415a13753f0.js" async=""></script><script src="/styles-e9d24b1846c7d6eb9685.js" async=""></script><script src="/app-7200a275e6a5a54ac58c.js" async=""></script><script src="/framework-2d6b7d2e2be378715b78.js" async=""></script><script src="/webpack-runtime-3af44b7a14c4e7b789b0.js" async=""></script></body></html>
