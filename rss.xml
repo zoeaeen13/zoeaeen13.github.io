@@ -1,4 +1,357 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Travel in Time.]]></title><description><![CDATA[Travel in Time.]]></description><link>https://zoeaeen13.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 29 Apr 2021 11:51:30 GMT</lastBuildDate><item><title><![CDATA[山隊｜南松鶴上八仙下松鶴]]></title><description><![CDATA[跨一個年，2021  #1 消失在社交媒體上有段時間，待在台東也減少了日常聚會的可能，因為九月底之後的腰傷更是沒怎麼出門，謝謝那些鍥而不捨找我的朋友，從十月、十一月到年底，還是不停有出隊的邀請。 在南二段的群組裡，豪哥開了一個「中級山生火烤肉party…]]></description><link>https://zoeaeen13.github.io/南松鶴上八仙下松鶴/</link><guid isPermaLink="false">https://zoeaeen13.github.io/南松鶴上八仙下松鶴/</guid><pubDate>Fri, 08 Jan 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;跨一個年，2021&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Travel in Time.]]></title><description><![CDATA[Travel in Time.]]></description><link>https://zoeaeen13.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 06 May 2021 11:08:03 GMT</lastBuildDate><item><title><![CDATA[宅在台東的一百種生活：長濱假期]]></title><description><![CDATA[回家 忙碌的四月，在各種事務夾雜下我整個人心力交瘁，很需要一場假期來好好放空、清除腦中的雜訊和焦慮感，在跟團隊告知最後的上班日想要 ＷFH…]]></description><link>https://zoeaeen13.github.io/長濱假期/</link><guid isPermaLink="false">https://zoeaeen13.github.io/長濱假期/</guid><pubDate>Sun, 02 May 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h5 id=&quot;回家&quot; style=&quot;position:relative;&quot;&gt;回家&lt;a href=&quot;#%E5%9B%9E%E5%AE%B6&quot; aria-label=&quot;回家 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h5&gt;
+&lt;p&gt;忙碌的四月，在各種事務夾雜下我整個人心力交瘁，很需要一場假期來好好放空、清除腦中的雜訊和焦慮感，在跟團隊告知最後的上班日想要 ＷFH 後，在勞動節前夕，迫不及待跳上回鄉列車，在一天奔波後沈沈睡去。&lt;/p&gt;
+&lt;p&gt;這個週末，台東長濱有一年一度的金剛馬拉松，小舅舅一家跟往常一樣一開報就加入，之前因工作轉換沒回台東過年的阿姨也拉我們一起參加，趁著難得的團聚，家人安排以慶祝母親節的形式來個久違的聚餐，在開完 retro 會議後，把測完的問題列出來回報給後端和 PM，我也算是可以好好結束這個 sprint 了，和 Cyriall 互相鼓勵一番，愉快下班！&lt;/p&gt;
+&lt;hr&gt;
+&lt;h5 id=&quot;家庭聚會&quot; style=&quot;position:relative;&quot;&gt;家庭聚會&lt;a href=&quot;#%E5%AE%B6%E5%BA%AD%E8%81%9A%E6%9C%83&quot; aria-label=&quot;家庭聚會 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h5&gt;
+&lt;p&gt;傍晚從咖啡廳回家，媽媽已經在準備，因為她今天也要上班，所以我們是在群組讓大家點餐、訂了不同餐館的招牌菜去拿，有泰城的檸檬豆腐、月亮蝦餅、大園的生魚片、鵝肉料、媽媽昨晚滷的紅酒燉牛肉、阿嬤自己做的蘿蔔糕…超級豐盛的一餐！&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/bLbxUir.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/ty9zepz.jpg&quot;&gt;&lt;/p&gt;
+&lt;center&gt;阿嬤看著兩個女兒備餐&lt;/center&gt;
+&lt;/br&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/1EjYyNl.jpg&quot;&gt;&lt;/p&gt;
+&lt;center&gt;搬完新家，還沒有正式招待阿公阿嬤來家裡&lt;/center&gt;
+&lt;/br&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/4EVnCAQ.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;配合從台中趕回來的妹妹，我們預計七點開飯，這時間對務農的阿公來說很晚，不過因為很久沒有這樣的聚會，大家都很有耐心、完全沒有人在抱怨，開開心心！&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/8RFqYtW.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/bMVXhKS.jpg&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;h5 id=&quot;次日出發&quot; style=&quot;position:relative;&quot;&gt;次日出發&lt;a href=&quot;#%E6%AC%A1%E6%97%A5%E5%87%BA%E7%99%BC&quot; aria-label=&quot;次日出發 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h5&gt;
+&lt;p&gt;前往長濱前，媽媽定了我們最愛的印度咖哩 ── 香料屋子，招待阿姨去吃，平凡的小店內藏著味道一絕的料理，不論是什麼口味的咖哩，搭上酥脆的烤餅都讓人回味不已，每次回到台東是一定要拜訪！&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/iPUsPjJ.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/s5YrkpD.jpg&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;h5 id=&quot;長濱馬拉松&quot; style=&quot;position:relative;&quot;&gt;長濱馬拉松&lt;a href=&quot;#%E9%95%B7%E6%BF%B1%E9%A6%AC%E6%8B%89%E6%9D%BE&quot; aria-label=&quot;長濱馬拉松 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h5&gt;
+&lt;p&gt;走在清晨的長濱街道，涼爽消散了不少睡意，從住宿點開了 5 分鐘左右來到會場附近、花了好久才順利找到車位，一踏進長濱國小就聽到倒計時出發的廣播，第一次參加路跑的媽媽和妹妹，很慌張的拿出迴紋針別上號碼牌，完全沒注意到其他樂活組的悠閒。&lt;/p&gt;
+&lt;p&gt;以前在台北參加路跑時，眾人無不摩拳擦掌等待鳴槍，但在金剛馬拉松，你完全看不到這樣的場景，樂活組的步調是真的很悠閒（很台東人），連排隊都只有前面一些人在排，大部分人是四散在操場上。&lt;/p&gt;
+&lt;p&gt;小舅舅站在起跑線對面，我這才注意到表弟妹都擠到前面蓄勢待發！果然小朋友就是有衝勁～&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/WU0ahTo.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;「砰」前面的人衝出起跑線，中後段慢悠悠散步出去。&lt;/p&gt;
+&lt;p&gt;妹妹才跑個二十幾公尺就跟我說累了，用走的吧，看著這擁擠的人潮根本也踏不了步，於是我們邊走邊跑一路往上坡前進。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/Jdn9duo.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/8L2tWJ6.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/e2uYsvh.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/7MRtCD5.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/BPKBzXc.jpg&quot;&gt;&lt;/p&gt;
+&lt;center&gt;日出的金剛大道&lt;/center&gt;
+&lt;/br&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/U9bPSjR.jpg&quot;&gt;&lt;/p&gt;
+&lt;center&gt;熱情的部落居民，都跑出來為我們加油打氣&lt;/center&gt;
+&lt;/br&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/nroEnSR.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/MSbvgQM.jpg&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;樂活組限時一個半小時，阿姨和媽媽早就結伴消失不見，本來信誓旦旦不會被關門的妹妹因為前面走得太悠哉，到後面兩公里一看時間「誒不對！我好像會被關門阿」我只好在前面領跑、一直 push 她往前，總算順利在前五分鐘把她推進終點（為什麼比要路跑的人還累？）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/K7qFhBz.jpg&quot;&gt;&lt;/p&gt;
+&lt;center&gt;一早起來就為了這張，說一定要合影拍照XD&lt;/center&gt;
+&lt;/br&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/nMhfjLy.jpg&quot;&gt;&lt;/p&gt;
+&lt;center&gt;小朋友們六點就進終點了&lt;/center&gt;
+&lt;/br&gt;
+&lt;hr&gt;
+&lt;h5 id=&quot;無菜單料理：美好拾光&quot; style=&quot;position:relative;&quot;&gt;無菜單料理：美好拾光&lt;a href=&quot;#%E7%84%A1%E8%8F%9C%E5%96%AE%E6%96%99%E7%90%86%EF%BC%9A%E7%BE%8E%E5%A5%BD%E6%8B%BE%E5%85%89&quot; aria-label=&quot;無菜單料理：美好拾光 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h5&gt;
+&lt;p&gt;結束路跑，回到民宿收拾、順便補個眠，一覺睡到了午餐時間，中午媽媽預定了她長濱好友推薦的無菜單料理 ── 美好拾光，聽說是之前那界的廚師回鄉開的餐館，在長濱你想要找餐廳，大部分得提前預約好當地的無菜單料理。&lt;/p&gt;
+&lt;p&gt;五菜一湯，豐富的肉類和海鮮、美味的長濱米，配上海景，值得在這裡好好吃上一頓飯。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/X1Ykg6Q.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/90K21gS.jpg&quot;&gt;&lt;/p&gt;
+&lt;style class=&quot;grvsc-styles&quot;&gt;
+  .grvsc-container {
+    overflow: auto;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 1rem;
+    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
+    padding-bottom: 1rem;
+    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
+    border-radius: 8px;
+    border-radius: var(--grvsc-border-radius, 8px);
+    font-feature-settings: normal;
+    line-height: 1.4;
+  }
+  
+  .grvsc-code {
+    display: table;
+  }
+  
+  .grvsc-line {
+    display: table-row;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+  }
+  
+  .grvsc-line &gt; * {
+    position: relative;
+  }
+  
+  .grvsc-gutter-pad {
+    display: table-cell;
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  .grvsc-gutter {
+    display: table-cell;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter::before {
+    content: attr(data-content);
+  }
+  
+  .grvsc-source {
+    display: table-cell;
+    padding-left: 1.5rem;
+    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
+    padding-right: 1.5rem;
+    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
+  }
+  
+  .grvsc-source:empty::after {
+    content: &apos; &apos;;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter + .grvsc-source {
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  /* Line transformer styles */
+  
+  .grvsc-has-line-highlighting &gt; .grvsc-code &gt; .grvsc-line::before {
+    content: &apos; &apos;;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .grvsc-line-diff-add::before {
+    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
+  }
+  
+  .grvsc-line-diff-del::before {
+    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
+  }
+  
+  .grvsc-line-number {
+    padding: 0 2px;
+    text-align: right;
+    opacity: 0.7;
+  }
+  
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[Logs]]></title><description><![CDATA[2021 年 4 月 Work 花一週的下班時間，用 gatsby 改版部落格，超滿意！ 工作逐漸上手，完成兩個後台功能、修一個 App bug，和 PM 們合作愉快 因月初月底都放連假，週五 front-end 讀書會進度慢（僅完成 YDKJS 導讀） 在 Udemy…]]></description><link>https://zoeaeen13.github.io/log/</link><guid isPermaLink="false">https://zoeaeen13.github.io/log/</guid><pubDate>Sat, 01 May 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h3 id=&quot;2021-年-4-月&quot; style=&quot;position:relative;&quot;&gt;2021 年 4 月&lt;a href=&quot;#2021-%E5%B9%B4-4-%E6%9C%88&quot; aria-label=&quot;2021 年 4 月 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Work&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;花一週的下班時間，用 gatsby 改版部落格，超滿意！&lt;/li&gt;
+&lt;li&gt;工作逐漸上手，完成兩個後台功能、修一個 App bug，和 PM 們合作愉快&lt;/li&gt;
+&lt;li&gt;因月初月底都放連假，週五 front-end 讀書會進度慢（僅完成 &lt;a href=&quot;https://github.com/getify/You-Dont-Know-JS/tree/2nd-ed/get-started&quot;&gt;YDKJS&lt;/a&gt; 導讀）&lt;/li&gt;
+&lt;li&gt;在 Udemy 上學習 &lt;a href=&quot;https://www.udemy.com/course/understand-javascript/&quot;&gt;JavaScript: Understanding the Weird Parts&lt;/a&gt;，目前進行第四章&lt;/li&gt;
+&lt;li&gt;擔任線上助教的第一個月，學習成為引導的角色&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Leisure&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;和子心、家誼有個 Happy Friday 喝酒聚！&lt;/li&gt;
+&lt;li&gt;月中爸媽來台北看我，陪他們到北投到處走走&lt;/li&gt;
+&lt;li&gt;連續兩個週三和阿姨有午餐約會，收到她做給我的咖哩和肉燥🥰&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Idle moment&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;看一部峰迴路轉（Knives Out），劇情流暢、場景拍得好美！&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;這個月，漸漸熟悉工作之後會開始思考下班時間該如何規劃，而不會讓每日生活只有兩點一線，從寫作開始出發，把很久之前做的 hexo 砍掉、用 gatsby 重建，花了整整一週把原本的 starter 大改，&lt;u&gt;非常滿意目前的形式、各類文章不會互相干擾閱讀&lt;/u&gt;，等摸透了 &lt;strong&gt;gatsby&lt;/strong&gt; 再寫一篇改版歷程；也在工作之餘開始學習，除了跟著團隊讀書會，也買線上課程進修，希望一切盡快步上軌道。&lt;/p&gt;
+&lt;p&gt;不過，規劃初期總是想做的事情太多，因為腦子裡塞太多訊息，本月真正的空閒時間不多，只有一部《峰迴路轉》讓我好好放鬆到！其他的 Netflix 影片感受都普普，兔嘲男孩還行，婚姻故事看到一半就棄了QQ&lt;/p&gt;
+&lt;p&gt;整體狀態很差，運動方面放掉了不少、假日也沒有心力拉去戶外，加上文章搬遷和補缺是一件很耗費心力的事情，四月沒有產出。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/luVytgZ.jpg&quot;&gt;&lt;/p&gt;
+&lt;style class=&quot;grvsc-styles&quot;&gt;
+  .grvsc-container {
+    overflow: auto;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 1rem;
+    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
+    padding-bottom: 1rem;
+    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
+    border-radius: 8px;
+    border-radius: var(--grvsc-border-radius, 8px);
+    font-feature-settings: normal;
+    line-height: 1.4;
+  }
+  
+  .grvsc-code {
+    display: table;
+  }
+  
+  .grvsc-line {
+    display: table-row;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+  }
+  
+  .grvsc-line &gt; * {
+    position: relative;
+  }
+  
+  .grvsc-gutter-pad {
+    display: table-cell;
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  .grvsc-gutter {
+    display: table-cell;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter::before {
+    content: attr(data-content);
+  }
+  
+  .grvsc-source {
+    display: table-cell;
+    padding-left: 1.5rem;
+    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
+    padding-right: 1.5rem;
+    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
+  }
+  
+  .grvsc-source:empty::after {
+    content: &apos; &apos;;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter + .grvsc-source {
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  /* Line transformer styles */
+  
+  .grvsc-has-line-highlighting &gt; .grvsc-code &gt; .grvsc-line::before {
+    content: &apos; &apos;;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .grvsc-line-diff-add::before {
+    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
+  }
+  
+  .grvsc-line-diff-del::before {
+    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
+  }
+  
+  .grvsc-line-number {
+    padding: 0 2px;
+    text-align: right;
+    opacity: 0.7;
+  }
+  
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[Love Logs]]></title><description><![CDATA[2021 年 4 月]]></description><link>https://zoeaeen13.github.io/love-logs/</link><guid isPermaLink="false">https://zoeaeen13.github.io/love-logs/</guid><pubDate>Sat, 01 May 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h3 id=&quot;2021-年-4-月&quot; style=&quot;position:relative;&quot;&gt;2021 年 4 月&lt;a href=&quot;#2021-%E5%B9%B4-4-%E6%9C%88&quot; aria-label=&quot;2021 年 4 月 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;style class=&quot;grvsc-styles&quot;&gt;
+  .grvsc-container {
+    overflow: auto;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 1rem;
+    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
+    padding-bottom: 1rem;
+    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
+    border-radius: 8px;
+    border-radius: var(--grvsc-border-radius, 8px);
+    font-feature-settings: normal;
+    line-height: 1.4;
+  }
+  
+  .grvsc-code {
+    display: table;
+  }
+  
+  .grvsc-line {
+    display: table-row;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+  }
+  
+  .grvsc-line &gt; * {
+    position: relative;
+  }
+  
+  .grvsc-gutter-pad {
+    display: table-cell;
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  .grvsc-gutter {
+    display: table-cell;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter::before {
+    content: attr(data-content);
+  }
+  
+  .grvsc-source {
+    display: table-cell;
+    padding-left: 1.5rem;
+    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
+    padding-right: 1.5rem;
+    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
+  }
+  
+  .grvsc-source:empty::after {
+    content: &apos; &apos;;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter + .grvsc-source {
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  /* Line transformer styles */
+  
+  .grvsc-has-line-highlighting &gt; .grvsc-code &gt; .grvsc-line::before {
+    content: &apos; &apos;;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .grvsc-line-diff-add::before {
+    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
+  }
+  
+  .grvsc-line-diff-del::before {
+    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
+  }
+  
+  .grvsc-line-number {
+    padding: 0 2px;
+    text-align: right;
+    opacity: 0.7;
+  }
+  
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[山隊｜南松鶴上八仙下松鶴]]></title><description><![CDATA[跨一個年，2021  #1 消失在社交媒體上有段時間，待在台東也減少了日常聚會的可能，因為九月底之後的腰傷更是沒怎麼出門，謝謝那些鍥而不捨找我的朋友，從十月、十一月到年底，還是不停有出隊的邀請。 在南二段的群組裡，豪哥開了一個「中級山生火烤肉party…]]></description><link>https://zoeaeen13.github.io/南松鶴上八仙下松鶴/</link><guid isPermaLink="false">https://zoeaeen13.github.io/南松鶴上八仙下松鶴/</guid><pubDate>Fri, 08 Jan 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;跨一個年，2021&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://i.imgur.com/8nOqwKD.jpg&quot;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h5 id=&quot;1&quot; style=&quot;position:relative;&quot;&gt;#1&lt;a href=&quot;#1&quot; aria-label=&quot;1 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h5&gt;
@@ -1891,7 +2244,317 @@ DOM 是描述 HTML 文件的表示法，也就是我們常看到的、可以使�
     opacity: 0.7;
   }
   
-&lt;/style&gt;</content:encoded></item><item><title><![CDATA[馬祖旅居 D4 — 南竿：牛角村、鐵板村和獅子市場]]></title><description><![CDATA[一早騎車來排，在介壽獅子市場二樓有許多熟食，大部分查到的網料都推薦阿妹的店，鼎邊糊。 「那個蔥抓餅，我一個禮拜可以吃…]]></description><link>https://zoeaeen13.github.io/Matzu/D4/</link><guid isPermaLink="false">https://zoeaeen13.github.io/Matzu/D4/</guid><pubDate>Sat, 08 Aug 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;一早騎車來排，在介壽獅子市場二樓有許多熟食，大部分查到的網料都推薦阿妹的店，鼎邊糊。&lt;/p&gt;
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[嘉明湖：一趟跨越三十年的山行]]></title><description><![CDATA[2017 年中，我在日記上寫了「想實現帶爸媽登山的願望，好希望自己在不久的將來能做到！」那時候的我剛讀完山女日記，其中一篇主角寫到想帶身為家庭主婦的母親出門，去看外面一座座山的期待，還要邀請不曾踏入戶外的妹妹加入，這段話…不禁讓我帶入而紀錄下來。 一直到去年在 Lisboa…]]></description><link>https://zoeaeen13.github.io/mountain/一趟跨越三十年的山行/</link><guid isPermaLink="false">https://zoeaeen13.github.io/mountain/一趟跨越三十年的山行/</guid><pubDate>Tue, 25 Aug 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;2017 年中，我在日記上寫了「想實現帶爸媽登山的願望，好希望自己在不久的將來能做到！」那時候的我剛讀完山女日記，其中一篇主角寫到想帶身為家庭主婦的母親出門，去看外面一座座山的期待，還要邀請不曾踏入戶外的妹妹加入，這段話…不禁讓我帶入而紀錄下來。&lt;/p&gt;
+&lt;p&gt;一直到去年在 Lisboa，受到泊瑜鼓勵的阿姨燃起了鬥志，催促著找個合適的行程，我開始著墨有沒有可能安排一趟輕鬆的瓦拉米之行作為行前訓，之後再挑戰上更高的山？沒想到，因為疫情和工作忙碌湊不到一塊，拖到六月中突然抽中了山屋，只好臨時抱佛腳，大家開始鍛鍊腳力，五個人就這樣…出發了！&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/n86TsVL.jpg&quot;&gt;&lt;/p&gt;
+&lt;center&gt;妹妹、媽媽、好友姿穎、阿姨&lt;/center&gt;
+&lt;hr&gt;
+&lt;h5 id=&quot;出發，差點趕不上管制&quot; style=&quot;position:relative;&quot;&gt;出發，差點趕不上管制&lt;a href=&quot;#%E5%87%BA%E7%99%BC%EF%BC%8C%E5%B7%AE%E9%BB%9E%E8%B6%95%E4%B8%8D%E4%B8%8A%E7%AE%A1%E5%88%B6&quot; aria-label=&quot;出發，差點趕不上管制 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h5&gt;
+&lt;p&gt;D1（7/21）&lt;/p&gt;
+&lt;p&gt;沿著南橫，爸爸的車始終維持在一個舒服的高速，為了趕九點的管制時間，我們六點多就起床洗漱，準時七點半從市區出發。住在台東市，到向陽登山口只是睡個午覺的時間，不需要熬夜搶東部車票、轉各種交通工具、住宿，難怪這是我第 6 次要去嘉明湖了。&lt;/p&gt;
+&lt;p&gt;正值熱氣球季，經過鹿野高台附近有大量的觀光客，車速很慢、似乎在遊山玩水看稻田、也不稍微靠邊讓後方超車，一路堵到關山。轉進山路之後，老爸開始加速，直到 183K 左右有落石被攔下管制，施工單位正在道路狀況排除，這一待就是 20 幾分鐘，駕駛們紛紛下車了解情況、並得知單位會和上方管制點溝通，所有車輛堵成一排。&lt;/p&gt;
+&lt;p&gt;一解除，大家像脫韁野馬衝出，沒一會就到上方 172K 管制點，而我們恰恰最幸運的那輛車，就這樣眼睜睜看著柵欄關上，而後面還跟著一堆車輛，爸爸馬上下車與管制站人員理論、詢問是否有接到底下通報的突發狀況，長年接觸公路工程的他很了解這種因外包給不同廠商，各路段溝通不良的情形。&lt;/p&gt;
+&lt;p&gt;總之，最後順利通過了，前往向陽登山口。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h5 id=&quot;最認真的隊員&quot; style=&quot;position:relative;&quot;&gt;最認真的隊員&lt;a href=&quot;#%E6%9C%80%E8%AA%8D%E7%9C%9F%E7%9A%84%E9%9A%8A%E5%93%A1&quot; aria-label=&quot;最認真的隊員 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h5&gt;
+&lt;p&gt;「為了這次我可是每天運動一個半小時呢」&lt;/p&gt;
+&lt;p&gt;兩個月來，阿姨天天下班到附近體育場運動，風雨無阻，距離在 5K～8K 不等，再練深蹲，裝備添購好就去土城附近小山試試感覺，以一個早上六點要起來煮飯、接著上班到晚上七點半才回家的職業婦女，這作息真的很哈扣😅&lt;/p&gt;
+&lt;p&gt;雖然自己帶過的新生不多，可是已經看過太多糟糕的行前準備，檢查裝備時總是皺著眉頭、不知道該從何說起。出發前一個禮拜，順路上台北幫阿姨檢查，第一次看到有人好好研究過裝備表、防水打包全做足、連個人保養包都比我準備的更輕量細緻，以第一次爬山的人來講，堪稱完美！&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/zliqKYR.jpg&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h5 id=&quot;借漫畫&quot; style=&quot;position:relative;&quot;&gt;借漫畫&lt;a href=&quot;#%E5%80%9F%E6%BC%AB%E7%95%AB&quot; aria-label=&quot;借漫畫 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h5&gt;
+&lt;p&gt;抵達向陽山屋，大家精神意外的好，先找到床位下背整理，然後就躺著不知道要幹嘛。考量時間還早，我決定帶著大家去黑水塘走走，不知道是不是太久沒來記錯時間，比預計行程還花更多時間才走到黑水塘，周圍全被一群中年人佔滿、拍老套的人像照，當然，不免俗也要給身旁夥伴來幾張。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/qN8HnMc.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/RGXc5SF.jpg&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;回到山屋，找管理員室找伍元老師，想想我好像每次來都碰到他，巧到老師都開玩笑說我是挑他值班的日子上來的哈哈哈，還說如果無聊可以去跟他借漫畫。&lt;/p&gt;
+&lt;p&gt;於是，我們真的跑去借，抱了一整套「山與食慾與我」系列分著看，邊等晚餐、邊討論哪一個是想嘗試的山食。爬了四年，這是人生中第一次定山屋的餐，想不久前還是學生隊、幫忙清菜尾的那種，這回帶長輩出門，當然要讓他們舒舒服服、吃飽喝足，海陸大餐、水果、甜湯，飽到最後躺在床上看漫畫，一路到晚上八點才趕緊去還書，老師慫恿要不要乾脆背書上去看，心癢癢，決定抽一套孤高之人上去XDD&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/alwdTIz.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/B8zfLtF.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/C0T7xvd.jpg&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h5 id=&quot;他們的第一座百岳&quot; style=&quot;position:relative;&quot;&gt;他們的第一座百岳&lt;a href=&quot;#%E4%BB%96%E5%80%91%E7%9A%84%E7%AC%AC%E4%B8%80%E5%BA%A7%E7%99%BE%E5%B2%B3&quot; aria-label=&quot;他們的第一座百岳 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h5&gt;
+&lt;p&gt;D2（7/22）&lt;/p&gt;
+&lt;p&gt;今天是舒服的上升，可能是因為出發前提醒說第二天得爬很多，大家很認份地爬到哭坡前才說要來個大休。&lt;/p&gt;
+&lt;p&gt;行前，已經在 Youtube 看了三十幾部嘉明湖影片的阿姨，功課做的比我還足、連下一段有什麼地形/地標都比我熟悉，我本以為會臭臉罷走的妹妹，全程步伐輕盈，還有力氣唱唱跳跳，於是我改變計劃，決定帶他們去單攻向陽山，這座我來了 N 次還沒拜訪過的山頭。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/YbY2dCS.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/dseNjt9.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/SIOhRkf.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/L86XA3H.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;撿完向陽山，大家瞬間被抽空力氣，帶著對午餐的執念，終於慢悠悠爬進山屋。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/p94ap2Y.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/Ar4rxPA.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;即便這樣，我們還是準時在午飯時間抵達，協作大哥已經煮好大滷麵，迫不急待拿出餐具，所謂山景配美食，真是爬山的一大享受！&lt;/p&gt;
+&lt;p&gt;午飯過後，媽媽們跑到裡面睡午覺休息，我則在戶外餐桌找了個舒服的位置，翻開從向陽背上來的漫畫，配著隔壁老夫妻請喝的咖啡，What a life！&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/L5WngAs.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/OVATiWs.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/hVN5XO6.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;之所以這回選擇定 &lt;code class=&quot;language-text&quot;&gt;#熊出沒&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;是因為前陣子從南二段下來時受到他們照顧，5 人蹭了一頓飯，我至今對那個山粉圓、豪華菜色和幽默的廚師大哥印象深刻，這次就定了他們的餐點，很讚，一點也沒讓我失望，媽媽和阿姨滿意，連一向仙女胃的妹妹都扒了兩碗飯呢！&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/sP8H7WB.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/8g3vX7u.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/WzaDa21.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/KkQe2fv.jpg&quot;&gt;&lt;/p&gt;
+&lt;center&gt;整路很 ㄎㄧㄤ 的姿穎是大家的開心果&lt;/center&gt;
+&lt;br/&gt;
+&lt;hr&gt;
+&lt;h5 id=&quot;摸黑&quot; style=&quot;position:relative;&quot;&gt;摸黑&lt;a href=&quot;#%E6%91%B8%E9%BB%91&quot; aria-label=&quot;摸黑 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h5&gt;
+&lt;p&gt;D3（7/23）&lt;/p&gt;
+&lt;p&gt;兩點多起來，抬頭有一道明顯的星河，一邊咀嚼廚師辛苦早起料理的食物，我一邊思考待會的路。&lt;/p&gt;
+&lt;p&gt;往返嘉明湖的路，我走過很多遍，但是作為不太喜歡摸早黑的人，五根手指頭數得出來的次數，再三考慮一下還是決定提早出發，至少在夜裡大家會走的舒服些。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/nX6DnL8.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/8xIhovu.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/QhzLHAx.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/Yrgvj4b.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;清晨的稜線上，有兩隊人馬努力前進，後面那組也是一個年輕人帶著年邁父母來爬山，因為行程相同，我們每天都可以在路上或營地遇到他們，七十歲的年紀與狀態令人佩服。&lt;/p&gt;
+&lt;p&gt;哭坡過後不久，直面而來的迎賓樹，瞧見山脈背後已經染了色，昭示日出的來臨。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/cQuhuZO.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;這樣的場景，我本來應該沒有什麼特別的感覺，畢竟看了許多遍，但不知道為什麼，今天轉身背後是我的家人，等待他們緩慢爬上來的同時，我內心湧入無盡的讚嘆與感動，好開心能挖掘他們眼底毫不掩飾的讚嘆，能跟他們共享這片山色，我好像…才是願望被實現的那個人！&lt;/p&gt;
+&lt;hr&gt;
+&lt;h5 id=&quot;天亮了&quot; style=&quot;position:relative;&quot;&gt;天亮了&lt;a href=&quot;#%E5%A4%A9%E4%BA%AE%E4%BA%86&quot; aria-label=&quot;天亮了 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h5&gt;
+&lt;p&gt;五點的時候，山已經亮了一角，還在路上掙扎最後一公里的我們，乾脆唱起了歌。&lt;/p&gt;
+&lt;p&gt;煎熬、長途夜車、逆光，把心裡的想法用聲音表達，我們幾個年輕人縱情歌唱，結果一到湖畔，從戒茂斯上來的幾位小哥，說這幾座山頭的早晨是靜的連咳嗽都聽得見，而對面的他們，老早就聽到了我們張揚的歌聲，被現場抓包真是有夠羞恥的哈哈哈～&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/jQlWfjw.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/9H3wvFY.jpg&quot;&gt;&lt;/p&gt;
+&lt;center&gt;不停說著「好美喔」開心到無法自己的妹妹&lt;/center&gt;
+&lt;br/&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/MkvicEl.jpg&quot;&gt;&lt;/p&gt;
+&lt;center&gt;在山上從沒想像過的場景，大家一起，真是七月最大的幸福&lt;/center&gt;
+&lt;br/&gt;
+&lt;hr&gt;
+&lt;p&gt;帶大家走完摸早黑的路段，我直接倒睡在地，連走下去看湖的興致都沒有（都來幾次了），領隊兼嚮導有夠累的，一直睡到媽媽和阿姨先行去撿了三叉山，驚醒的我趕緊收拾東西、拉上正享受湖畔美景的兩人去追趕他們。&lt;/p&gt;
+&lt;p&gt;回程時，他們不敢相信今早是這樣一路爬過來，尤其是第二段的哭坡，簡直嚇壞了，上坡都覺得好危險，在黑暗中下坡卻毫無察覺、頂多覺得路比較零碎，「這要是在白天爬喔～我真的沒辦法啦」阿姨和媽媽異口同聲，也好險提早出發，才不用頂著曝曬走兩次。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/uV5mB3S.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/uWPqK5Q.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/KM3r4rQ.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/vjFwv7W.jpg&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;回到避難已經十一點了，沒辦法多休息，催促大家趕快吃過午飯要上背，漫長的下坡路才是考驗。&lt;/p&gt;
+&lt;p&gt;出發前，一直很擔心我媽的腳能不能負荷嘉明湖的爬升，哪怕已經把時程拉長到四天，今天也是最累的行程 —— 得來回嘉明湖再下去向陽山屋，還好平時佛腳有好好抱，這回很順利、無痛地帶他們走到山屋，反而是早晨精力滿滿的我妹，大概過度興奮，腎上腺素爆發完的她越走越頹靡，到山屋倒頭就睡、一整個累到不想講話。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/1dC3avk.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/b0onmXF.jpg&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;離開這天，我們讓腳程慢的媽媽們先行，年輕人在山屋聊天，在被陽光曬得很暖的平台聽伍元老師講故事，關於這片山域的故事。&lt;/p&gt;
+&lt;p&gt;聊到十點半，我們打算跟老師告辭下山，他說自己也要去 3.6K 刷網路，乾脆一起走下去，順便提起那附近有被黑熊爆頭的水鹿屍體，姿穎興致一來，就跟老師說想要去看看，於是有一段讓他們喘到不行的小探勘，在 3.6K 附近沿著邊坡往上，走大概 50-100 公尺就找到了藏在大石頭底下的白骨。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/B6zbbM5.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/f3QWhHq.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/Vm1ysHS.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/PEhDtj0.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/2Eqfnyd.jpg&quot;&gt;&lt;/p&gt;
+&lt;center&gt;一半的水鹿頭骨&lt;/center&gt;
+&lt;br/&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/Ei57feD.jpg&quot;&gt;&lt;/p&gt;
+&lt;center&gt;一路狂奔下山&lt;/center&gt;
+&lt;br/&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/NdO0MiG.jpg&quot;&gt;&lt;/p&gt;
+&lt;center&gt;辛苦的司機老爸帶了一大堆好吃的來迎接我們&lt;/center&gt;
+&lt;br/&gt;
+&lt;style class=&quot;grvsc-styles&quot;&gt;
+  .grvsc-container {
+    overflow: auto;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 1rem;
+    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
+    padding-bottom: 1rem;
+    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
+    border-radius: 8px;
+    border-radius: var(--grvsc-border-radius, 8px);
+    font-feature-settings: normal;
+    line-height: 1.4;
+  }
+  
+  .grvsc-code {
+    display: table;
+  }
+  
+  .grvsc-line {
+    display: table-row;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+  }
+  
+  .grvsc-line &gt; * {
+    position: relative;
+  }
+  
+  .grvsc-gutter-pad {
+    display: table-cell;
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  .grvsc-gutter {
+    display: table-cell;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter::before {
+    content: attr(data-content);
+  }
+  
+  .grvsc-source {
+    display: table-cell;
+    padding-left: 1.5rem;
+    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
+    padding-right: 1.5rem;
+    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
+  }
+  
+  .grvsc-source:empty::after {
+    content: &apos; &apos;;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter + .grvsc-source {
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  /* Line transformer styles */
+  
+  .grvsc-has-line-highlighting &gt; .grvsc-code &gt; .grvsc-line::before {
+    content: &apos; &apos;;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .grvsc-line-diff-add::before {
+    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
+  }
+  
+  .grvsc-line-diff-del::before {
+    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
+  }
+  
+  .grvsc-line-number {
+    padding: 0 2px;
+    text-align: right;
+    opacity: 0.7;
+  }
+  
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[馬祖旅居 D5 — 尋找南竿的神秘據點]]></title><description><![CDATA[旅居的定義是一邊旅行，一邊持續生活。 身為剛結束接案工作的無業遊民，目前我投入一個短期的線上學習計畫，而旅伴也是個帶著工作出逃的自由工作者，因為白天的馬祖熱到可以和蘭嶼相比，我們會花至少半天待在民宿或是找間咖啡廳做事，等涼爽一點再出門走走。 今天安排南竿的刺鳥咖啡廳，和 5…]]></description><link>https://zoeaeen13.github.io/Matzu/D5/</link><guid isPermaLink="false">https://zoeaeen13.github.io/Matzu/D5/</guid><pubDate>Sun, 09 Aug 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;旅居的定義是一邊旅行，一邊持續生活。&lt;/p&gt;
+&lt;p&gt;身為剛結束接案工作的無業遊民，目前我投入一個短期的線上學習計畫，而旅伴也是個帶著工作出逃的自由工作者，因為白天的馬祖熱到可以和蘭嶼相比，我們會花至少半天待在民宿或是找間咖啡廳做事，等涼爽一點再出門走走。&lt;/p&gt;
+&lt;p&gt;今天安排南竿的刺鳥咖啡廳，和 55 一樣也是據點改建而成，聽說老闆在馬祖當地大有來頭，擔任過重要的官職，下午則規劃去探之前建築系老師跟我們提過的&lt;strong&gt;神秘據點&lt;/strong&gt;，昨天有在市場偶遇一位中年大叔，他聽到我們在找有趣的據點馬上來興致，跟市場阿姨一搭一唱分析，最後給了我們路線指點，準備一探究竟！&lt;/p&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;刺鳥咖啡館&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/F9KkA9Q.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/oF9WUfE.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/7gniRJe.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/2eZHC4H.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/aVE7mEj.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/mBxBeGc.jpg&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;神秘據點&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;告別刺鳥，我們一路飆車繞錯路、回頭，兜兜轉轉，一開始還想著地圖就標就在這裡，怎麼繞來繞去沒看到任何路的蹤跡，往回騎了一點發現路邊草叢好像有被壓出痕跡，抱持著「反正就當獸徑在走」的想法先下車跟一段，越走越明顯，竟然還有幾台機車停在旁邊？&lt;/p&gt;
+&lt;p&gt;轉個彎，看到了據點的大門，一望下去是長長的階梯，直面海峽，真的比 53 還要壯觀！周圍全部被鐵絲網給纏繞住，我撥了右側的草叢彎下腰，果然有被人走出來的空隙，輕易就避開扎人的機關、走到了階梯上。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/bG9ev1c.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;一路往下，像進入避世的莊園，緩緩走近暗紅色的斑駁牆體，雜亂殘破的室內，錯綜複雜的地下梯和暗道，要不是仗著遠處石壁上有幾個正在釣魚的當地居民，我還真的不太敢下去一探究竟，深怕在裡頭迷失了方向。&lt;/p&gt;
+&lt;p&gt;沿著山壁建成的神秘據點高度不一，順著狹窄通道緩緩往下，我和姿穎兩個人一前一後照燈，幾十公尺走的像百米賽場，一個轉彎就走到了有光的盡頭，呼～終於下到另一側，一個個機槍台和小房間出現在眼前。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/T3exCwt.jpg&quot;&gt;
+&lt;img src=&quot;https://i.imgur.com/uwQj4N5.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/Zj65CdD.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/RocI87W.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;好酷的景點！要不是老師推薦、市場大叔指路，我真的不知道怎麼找到這裡&lt;/p&gt;
+&lt;style class=&quot;grvsc-styles&quot;&gt;
+  .grvsc-container {
+    overflow: auto;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 1rem;
+    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
+    padding-bottom: 1rem;
+    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
+    border-radius: 8px;
+    border-radius: var(--grvsc-border-radius, 8px);
+    font-feature-settings: normal;
+    line-height: 1.4;
+  }
+  
+  .grvsc-code {
+    display: table;
+  }
+  
+  .grvsc-line {
+    display: table-row;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+  }
+  
+  .grvsc-line &gt; * {
+    position: relative;
+  }
+  
+  .grvsc-gutter-pad {
+    display: table-cell;
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  .grvsc-gutter {
+    display: table-cell;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter::before {
+    content: attr(data-content);
+  }
+  
+  .grvsc-source {
+    display: table-cell;
+    padding-left: 1.5rem;
+    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
+    padding-right: 1.5rem;
+    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
+  }
+  
+  .grvsc-source:empty::after {
+    content: &apos; &apos;;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter + .grvsc-source {
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  /* Line transformer styles */
+  
+  .grvsc-has-line-highlighting &gt; .grvsc-code &gt; .grvsc-line::before {
+    content: &apos; &apos;;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .grvsc-line-diff-add::before {
+    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
+  }
+  
+  .grvsc-line-diff-del::before {
+    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
+  }
+  
+  .grvsc-line-number {
+    padding: 0 2px;
+    text-align: right;
+    opacity: 0.7;
+  }
+  
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[馬祖旅居 D4 — 牛角村、鐵板村和介壽獅子市場]]></title><description><![CDATA[一早騎車來排，在介壽獅子市場二樓有許多熟食，大部分查到的網料都推薦阿妹的店，鼎邊糊。 「那個蔥抓餅，我一個禮拜可以吃…]]></description><link>https://zoeaeen13.github.io/Matzu/D4/</link><guid isPermaLink="false">https://zoeaeen13.github.io/Matzu/D4/</guid><pubDate>Sat, 08 Aug 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;一早騎車來排，在介壽獅子市場二樓有許多熟食，大部分查到的網料都推薦阿妹的店，鼎邊糊。&lt;/p&gt;
 &lt;p&gt;「那個蔥抓餅，我一個禮拜可以吃 4 天！」和其他人不同，老闆說一定要去買阿伯蔥抓餅，就在阿妹的店對面，阿伯會用一個機器壓扁麵團，聽到「噗磁」的氣聲就知道是哪家店，既然大家極力推薦，兩種早點我們就各買了一份。&lt;/p&gt;
 &lt;p&gt;當姿穎第一口咬下去，那個表情和我在西班牙騎車遇到的麵包店一樣，驚為天人！我半信半疑也吃了一口，立馬被驚艷到！煎得酥脆的餅皮，中間一口咬下去的卻是半熟蛋，蛋汁在嘴裡散開，再配上必加的辣椒醬，我很訝異—馬祖竟然有這麼好吃的蔥抓餅！！？&lt;/p&gt;
 &lt;p&gt;吃完一個還意猶未盡，而鼎邊糊完全被我們略過，真的大推蔥抓餅加蛋（加辣）！！！&lt;/p&gt;
