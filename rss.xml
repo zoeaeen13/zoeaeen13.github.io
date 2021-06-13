@@ -1,4 +1,194 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Travel in Time.]]></title><description><![CDATA[Travel in Time.]]></description><link>https://zoeaeen13.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 09 Jun 2021 15:39:17 GMT</lastBuildDate><item><title><![CDATA[長濱假期]]></title><description><![CDATA[回家 忙碌的四月，在各種事務夾雜下我整個人心力交瘁，很需要一場假期來好好放空、清除腦中的雜訊和焦慮感，在跟團隊告知最後的上班日想要 ＷFH…]]></description><link>https://zoeaeen13.github.io/長濱假期/</link><guid isPermaLink="false">https://zoeaeen13.github.io/長濱假期/</guid><pubDate>Sun, 02 May 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h5 id=&quot;回家&quot; style=&quot;position:relative;&quot;&gt;回家&lt;a href=&quot;#%E5%9B%9E%E5%AE%B6&quot; aria-label=&quot;回家 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h5&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Travel in Time.]]></title><description><![CDATA[Travel in Time.]]></description><link>https://zoeaeen13.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 13 Jun 2021 11:34:30 GMT</lastBuildDate><item><title><![CDATA[CH1：React 概述]]></title><description><![CDATA[Overview 一般初始化 React 專案，會看到這幾行程式碼  是 React 元件（Component） 元件，用來產出 JSX 語法和處理事件綁定，JSX 是 JavaScript 的一種形式，長得和 HTML 元素很像，用來告訴 React…]]></description><link>https://zoeaeen13.github.io/modern-react-with-redux/CH1：React 基本概述/</link><guid isPermaLink="false">https://zoeaeen13.github.io/modern-react-with-redux/CH1：React 基本概述/</guid><pubDate>Thu, 10 Jun 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h4 id=&quot;Overview&quot; style=&quot;position:relative;&quot;&gt;Overview&lt;a href=&quot;#Overview&quot; aria-label=&quot;Overview permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;一般初始化 React 專案，會看到這幾行程式碼&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;javascript&quot; data-index=&quot;0&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;import&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; React &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;react&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;import&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; ReactDOM &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;react-dom&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;import&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; App &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;./App&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;ReactDOM.render(&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;App&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;/&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;, document.getElementById(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;root&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;))&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;App&lt;/code&gt; 是 React 元件（Component）&lt;/p&gt;
+&lt;p&gt;元件，用來產出 JSX 語法和處理事件綁定，JSX 是 JavaScript 的一種形式，長得和 HTML 元素很像，用來告訴 React 我們希望呈現的畫面內容&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/KCW5AQH.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;回傳 JSX 的時候，React 會去檢視每一個元素：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如果是一般的 DOM element，到時會在畫面上創建一個對應的 DOM 元素，像是 &lt;code class=&quot;language-text&quot;&gt;&amp;lt;div&amp;gt;&amp;lt;/div&amp;gt;&lt;/code&gt; &lt;/li&gt;
+&lt;li&gt;如果是 component，就再往該函數裡面檢視它的內容，像 &lt;code class=&quot;language-text&quot;&gt;&amp;lt;App /&amp;gt;&lt;/code&gt; ，會用 opening 和 closing tag 包住函數名稱（組件名稱都是大寫開頭），會產生 component instance&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/a6pFPnt.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/nLGZp11.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;這些 JSX 沒辦法直接渲染在瀏覽器上，JSX 和 ES6 一樣，需要先經過 webpack+babel 轉譯，所有的 app.js、react.js…會形成一個 JavaScript 檔，才被 &lt;code class=&quot;language-text&quot;&gt;./public&lt;/code&gt; 裡面的 index.html 引用&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/6StGQqQ.png&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;需要引用 react 和 react-dom 兩個 library，他們分別有不同的作用&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;React&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;協調器，呼叫組件函數、取得所有的 JSX，決定是渲染 DOM element 或創造一個個組件&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ReactDOM&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;渲染器，負責處理 JSX，將其轉化成 HTML 展示，和瀏覽器及真實的 DOM 互動&lt;/p&gt;
+&lt;p&gt;最早在 v0.14 之前是沒有 ReactDOM 的，所有功能都包含在 React library 裡面，而分開的原因很簡單，因為後來出現了 ReactNative，於是兩者拆分出來，React library 只包含通用的核心部分，跟 Web DOM 有關的操作就被移到了 ReactDOM library 中&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/6A9HxeZ.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;ReactDOM.render&lt;/code&gt; 裡面的參數：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;第一個參數，是調用組件函數（通常是 &lt;code class=&quot;language-text&quot;&gt;&amp;lt;App /&amp;gt;&lt;/code&gt;）、拿到 JSX&lt;/li&gt;
+&lt;li&gt;第二個參數，決定在 index.html 裡的哪個元素來展現內容&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4 id=&quot;建立專案&quot; style=&quot;position:relative;&quot;&gt;建立專案&lt;a href=&quot;#%E5%BB%BA%E7%AB%8B%E5%B0%88%E6%A1%88&quot; aria-label=&quot;建立專案 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h4&gt;
+&lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;html&quot; data-index=&quot;1&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;npm install -g create-react-app&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;create-react-app [my-project-name]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;npm&lt;/code&gt;：套件管理器，可以將大量的開源專案安裝到自己的專案上&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;install&lt;/code&gt;：sub command&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;-g&lt;/code&gt;：全域&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;create-react-app&lt;/code&gt;：套件名稱，用來產生新的 React 專案&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/jA6uaOk.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;官方文件是提供以下指令來建立專案，不過可能因 node 過舊而出現版本問題&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;javascript&quot; data-index=&quot;2&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;npx create-react-app [my-project-name]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;初始檔案結構&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;/src&lt;/code&gt; 主要開發的地方，一開始會有一些預設檔案，可以都刪掉&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;/public&lt;/code&gt; 放置靜態檔案 static files&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br/&gt;
+&lt;blockquote&gt;
+&lt;p&gt;基本的 index.js&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;引入需要的 libraries&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;建立 component 組件&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;可以是 Class 或 Function，他們目的都是產出 JSX&lt;/li&gt;
+&lt;li&gt;次要功能是進行事件處理&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;將其渲染到畫面上，使用 &lt;code class=&quot;language-text&quot;&gt;ReactDOM.render()&lt;/code&gt; 方法&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;javascript&quot; data-index=&quot;3&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk3&quot;&gt;// Import the Rract and ReactDOM libraries&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;import&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; React &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;react&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;import&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; ReactDOM &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;react-dom&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk3&quot;&gt;// Create a react component（function based component）&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;const&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; App = &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;() {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;Hi!&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk3&quot;&gt;// Take the react component and show it on the screen&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;ReactDOM.render(&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;App&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;/&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;// create component instance&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    document.querySelector(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;#root&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;// render inside the &amp;lt;div id=&amp;quot;root&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; element&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/W8L4uJy.png&quot;&gt;&lt;/p&gt;
+&lt;style class=&quot;grvsc-styles&quot;&gt;
+  .grvsc-container {
+    overflow: auto;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 1rem;
+    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
+    padding-bottom: 1rem;
+    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
+    border-radius: 8px;
+    border-radius: var(--grvsc-border-radius, 8px);
+    font-feature-settings: normal;
+    line-height: 1.4;
+  }
+  
+  .grvsc-code {
+    display: table;
+  }
+  
+  .grvsc-line {
+    display: table-row;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+  }
+  
+  .grvsc-line &gt; * {
+    position: relative;
+  }
+  
+  .grvsc-gutter-pad {
+    display: table-cell;
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  .grvsc-gutter {
+    display: table-cell;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter::before {
+    content: attr(data-content);
+  }
+  
+  .grvsc-source {
+    display: table-cell;
+    padding-left: 1.5rem;
+    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
+    padding-right: 1.5rem;
+    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
+  }
+  
+  .grvsc-source:empty::after {
+    content: &apos; &apos;;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter + .grvsc-source {
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  /* Line transformer styles */
+  
+  .grvsc-has-line-highlighting &gt; .grvsc-code &gt; .grvsc-line::before {
+    content: &apos; &apos;;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .grvsc-line-diff-add::before {
+    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
+  }
+  
+  .grvsc-line-diff-del::before {
+    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
+  }
+  
+  .grvsc-line-number {
+    padding: 0 2px;
+    text-align: right;
+    opacity: 0.7;
+  }
+  
+  .visual-studio-dark {
+    background-color: #1E1E1E;
+    color: #D4D4D4;
+  }
+  .visual-studio-dark .mtk4 { color: #569CD6; }
+  .visual-studio-dark .mtk1 { color: #D4D4D4; }
+  .visual-studio-dark .mtk11 { color: #CE9178; }
+  .visual-studio-dark .mtk13 { color: #808080; }
+  .visual-studio-dark .mtk3 { color: #6A9955; }
+  .visual-studio-dark .grvsc-line-highlighted::before {
+    background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
+    box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
+  }
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[長濱假期]]></title><description><![CDATA[回家 忙碌的四月，在各種事務夾雜下我整個人心力交瘁，很需要一場假期來好好放空、清除腦中的雜訊和焦慮感，在跟團隊告知最後的上班日想要 ＷFH…]]></description><link>https://zoeaeen13.github.io/長濱假期/</link><guid isPermaLink="false">https://zoeaeen13.github.io/長濱假期/</guid><pubDate>Sun, 02 May 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h5 id=&quot;回家&quot; style=&quot;position:relative;&quot;&gt;回家&lt;a href=&quot;#%E5%9B%9E%E5%AE%B6&quot; aria-label=&quot;回家 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h5&gt;
 &lt;p&gt;忙碌的四月，在各種事務夾雜下我整個人心力交瘁，很需要一場假期來好好放空、清除腦中的雜訊和焦慮感，在跟團隊告知最後的上班日想要 ＷFH 後，在勞動節前夕，迫不及待跳上回鄉列車，在一天奔波後沈沈睡去。&lt;/p&gt;
 &lt;p&gt;這個週末，台東長濱有一年一度的金剛馬拉松，小舅舅一家跟往常一樣一開報就加入，之前因工作轉換沒回台東過年的阿姨也拉我們一起參加，趁著難得的團聚，家人安排以慶祝母親節的形式來個久違的聚餐，在開完 retro 會議後，把測完的問題列出來回報給後端和 PM，我也算是可以好好結束這個 sprint 了，和 Cyriall 互相鼓勵一番，愉快下班！&lt;/p&gt;
 &lt;hr&gt;
@@ -360,7 +550,7 @@
   }
   
 &lt;/style&gt;</content:encoded></item><item><title><![CDATA[[筆記] JavaScript 全攻略：克服 JS 的奇怪部分]]></title><description><![CDATA[作為前端工程師的第一份工作，希望將基礎打得扎實些 這篇記錄從 Udemy 上學習《JavaScript: Understanding the Weird Part》的過程，筆記自己新學到、重新理解的 JavaScript 基礎知識。
- ch1 syntax parsers…]]></description><link>https://zoeaeen13.github.io/克服 JS 的奇怪部分/</link><guid isPermaLink="false">https://zoeaeen13.github.io/克服 JS 的奇怪部分/</guid><pubDate>Fri, 02 Apr 2021 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+ ch1 syntax parsers…]]></description><link>https://zoeaeen13.github.io/[筆記] 克服 JS 的奇怪部分/</link><guid isPermaLink="false">https://zoeaeen13.github.io/[筆記] 克服 JS 的奇怪部分/</guid><pubDate>Fri, 02 Apr 2021 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;p&gt;作為前端工程師的第一份工作，希望將基礎打得扎實些&lt;/p&gt;
 &lt;p&gt;這篇記錄從 Udemy 上學習《JavaScript: Understanding the Weird Part》的過程，筆記自己新學到、重新理解的 JavaScript 基礎知識。
 &lt;br/&gt;&lt;/p&gt;
@@ -551,6 +741,109 @@
 &lt;/ul&gt;
 &lt;p&gt;參考資料：&lt;a href=&quot;https://pjchender.blogspot.com/2016/01/javascriptobjectjson.html&quot;&gt;JavaScript中物件(object)和JSON格式的轉換&lt;/a&gt;&lt;/p&gt;
 &lt;hr&gt;
+&lt;br/&gt;
+&lt;h5 id=&quot;函式是物件的一種&quot; style=&quot;position:relative;&quot;&gt;函式是物件的一種&lt;a href=&quot;#%E5%87%BD%E5%BC%8F%E6%98%AF%E7%89%A9%E4%BB%B6%E7%9A%84%E4%B8%80%E7%A8%AE&quot; aria-label=&quot;函式是物件的一種 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h5&gt;
+&lt;p&gt;在 JS 裡面，function 是 object 的一種，可以像其他型別一樣被設定成變數、被傳入其他地方，被快速創造出來使用，這樣的 function 被稱作是 &lt;strong&gt;First-class function&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;是一種特殊的物件&lt;/li&gt;
+&lt;li&gt;可以將 function 存成變數&lt;/li&gt;
+&lt;li&gt;可以將 function 當成參數代入另一 function&lt;/li&gt;
+&lt;li&gt;可以在一個 function 中回傳另一個 function&lt;/li&gt;
+&lt;li&gt;跟物件一樣有屬性（property）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/lYqVQWY.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;當 function 被視為物件時，它還有兩個特別的屬性&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;name property：function 的名稱，如果沒有的話就是匿名函式（anonymous function）&lt;/li&gt;
+&lt;li&gt;code property：想像 functions 只是用來裝程式碼的容器，funcition 可以被呼叫、執行環境會被建立，執行裡面的程式碼&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;javascript&quot; data-index=&quot;10&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; greet() {         &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;// 建立名為 greet 的函式&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  console.log(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;#39;Hello&amp;#39;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;)     &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;// code property&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;greet.language = &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;#39;english&amp;#39;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;// 因為是 object，可以添加屬性&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;greet()                    &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;// name property 加上 () =&amp;gt; 呼叫函式&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;console.log(greet)         &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;// 印出 code property 內容&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;參考資料：&lt;a href=&quot;https://pjchender.blogspot.com/2016/03/javascriptfunctionobjects.html&quot;&gt;[筆記] JavaScript 中函式就是一種物件 ─ 談談 first class function&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;br/&gt;
+&lt;h5 id=&quot;函式：表達式和聲明式&quot; style=&quot;position:relative;&quot;&gt;函式：表達式和聲明式&lt;a href=&quot;#%E5%87%BD%E5%BC%8F%EF%BC%9A%E8%A1%A8%E9%81%94%E5%BC%8F%E5%92%8C%E8%81%B2%E6%98%8E%E5%BC%8F&quot; aria-label=&quot;函式：表達式和聲明式 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h5&gt;
+&lt;p&gt;先來認識表達式和聲明式的差別&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;表達式&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;輸入的那串程式執行後能直接回傳一個值（a unit of code that results in a values），一般情況，我們會把 expression 回傳的值存成一個變數，但並不是一定要存。&lt;/p&gt;
+&lt;p&gt;例如下面都是表達式&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;javascript&quot; data-index=&quot;11&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;a = &lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;           &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;// = 會回傳右邊的 3&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk5&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; + &lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;           &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;// 沒有對該值做任何事&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; (a === &lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;) {} &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;// a === 3 會回傳 true&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;聲明式：會做事情，但不會直接回傳值&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;javascript&quot; data-index=&quot;12&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;const&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; b = if (a === &lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;) {}  &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;// 不能用變數接❌&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;像 &lt;code class=&quot;language-text&quot;&gt;if&lt;/code&gt; 指令就是函式聲明，它並不會直接回傳一個值，也不能將它指定為一個變數&lt;/p&gt;
+&lt;hr&gt;
+&lt;br/&gt;
+&lt;p&gt;Function 是物件的一種，它可以透過 expression 或 statements 兩種方式來建立函式：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;h6 id=&quot;函式聲明式-Function-Statements&quot; style=&quot;position:relative;&quot;&gt;函式聲明式 Function Statements&lt;a href=&quot;#%E5%87%BD%E5%BC%8F%E8%81%B2%E6%98%8E%E5%BC%8F-Function-Statements&quot; aria-label=&quot;函式聲明式 Function Statements permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h6&gt;
+&lt;p&gt;它不會直接回傳任何的值&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;函式聲明會被提升（hoisting），在創造階段就被放進記憶體儲存，可以在執行這段程式前，就呼叫函式來使用&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;javascript&quot; data-index=&quot;13&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;greet()   &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;// it works!&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; greeting() {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    console.log(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;#39;hello&amp;#39;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/77o3UNs.png&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;h6 id=&quot;函式表達式-Function-Expressions&quot; style=&quot;position:relative;&quot;&gt;函式表達式 Function Expressions&lt;a href=&quot;#%E5%87%BD%E5%BC%8F%E8%A1%A8%E9%81%94%E5%BC%8F-Function-Expressions&quot; aria-label=&quot;函式表達式 Function Expressions permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h6&gt;
+&lt;/blockquote&gt;
+&lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;javascript&quot; data-index=&quot;14&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;const&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; anonymousGreet = &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;() { &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;// function object&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    console.log(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;#39;hello&amp;#39;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;匿名函數物件，同樣在創造階段被放進記憶體&lt;/li&gt;
+&lt;li&gt;而 &lt;code class=&quot;language-text&quot;&gt;anonymousGreet&lt;/code&gt; 變數知道它的位址，所以不需要再寫一個 name property 去參照它&lt;/li&gt;
+&lt;li&gt;在上面的例子中，&lt;code class=&quot;language-text&quot;&gt;function() {...}&lt;/code&gt; 是函式表達式 =&gt; &lt;span class=&quot;highlight&quot;&gt;被執行時會讓函數被創造出來，會回傳一個函數物件&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;因為是一行一行執行，用 anonymousGreet 去指向函式位址，在還沒有被賦值之前就呼叫的話，會報錯&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;javascript&quot; data-index=&quot;15&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;anonymousGreet() &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;// error! &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;const&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; anonymousGreet = &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;() {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    console.log(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;#39;hello&amp;#39;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;anonymousGreet() &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;// 變數已經指向它的位置，可以呼叫&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;br/&gt;
+&lt;h5 id=&quot;by-value-和-by-reference-基本觀念&quot; style=&quot;position:relative;&quot;&gt;by value 和 by reference 基本觀念&lt;a href=&quot;#by-value-%E5%92%8C-by-reference-%E5%9F%BA%E6%9C%AC%E8%A7%80%E5%BF%B5&quot; aria-label=&quot;by value 和 by reference 基本觀念 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h5&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;by value&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;在建立 primitive type 的變數，會是用拷貝 value 的方式，拷貝 a 的值填到 b 位址。&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;javascript&quot; data-index=&quot;16&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;var&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; a = &lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;// 0x001&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;var&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; b&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;b = a     &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;// 0x002&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在不同記憶體位置上，彼此不會互相影響&lt;/p&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;&lt;strong&gt;by reference&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;將變數 c 設立成一個 Object，用 &lt;strong&gt;object literal&lt;/strong&gt; 的方式指定物件的值，那麼就會是 by value、一樣會在記憶體中給它個位置。&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;javascript&quot; data-index=&quot;17&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;var&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; c = { greeting: &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;#39;hello&amp;#39;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;} &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;// 0x001&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;但如果今天要把變數 c 的值等同於 d 時，因為 &lt;code class=&quot;language-text&quot;&gt;=&lt;/code&gt; 運算子知道 c 是指向物件，它不會創造新的記憶體位置給 d，而是讓 d 指向跟 c 一樣的地方&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;javascript&quot; data-index=&quot;18&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;var&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; d&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;d = c  &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;// 0x001&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;而參數，同樣會是用 by reference 的做法，如果將 d 作為參數傳進下方的函式，d 和 c 自身都會被改變&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;javascript&quot; data-index=&quot;19&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; changeGreeting(obj) {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    obj.greeting = &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;#39;hola&amp;#39;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;changeGreeting(d) &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;// 同樣改變 d 和 c&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;參考資料：&lt;a href=&quot;https://pjchender.blogspot.com/2016/03/javascriptby-referenceby-value.html&quot;&gt;談談 JavaScript 中 by reference 和 by value 的重要觀念&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;br/&gt;
+&lt;br/&gt;
 &lt;style class=&quot;grvsc-styles&quot;&gt;
   .grvsc-container {
     overflow: auto;
