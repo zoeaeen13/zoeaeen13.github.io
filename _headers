@@ -59,7 +59,7 @@
   Link: </component---node-modules-gatsby-plugin-offline-app-shell-js-2296adb1de2fc003fbd5.js>; rel=preload; as=script
   Link: </page-data/app-data.json>; rel=preload; as=fetch; crossorigin
   Link: </page-data/offline-plugin-app-shell-fallback/page-data.json>; rel=preload; as=fetch; crossorigin
-/modern-react-with-redux/CH4/
+/modern-react-with-redux/CH6：討論生命週期/
   Link: </webpack-runtime-10bb59ba0b4fbb0de2ab.js>; rel=preload; as=script
   Link: </styles-e9d24b1846c7d6eb9685.js>; rel=preload; as=script
   Link: </framework-2d6b7d2e2be378715b78.js>; rel=preload; as=script
@@ -69,7 +69,18 @@
   Link: </5c3f3ed0ca01001d335c9b0021661d159a6a78f4-f0151228293631dd083a.js>; rel=preload; as=script
   Link: </component---src-templates-blog-post-js-35971da685d3b4c7d1dd.js>; rel=preload; as=script
   Link: </page-data/app-data.json>; rel=preload; as=fetch; crossorigin
-  Link: </page-data/modern-react-with-redux/CH4/page-data.json>; rel=preload; as=fetch; crossorigin
+  Link: </page-data/modern-react-with-redux/CH6：討論生命週期/page-data.json>; rel=preload; as=fetch; crossorigin
+/modern-react-with-redux/CH4-5：Class Component 和 State System/
+  Link: </webpack-runtime-10bb59ba0b4fbb0de2ab.js>; rel=preload; as=script
+  Link: </styles-e9d24b1846c7d6eb9685.js>; rel=preload; as=script
+  Link: </framework-2d6b7d2e2be378715b78.js>; rel=preload; as=script
+  Link: </app-7200a275e6a5a54ac58c.js>; rel=preload; as=script
+  Link: </styles-e9d24b1846c7d6eb9685.js>; rel=preload; as=script
+  Link: </78bde0f9cbfb3abf81d5baf6b7f31e60371328d0-caa364ff8415a13753f0.js>; rel=preload; as=script
+  Link: </5c3f3ed0ca01001d335c9b0021661d159a6a78f4-f0151228293631dd083a.js>; rel=preload; as=script
+  Link: </component---src-templates-blog-post-js-35971da685d3b4c7d1dd.js>; rel=preload; as=script
+  Link: </page-data/app-data.json>; rel=preload; as=fetch; crossorigin
+  Link: </page-data/modern-react-with-redux/CH4-5：Class Component 和 State System/page-data.json>; rel=preload; as=fetch; crossorigin
 /modern-react-with-redux/CH2-3：認識 JSX 和 Component 特性/
   Link: </webpack-runtime-10bb59ba0b4fbb0de2ab.js>; rel=preload; as=script
   Link: </styles-e9d24b1846c7d6eb9685.js>; rel=preload; as=script
@@ -268,7 +279,7 @@
   Link: </component---src-templates-blog-post-js-35971da685d3b4c7d1dd.js>; rel=preload; as=script
   Link: </page-data/app-data.json>; rel=preload; as=fetch; crossorigin
   Link: </page-data/Lidemy/什麼是 DOM/page-data.json>; rel=preload; as=fetch; crossorigin
-/projects/HTML X CSS Practice/
+/HTML X CSS Practice/
   Link: </webpack-runtime-10bb59ba0b4fbb0de2ab.js>; rel=preload; as=script
   Link: </styles-e9d24b1846c7d6eb9685.js>; rel=preload; as=script
   Link: </framework-2d6b7d2e2be378715b78.js>; rel=preload; as=script
@@ -278,7 +289,7 @@
   Link: </5c3f3ed0ca01001d335c9b0021661d159a6a78f4-f0151228293631dd083a.js>; rel=preload; as=script
   Link: </component---src-templates-blog-post-js-35971da685d3b4c7d1dd.js>; rel=preload; as=script
   Link: </page-data/app-data.json>; rel=preload; as=fetch; crossorigin
-  Link: </page-data/projects/HTML X CSS Practice/page-data.json>; rel=preload; as=fetch; crossorigin
+  Link: </page-data/HTML X CSS Practice/page-data.json>; rel=preload; as=fetch; crossorigin
 /mountain/一趟跨越三十年的山行/
   Link: </webpack-runtime-10bb59ba0b4fbb0de2ab.js>; rel=preload; as=script
   Link: </styles-e9d24b1846c7d6eb9685.js>; rel=preload; as=script

@@ -1,4 +1,252 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Travel in Time.]]></title><description><![CDATA[Travel in Time.]]></description><link>https://zoeaeen13.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 15 Jun 2021 03:19:40 GMT</lastBuildDate><item><title><![CDATA[CH4/5：Class Component 和 State System]]></title><description><![CDATA[Class Component 在 Hook System 還沒有出現時，早期的 functional component 是沒辦法擁有 state，只能用來展示一些固定的內容，資料往往由父層 props 傳入、在創建的時候 data…]]></description><link>https://zoeaeen13.github.io/modern-react-with-redux/CH4/</link><guid isPermaLink="false">https://zoeaeen13.github.io/modern-react-with-redux/CH4/</guid><pubDate>Tue, 15 Jun 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h4 id=&quot;Class-Component&quot; style=&quot;position:relative;&quot;&gt;Class Component&lt;a href=&quot;#Class-Component&quot; aria-label=&quot;Class Component permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h4&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Travel in Time.]]></title><description><![CDATA[Travel in Time.]]></description><link>https://zoeaeen13.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 15 Jun 2021 03:55:38 GMT</lastBuildDate><item><title><![CDATA[CH4/5：Class Component 和 State System]]></title><description><![CDATA[Class Component 在 Hook System 還沒有出現時，早期的 functional component 是沒辦法擁有 state，只能用來展示一些固定的內容，資料往往由父層 props 傳入、在創建的時候 data…]]></description><link>https://zoeaeen13.github.io/modern-react-with-redux/CH6：討論生命週期/</link><guid isPermaLink="false">https://zoeaeen13.github.io/modern-react-with-redux/CH6：討論生命週期/</guid><pubDate>Tue, 15 Jun 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h4 id=&quot;Class-Component&quot; style=&quot;position:relative;&quot;&gt;Class Component&lt;a href=&quot;#Class-Component&quot; aria-label=&quot;Class Component permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;在 Hook System 還沒有出現時，早期的 functional component 是沒辦法擁有 state，只能用來展示一些固定的內容，資料往往由父層 props 傳入、在創建的時候 data 已經被決定好了。&lt;/p&gt;
+&lt;br&gt;
+&lt;h5 id=&quot;為什麼需要它？&quot; style=&quot;position:relative;&quot;&gt;為什麼需要它？&lt;a href=&quot;#%E7%82%BA%E4%BB%80%E9%BA%BC%E9%9C%80%E8%A6%81%E5%AE%83%EF%BC%9F&quot; aria-label=&quot;為什麼需要它？ permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h5&gt;
+&lt;p&gt;執行 React 專案時，首先 JS file 被瀏覽器載入，這時候 App component 會被創建，裡面的程式碼一一被執行，然後才是回傳 JSX、被 ReactDOM 渲染到畫面上。&lt;/p&gt;
+&lt;p&gt;如果那些程式碼是非同步的話，就得用 callback function 才能處理，但結果返回的時候，畫面往往已經渲染完畢，這時候，如何才能跟 component 溝通、去更新畫面呢？&lt;/p&gt;
+&lt;p&gt;我們需要 Class Component 來做狀態管理。&lt;/p&gt;
+&lt;br&gt;
+&lt;h5 id=&quot;兩者差異&quot; style=&quot;position:relative;&quot;&gt;兩者差異&lt;a href=&quot;#%E5%85%A9%E8%80%85%E5%B7%AE%E7%95%B0&quot; aria-label=&quot;兩者差異 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h5&gt;
+&lt;p&gt;相較於 functional component，class component 可以&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;同樣產生 JSX&lt;/li&gt;
+&lt;li&gt;能使用「lifecycle」生命週期方法，選擇在特定時間點執行程式碼&lt;/li&gt;
+&lt;li&gt;能使用「state system」來管理狀態（state），用以更新畫面上的東西&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;p&gt;在改寫 functional component 為 class component 時，有幾點要留意：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;一定是 JavaScript 的類別&lt;/li&gt;
+&lt;li&gt;一定要繼承 &lt;code class=&quot;language-text&quot;&gt;React.Component&lt;/code&gt;（extends）&lt;/li&gt;
+&lt;li&gt;一定要定義 &lt;code class=&quot;language-text&quot;&gt;render&lt;/code&gt; 方法，也就是元件要回傳的 JSX&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;javascript&quot; data-index=&quot;0&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk3&quot;&gt;// functional component&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;const&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; App = () &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; (&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;Hi&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  )&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk3&quot;&gt;// class component&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; App &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;extends&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; React.Component {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  render() {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; (&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;      &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;Hi&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    )&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;使用 &lt;code class=&quot;language-text&quot;&gt;class&lt;/code&gt; keyword 將在 JS 創建類別，而定義一個 React component 類別，需要讓它繼承 &lt;code class=&quot;language-text&quot;&gt;React.Component&lt;/code&gt;，在 &lt;code class=&quot;language-text&quot;&gt;React.Component&lt;/code&gt; 裡面提供很多方法、我們不需要自己寫，因為繼承的關係能夠直接借用過來（原型繼承）。&lt;/p&gt;
+&lt;p&gt;我們依照程式的需求再來決定要使用哪些方法，但在 &lt;code class=&quot;language-text&quot;&gt;React.Component&lt;/code&gt; 中有個 subclass 是一定要實作的，就是定義 component 該怎麼渲染的 &lt;code class=&quot;language-text&quot;&gt;render&lt;/code&gt; 方法，和原本寫 functional component 的 return 很相像，都是用在回傳元件需要的 JSX。&lt;/p&gt;
+&lt;hr&gt;
+&lt;br&gt;
+&lt;h4 id=&quot;React-State-System&quot; style=&quot;position:relative;&quot;&gt;React State System&lt;a href=&quot;#React-State-System&quot; aria-label=&quot;React State System permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;只有 class component 才能擁有 state（&lt;del&gt;這點在 React 16.8 之後被打破&lt;/del&gt;）&lt;/li&gt;
+&lt;li&gt;初學者容易把它和 props 混淆&lt;/li&gt;
+&lt;li&gt;state 是一個 JS 物件，會存放和元件有關的資料&lt;/li&gt;
+&lt;li&gt;state 要在創建元件時就被初始化&lt;/li&gt;
+&lt;li&gt;state 只能透過 &lt;code class=&quot;language-text&quot;&gt;setState&lt;/code&gt; 方法更新，不能用一般 JavaScript 習慣的賦值&lt;/li&gt;
+&lt;li&gt;更新 state 狀態會促使 component 重新渲染 =&gt; 換句話說，想要讓畫面變動，要透過 &lt;code class=&quot;language-text&quot;&gt;setState&lt;/code&gt; 方法來更新 state&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h5 id=&quot;初始化-state&quot; style=&quot;position:relative;&quot;&gt;初始化 state&lt;a href=&quot;#%E5%88%9D%E5%A7%8B%E5%8C%96-state&quot; aria-label=&quot;初始化 state permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h5&gt;
+&lt;p&gt;state 要在創造元件時就被初始化，這樣在 &lt;code class=&quot;language-text&quot;&gt;render&lt;/code&gt; 方法就能使用到變數，之後的某個時間點同樣也可以用 &lt;code class=&quot;language-text&quot;&gt;setState&lt;/code&gt; 進行更新來重新渲染。&lt;/p&gt;
+&lt;p&gt;而要做到這一點，在 JavaScript 中有一個會隨著 class 一同建立並初始化物件的特殊方法、會在進行其他事情之前先被自動調用，很適合拿來初始化 state，那就是 &lt;strong&gt;constructor&lt;/strong&gt;（構造函數）。&lt;/p&gt;
+&lt;br&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;constructor function 構造函數&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;參考「 &lt;a href=&quot;https://overreacted.io/zh-hant/why-do-we-write-super-props/&quot;&gt;為什麼我們要寫 super(props) ？&lt;/a&gt;」，當你呼叫 constructor 建構子後、參數帶入父層傳遞的 props，JavaScript 規定必須先呼叫 super function，才能使用 &lt;code class=&quot;language-text&quot;&gt;this&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;原因是，我們現在是借用 &lt;code class=&quot;language-text&quot;&gt;React.Component&lt;/code&gt; 的方法，當我們在 App 裡面呼叫 constructor 時，實際上正在覆蓋掉 &lt;code class=&quot;language-text&quot;&gt;React.Component&lt;/code&gt; 原本的 constructor 設置，為了要確保那些設置可以被正常使用，才會呼叫 super =&gt; 指示它去參照父類別的 constructor。&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;javascript&quot; data-index=&quot;1&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;(props)  &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;// 是對父類構造函數的引用&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在 super 被呼叫前，JavaScript 不允許我們去使用 &lt;code class=&quot;language-text&quot;&gt;this&lt;/code&gt;，是為了避免遇到以下這種情況：&lt;/p&gt;
+&lt;p&gt;例如：在還沒有設置前就先被呼叫&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;javascript&quot; data-index=&quot;2&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; Person {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;(name) {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.name = name;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; PolitePerson &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;extends&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; Person {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;(name) {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.greetColleagues(); &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;// 🔴 不被允許&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;(name);&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  greetColleagues() {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    alert(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;#39;My name is &amp;#39;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; + &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.name + &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;#39;, nice to meet you!&amp;#39;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;);&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;帶入 props 也是類似的形式，讓 constructor 初始化 &lt;code class=&quot;language-text&quot;&gt;this.props&lt;/code&gt;，接下來也可以設置狀態，創建一個 state 物件指派給 &lt;code class=&quot;language-text&quot;&gt;this.state&lt;/code&gt; 變數&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;javascript&quot; data-index=&quot;3&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk3&quot;&gt;// React 內部&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; Component {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;(props) {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.props = props;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;// ...&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; App &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;extends&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; React.Component {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;(props) {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;(props)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.state = { lat: &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; } &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;// 初始化 state 才會用 assignment&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  render() {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; (&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;      &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;Latitude: &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;{this&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.state.lat&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    )&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;br&gt;
+&lt;h5 id=&quot;更新-state&quot; style=&quot;position:relative;&quot;&gt;更新 state&lt;a href=&quot;#%E6%9B%B4%E6%96%B0-state&quot; aria-label=&quot;更新 state permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h5&gt;
+&lt;p&gt;一般跟渲染無關的操作，不會將程式碼寫在 &lt;code class=&quot;language-text&quot;&gt;render&lt;/code&gt; 方法裡面，因為 &lt;code class=&quot;language-text&quot;&gt;render&lt;/code&gt; 方法很常被呼叫，為了避免重複取得執行結果，不能將邏輯寫在這裏。&lt;/p&gt;
+&lt;p&gt;這邊寫在 constructor 裡面，在 callback function 裡面更新：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;狀態有 lat 和 errorMessage 兩個屬性，分別在獲得不同地理位址的結果時更新&lt;/li&gt;
+&lt;li&gt;不用每次更新全部屬性，它會添加或修改，但不會移除屬性，可以&lt;strong&gt;只針對我們要調整的值&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;javascript&quot; data-index=&quot;4&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; App &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;extends&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; React.Component {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;(props) {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;(props)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.state = { lat: &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;, errorMessage: &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    window.navigator.geolocation.getCurrentPosition(&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;        (position) &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;          &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;// call setState method if updating&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;          &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.setState({ lat: position.coords.latitude })&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;        },&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;        (err) &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;          &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;// error handling&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;          &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.setState({ errorMessage: err.message })&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;        }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    );&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  render() {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; (&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;      &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;Latitude:&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    )&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;總結，目前流程如下&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;瀏覽器加載 XML 文件，請求 JavaScript file 然後執行&lt;/li&gt;
+&lt;li&gt;創建 App 的實例&lt;/li&gt;
+&lt;li&gt;在 Class Component 裡面第一個被呼叫的是「constructor」構造函數，呼叫 super 引用父類別設定&lt;/li&gt;
+&lt;li&gt;初始化狀態，創建 state object 並得指配給 &lt;code class=&quot;language-text&quot;&gt;this.state&lt;/code&gt; 這個特殊的變數&lt;/li&gt;
+&lt;li&gt;render 方法，回傳 JSX&lt;/li&gt;
+&lt;li&gt;如果執行完一些程式碼需要更新狀態，得呼叫 &lt;code class=&quot;language-text&quot;&gt;this.setState&lt;/code&gt; 這個內建的特殊函式，傳入新的狀態&lt;/li&gt;
+&lt;li&gt;呼叫 &lt;code class=&quot;language-text&quot;&gt;this.setState&lt;/code&gt; 後，React 會自動知道我們已經更新屬性，幾乎立即重新渲染元件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br&gt;
+&lt;p&gt;其他參考資料：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.digitalocean.com/community/tutorials/react-constructors-with-react-components&quot;&gt;Understanding Constructors with React Components&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;style class=&quot;grvsc-styles&quot;&gt;
+  .grvsc-container {
+    overflow: auto;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 1rem;
+    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
+    padding-bottom: 1rem;
+    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
+    border-radius: 8px;
+    border-radius: var(--grvsc-border-radius, 8px);
+    font-feature-settings: normal;
+    line-height: 1.4;
+  }
+  
+  .grvsc-code {
+    display: table;
+  }
+  
+  .grvsc-line {
+    display: table-row;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+  }
+  
+  .grvsc-line &gt; * {
+    position: relative;
+  }
+  
+  .grvsc-gutter-pad {
+    display: table-cell;
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  .grvsc-gutter {
+    display: table-cell;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter::before {
+    content: attr(data-content);
+  }
+  
+  .grvsc-source {
+    display: table-cell;
+    padding-left: 1.5rem;
+    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
+    padding-right: 1.5rem;
+    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
+  }
+  
+  .grvsc-source:empty::after {
+    content: &apos; &apos;;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter + .grvsc-source {
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  /* Line transformer styles */
+  
+  .grvsc-has-line-highlighting &gt; .grvsc-code &gt; .grvsc-line::before {
+    content: &apos; &apos;;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .grvsc-line-diff-add::before {
+    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
+  }
+  
+  .grvsc-line-diff-del::before {
+    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
+  }
+  
+  .grvsc-line-number {
+    padding: 0 2px;
+    text-align: right;
+    opacity: 0.7;
+  }
+  
+  .visual-studio-dark {
+    background-color: #1E1E1E;
+    color: #D4D4D4;
+  }
+  .visual-studio-dark .mtk3 { color: #6A9955; }
+  .visual-studio-dark .mtk4 { color: #569CD6; }
+  .visual-studio-dark .mtk1 { color: #D4D4D4; }
+  .visual-studio-dark .mtk13 { color: #808080; }
+  .visual-studio-dark .mtk11 { color: #CE9178; }
+  .visual-studio-dark .grvsc-line-highlighted::before {
+    background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
+    box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
+  }
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[CH4/5：Class Component 和 State System]]></title><description><![CDATA[Class Component 在 Hook System 還沒有出現時，早期的 functional component 是沒辦法擁有 state，只能用來展示一些固定的內容，資料往往由父層 props 傳入、在創建的時候 data…]]></description><link>https://zoeaeen13.github.io/modern-react-with-redux/CH4-5：Class Component 和 State System/</link><guid isPermaLink="false">https://zoeaeen13.github.io/modern-react-with-redux/CH4-5：Class Component 和 State System/</guid><pubDate>Tue, 15 Jun 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h4 id=&quot;Class-Component&quot; style=&quot;position:relative;&quot;&gt;Class Component&lt;a href=&quot;#Class-Component&quot; aria-label=&quot;Class Component permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;在 Hook System 還沒有出現時，早期的 functional component 是沒辦法擁有 state，只能用來展示一些固定的內容，資料往往由父層 props 傳入、在創建的時候 data 已經被決定好了。&lt;/p&gt;
 &lt;br&gt;
 &lt;h5 id=&quot;為什麼需要它？&quot; style=&quot;position:relative;&quot;&gt;為什麼需要它？&lt;a href=&quot;#%E7%82%BA%E4%BB%80%E9%BA%BC%E9%9C%80%E8%A6%81%E5%AE%83%EF%BC%9F&quot; aria-label=&quot;為什麼需要它？ permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h5&gt;
@@ -3857,7 +4105,7 @@ DOM 是描述 HTML 文件的表示法，也就是我們常看到的、可以使�
     background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
     box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
   }
-&lt;/style&gt;</content:encoded></item><item><title><![CDATA[HTML X CSS Practice]]></title><description><![CDATA[01. 名片設計 box-shadow 屬性 用來產生陰影效果，可設置 X 軸偏移量、Y 軸偏移量、模糊效果（邊緣是否清晰）、擴散程度（陰影放大縮放）及顏色，其中 Y 值為正、陰影是往下方移動。 半圓形，則使用到「絕對定位」及「overflow」屬性。 在卡片上畫兩個 div…]]></description><link>https://zoeaeen13.github.io/projects/HTML X CSS Practice/</link><guid isPermaLink="false">https://zoeaeen13.github.io/projects/HTML X CSS Practice/</guid><pubDate>Sat, 29 Aug 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h4 id=&quot;01-名片設計&quot; style=&quot;position:relative;&quot;&gt;01. 名片設計&lt;a href=&quot;#01-%E5%90%8D%E7%89%87%E8%A8%AD%E8%A8%88&quot; aria-label=&quot;01 名片設計 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h4&gt;
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[HTML X CSS Practice]]></title><description><![CDATA[01. 名片設計 box-shadow 屬性 用來產生陰影效果，可設置 X 軸偏移量、Y 軸偏移量、模糊效果（邊緣是否清晰）、擴散程度（陰影放大縮放）及顏色，其中 Y 值為正、陰影是往下方移動。 半圓形，則使用到「絕對定位」及「overflow」屬性。 在卡片上畫兩個 div…]]></description><link>https://zoeaeen13.github.io/HTML X CSS Practice/</link><guid isPermaLink="false">https://zoeaeen13.github.io/HTML X CSS Practice/</guid><pubDate>Sat, 29 Aug 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h4 id=&quot;01-名片設計&quot; style=&quot;position:relative;&quot;&gt;01. 名片設計&lt;a href=&quot;#01-%E5%90%8D%E7%89%87%E8%A8%AD%E8%A8%88&quot; aria-label=&quot;01 名片設計 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h4&gt;
 &lt;div class=&quot;project-skill-tags&quot;&gt;
   &lt;text&gt;HTML&lt;/text&gt;
   &lt;text&gt;CSS&lt;/text&gt;

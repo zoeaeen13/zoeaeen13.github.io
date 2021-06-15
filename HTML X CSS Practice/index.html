@@ -53,172 +53,350 @@
         }
       }
     })
-  </script><link rel="alternate" type="application/rss+xml" href="/rss.xml"/><link rel="icon" href="/favicon-32x32.png?v=6c1afc0e3c2660e267f5f3cecef47589" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><meta name="theme-color" content="#663399"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=6c1afc0e3c2660e267f5f3cecef47589"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=6c1afc0e3c2660e267f5f3cecef47589"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=6c1afc0e3c2660e267f5f3cecef47589"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=6c1afc0e3c2660e267f5f3cecef47589"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=6c1afc0e3c2660e267f5f3cecef47589"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=6c1afc0e3c2660e267f5f3cecef47589"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=6c1afc0e3c2660e267f5f3cecef47589"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=6c1afc0e3c2660e267f5f3cecef47589"/><title data-react-helmet="true">CH4/5：Class Component 和 State System | Travel in Time.</title><meta data-react-helmet="true" name="description" content="Class Component 在 Hook System 還沒有出現時，早期的 functional component 是沒辦法擁有 state，只能用來展示一些固定的內容，資料往往由父層 props 傳入、在創建的時候 data…"/><meta data-react-helmet="true" property="og:title" content="CH4/5：Class Component 和 State System"/><meta data-react-helmet="true" property="og:description" content="Class Component 在 Hook System 還沒有出現時，早期的 functional component 是沒辦法擁有 state，只能用來展示一些固定的內容，資料往往由父層 props 傳入、在創建的時候 data…"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:creator" content="Zoe Yu"/><meta data-react-helmet="true" name="twitter:title" content="CH4/5：Class Component 和 State System"/><meta data-react-helmet="true" name="twitter:description" content="Class Component 在 Hook System 還沒有出現時，早期的 functional component 是沒辦法擁有 state，只能用來展示一些固定的內容，資料往往由父層 props 傳入、在創建的時候 data…"/><style data-styled="" data-styled-version="5.2.3">.htfJiN{padding:8px 24px;margin-right:16px;font-size:12px;margin-bottom:16px;font-weight:500;-webkit-letter-spacing:.5px;-moz-letter-spacing:.5px;-ms-letter-spacing:.5px;letter-spacing:.5px;line-height:24px;color:#181818;border:1px solid #ECECEC;border-radius:4px;}/*!sc*/
+  </script><link rel="alternate" type="application/rss+xml" href="/rss.xml"/><link rel="icon" href="/favicon-32x32.png?v=6c1afc0e3c2660e267f5f3cecef47589" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><meta name="theme-color" content="#663399"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=6c1afc0e3c2660e267f5f3cecef47589"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=6c1afc0e3c2660e267f5f3cecef47589"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=6c1afc0e3c2660e267f5f3cecef47589"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=6c1afc0e3c2660e267f5f3cecef47589"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=6c1afc0e3c2660e267f5f3cecef47589"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=6c1afc0e3c2660e267f5f3cecef47589"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=6c1afc0e3c2660e267f5f3cecef47589"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=6c1afc0e3c2660e267f5f3cecef47589"/><title data-react-helmet="true">HTML X CSS Practice | Travel in Time.</title><meta data-react-helmet="true" name="description" content="01. 名片設計 box-shadow 屬性 用來產生陰影效果，可設置 X 軸偏移量、Y 軸偏移量、模糊效果（邊緣是否清晰）、擴散程度（陰影放大縮放）及顏色，其中 Y 值為正、陰影是往下方移動。 半圓形，則使用到「絕對定位」及「overflow」屬性。 在卡片上畫兩個 div…"/><meta data-react-helmet="true" property="og:title" content="HTML X CSS Practice"/><meta data-react-helmet="true" property="og:description" content="01. 名片設計 box-shadow 屬性 用來產生陰影效果，可設置 X 軸偏移量、Y 軸偏移量、模糊效果（邊緣是否清晰）、擴散程度（陰影放大縮放）及顏色，其中 Y 值為正、陰影是往下方移動。 半圓形，則使用到「絕對定位」及「overflow」屬性。 在卡片上畫兩個 div…"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:creator" content="Zoe Yu"/><meta data-react-helmet="true" name="twitter:title" content="HTML X CSS Practice"/><meta data-react-helmet="true" name="twitter:description" content="01. 名片設計 box-shadow 屬性 用來產生陰影效果，可設置 X 軸偏移量、Y 軸偏移量、模糊效果（邊緣是否清晰）、擴散程度（陰影放大縮放）及顏色，其中 Y 值為正、陰影是往下方移動。 半圓形，則使用到「絕對定位」及「overflow」屬性。 在卡片上畫兩個 div…"/><style data-styled="" data-styled-version="5.2.3">.htfJiN{padding:8px 24px;margin-right:16px;font-size:12px;margin-bottom:16px;font-weight:500;-webkit-letter-spacing:.5px;-moz-letter-spacing:.5px;-ms-letter-spacing:.5px;letter-spacing:.5px;line-height:24px;color:#181818;border:1px solid #ECECEC;border-radius:4px;}/*!sc*/
 .htfJiN:hover{color:#C5322E;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
 data-styled.g29[id="tag__BlogTag-ipvvgn-0"]{content:"htfJiN,"}/*!sc*/
 .hYboqo{margin:10vh 0;padding:20px;background:#F6F6F6;}/*!sc*/
 data-styled.g32[id="blog-post__CommentWrapper-sc-1hz7w8z-0"]{content:"hYboqo,"}/*!sc*/
-</style><link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC|Source+Sans+Pro:300,400,500,700&amp;display=swap" rel="stylesheet"/><link as="script" rel="preload" href="/webpack-runtime-10bb59ba0b4fbb0de2ab.js"/><link as="script" rel="preload" href="/framework-2d6b7d2e2be378715b78.js"/><link as="script" rel="preload" href="/app-7200a275e6a5a54ac58c.js"/><link as="script" rel="preload" href="/styles-e9d24b1846c7d6eb9685.js"/><link as="script" rel="preload" href="/78bde0f9cbfb3abf81d5baf6b7f31e60371328d0-caa364ff8415a13753f0.js"/><link as="script" rel="preload" href="/5c3f3ed0ca01001d335c9b0021661d159a6a78f4-f0151228293631dd083a.js"/><link as="script" rel="preload" href="/component---src-templates-blog-post-js-35971da685d3b4c7d1dd.js"/><link as="fetch" rel="preload" href="/page-data/modern-react-with-redux/CH4/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/63159454.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="site-wrapper "><header class="site-head"><div class="site-head-container"><a class="nav-burger" href="#"><div class="hamburger hamburger--collapse" aria-label="Menu" role="button" aria-controls="navigation"><div class="hamburger-box"><div class="hamburger-inner"></div></div></div></a><div class="site-head-center"><a class="site-head-logo" href="/">Travel in Time.</a></div><div class="site-head-right"><ul class="nav" role="menu"><li class="nav-elements" role="menuitem"><a href="/blog">Blog</a></li><li class="nav-elements" role="menuitem"><a href="/life">Life</a></li><li class="nav-elements" role="menuitem"><a href="/coding">Coding</a></li><li class="nav-elements" role="menuitem"><a href="/archive">Archive</a></li><li class="nav-about" role="menuitem"><a href="/about">About</a></li></ul></div></div></header><main id="site-main" class="site-main"><div id="swup" class="transition-fade"><article class="post-content no-image"><header class="post-content-header"><h1 class="post-content-title">CH4/5：Class Component 和 State System</h1><div><h5 class="post-content-date">Jun 15, 2021</h5><a class="post-content-category" href="/category/modern-react-with-redux">Modern React with Redux</a></div></header><div class="post-content-list"><ul>
-<li>
-<p><a href="/modern-react-with-redux/CH4/#class-component">Class Component</a></p>
+</style><link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC|Source+Sans+Pro:300,400,500,700&amp;display=swap" rel="stylesheet"/><link as="script" rel="preload" href="/webpack-runtime-10bb59ba0b4fbb0de2ab.js"/><link as="script" rel="preload" href="/framework-2d6b7d2e2be378715b78.js"/><link as="script" rel="preload" href="/app-7200a275e6a5a54ac58c.js"/><link as="script" rel="preload" href="/styles-e9d24b1846c7d6eb9685.js"/><link as="script" rel="preload" href="/78bde0f9cbfb3abf81d5baf6b7f31e60371328d0-caa364ff8415a13753f0.js"/><link as="script" rel="preload" href="/5c3f3ed0ca01001d335c9b0021661d159a6a78f4-f0151228293631dd083a.js"/><link as="script" rel="preload" href="/component---src-templates-blog-post-js-35971da685d3b4c7d1dd.js"/><link as="fetch" rel="preload" href="/page-data/HTML X CSS Practice/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/63159454.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="site-wrapper "><header class="site-head"><div class="site-head-container"><a class="nav-burger" href="#"><div class="hamburger hamburger--collapse" aria-label="Menu" role="button" aria-controls="navigation"><div class="hamburger-box"><div class="hamburger-inner"></div></div></div></a><div class="site-head-center"><a class="site-head-logo" href="/">Travel in Time.</a></div><div class="site-head-right"><ul class="nav" role="menu"><li class="nav-elements" role="menuitem"><a href="/blog">Blog</a></li><li class="nav-elements" role="menuitem"><a href="/life">Life</a></li><li class="nav-elements" role="menuitem"><a href="/coding">Coding</a></li><li class="nav-elements" role="menuitem"><a href="/archive">Archive</a></li><li class="nav-about" role="menuitem"><a href="/about">About</a></li></ul></div></div></header><main id="site-main" class="site-main"><div id="swup" class="transition-fade"><article class="post-content no-image"><header class="post-content-header"><h1 class="post-content-title">HTML X CSS Practice</h1><div><h5 class="post-content-date">Aug 29, 2020</h5><a class="post-content-category" href="/category/"></a></div></header><div class="post-content-list"><ul>
+<li><a href="/HTML%20X%20CSS%20Practice/#01-%E5%90%8D%E7%89%87%E8%A8%AD%E8%A8%88">01. 名片設計</a></li>
+<li><a href="/HTML%20X%20CSS%20Practice/#02-%E5%8B%95%E6%85%8B%E5%A4%A9%E6%B0%A3%E7%9B%92%E5%AD%90">02. 動態天氣盒子</a></li>
+</ul></div><div class="post-content-body"><h4 id="01-名片設計" style="position:relative;">01. 名片設計<a href="#01-%E5%90%8D%E7%89%87%E8%A8%AD%E8%A8%88" aria-label="01 名片設計 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
+<div class="project-skill-tags">
+  <text>HTML</text>
+  <text>CSS</text>
+</div>
+<div class="project_wrap project1">
+  <div class="mark">NAMECARD</div>
+  <a href="https://www.cakeresume.com/zoeaeen13-frontend" alt="" class="namecard">
+    <h2>
+      老余
+      <span>(Zoe)</span>
+    </h2>
+    <h5>前端工程師</h5>
+    <hr/>
+    <p>網頁前端開發者，熱愛動腦的過程，也喜歡動手實作</p>
+    <p>在一次旅行後開啟自學程式之路，持續學習、精進技術和邏輯思維<br/>期待有一天結合技術能力創造有價值的產品</p>  
+    <div class="circle circle1"></div>
+    <div class="circle circle2"></div>
+  </a>
+</div>
 <ul>
-<li><a href="/modern-react-with-redux/CH4/#%E7%82%BA%E4%BB%80%E9%BA%BC%E9%9C%80%E8%A6%81%E5%AE%83%EF%BC%9F">為什麼需要它？</a></li>
-<li><a href="/modern-react-with-redux/CH4/#%E5%85%A9%E8%80%85%E5%B7%AE%E7%95%B0">兩者差異</a></li>
+<li>box-shadow 屬性</li>
 </ul>
-</li>
-<li>
-<p><a href="/modern-react-with-redux/CH4/#react-state-system">React State System</a></p>
-<ul>
-<li><a href="/modern-react-with-redux/CH4/#%E5%88%9D%E5%A7%8B%E5%8C%96-state">初始化 state</a></li>
-<li><a href="/modern-react-with-redux/CH4/#%E6%9B%B4%E6%96%B0-state">更新 state</a></li>
-</ul>
-</li>
-</ul></div><div class="post-content-body"><h4 id="Class-Component" style="position:relative;">Class Component<a href="#Class-Component" aria-label="Class Component permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
-<p>在 Hook System 還沒有出現時，早期的 functional component 是沒辦法擁有 state，只能用來展示一些固定的內容，資料往往由父層 props 傳入、在創建的時候 data 已經被決定好了。</p>
-<br>
-<h5 id="為什麼需要它？" style="position:relative;">為什麼需要它？<a href="#%E7%82%BA%E4%BB%80%E9%BA%BC%E9%9C%80%E8%A6%81%E5%AE%83%EF%BC%9F" aria-label="為什麼需要它？ permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h5>
-<p>執行 React 專案時，首先 JS file 被瀏覽器載入，這時候 App component 會被創建，裡面的程式碼一一被執行，然後才是回傳 JSX、被 ReactDOM 渲染到畫面上。</p>
-<p>如果那些程式碼是非同步的話，就得用 callback function 才能處理，但結果返回的時候，畫面往往已經渲染完畢，這時候，如何才能跟 component 溝通、去更新畫面呢？</p>
-<p>我們需要 Class Component 來做狀態管理。</p>
-<br>
-<h5 id="兩者差異" style="position:relative;">兩者差異<a href="#%E5%85%A9%E8%80%85%E5%B7%AE%E7%95%B0" aria-label="兩者差異 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h5>
-<p>相較於 functional component，class component 可以</p>
-<ul>
-<li>同樣產生 JSX</li>
-<li>能使用「lifecycle」生命週期方法，選擇在特定時間點執行程式碼</li>
-<li>能使用「state system」來管理狀態（state），用以更新畫面上的東西</li>
-</ul>
-<br>
-<p>在改寫 functional component 為 class component 時，有幾點要留意：</p>
-<ol>
-<li>一定是 JavaScript 的類別</li>
-<li>一定要繼承 <code class="language-text">React.Component</code>（extends）</li>
-<li>一定要定義 <code class="language-text">render</code> 方法，也就是元件要回傳的 JSX</li>
-</ol>
-<pre class="grvsc-container visual-studio-dark" data-language="javascript" data-index="0"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">// functional component</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">const</span><span class="mtk1"> App = () </span><span class="mtk4">=&gt;</span><span class="mtk1"> {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk4">return</span><span class="mtk1"> (</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk13">&lt;</span><span class="mtk4">div</span><span class="mtk13">&gt;</span><span class="mtk1">Hi</span><span class="mtk13">&lt;/</span><span class="mtk4">div</span><span class="mtk13">&gt;</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  )</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">// class component</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">class</span><span class="mtk1"> App </span><span class="mtk4">extends</span><span class="mtk1"> React.Component {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  render() {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">return</span><span class="mtk1"> (</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk13">&lt;</span><span class="mtk4">div</span><span class="mtk13">&gt;</span><span class="mtk1">Hi</span><span class="mtk13">&lt;/</span><span class="mtk4">div</span><span class="mtk13">&gt;</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    )</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  }</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span></code></pre>
-<p>使用 <code class="language-text">class</code> keyword 將在 JS 創建類別，而定義一個 React component 類別，需要讓它繼承 <code class="language-text">React.Component</code>，在 <code class="language-text">React.Component</code> 裡面提供很多方法、我們不需要自己寫，因為繼承的關係能夠直接借用過來（原型繼承）。</p>
-<p>我們依照程式的需求再來決定要使用哪些方法，但在 <code class="language-text">React.Component</code> 中有個 subclass 是一定要實作的，就是定義 component 該怎麼渲染的 <code class="language-text">render</code> 方法，和原本寫 functional component 的 return 很相像，都是用在回傳元件需要的 JSX。</p>
+<p>用來產生陰影效果，可設置 X 軸偏移量、Y 軸偏移量、模糊效果（邊緣是否清晰）、擴散程度（陰影放大縮放）及顏色，其中 Y 值為正、陰影是往下方移動。</p>
+<pre class="grvsc-container visual-studio-dark" data-language="css" data-index="0"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">/* offset-x | offset-y | blur-radius | spread-radius | color */</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">box-shadow</span><span class="mtk1">: 0px 25px 15px -20px rgba(0, 0, 0, 0</span><span class="mtk7">.2</span><span class="mtk1">);</span></span></span></code></pre>
+<p>半圓形，則使用到「絕對定位」及「overflow」屬性。</p>
+<p>在卡片上畫兩個 div，圓角 100% 及設定他們為絕對定位，而父層卡片設置 <code class="language-text">position: relative</code>，因為是要以<strong>卡片</strong>本身來定位，參考 <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/position">MDN</a>。</p>
+<p>接著調整 top、right、bottom、left（根據卡片本身），因圓形半徑為 75px，一個放在卡片右上角，一個對著卡片底部，超過的部分則用 <code class="language-text">overflow: hidden;</code> 處理。</p>
 <hr>
-<br>
-<h4 id="React-State-System" style="position:relative;">React State System<a href="#React-State-System" aria-label="React State System permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
+<h4 id="02-動態天氣盒子" style="position:relative;">02. 動態天氣盒子<a href="#02-%E5%8B%95%E6%85%8B%E5%A4%A9%E6%B0%A3%E7%9B%92%E5%AD%90" aria-label="02 動態天氣盒子 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
+<div class="project-skill-tags">
+  <text>HTML</text>
+  <text>CSS</text>
+  <text>SVG</text>
+  <text>ANIMATION</text>
+</div>
+<div class="project_wrap project2">
+  <div class="box">
+    <label>
+      <input type="checkbox" id="switch_night">
+        <div class="top" viewbox="0 0 400 400">
+          <svg class="temsvg"><circle cx="0" cy="70" r="3"/><text x="0" y="70">32°C</text><circle cx="70" cy="50" r="3"/><text x="70" y="50">34°C</text><circle cx="140" cy="30" r="3"/><text x="140" y="30">34.5°C</text><circle cx="210" cy="60" r="3"/><text x="210" y="60">33°C</text><circle cx="280" cy="70" r="3"/><text x="280" y="70">32.5°C</text><circle cx="350" cy="60" r="3"/><text x="350" y="60">33°C</text><circle cx="420" cy="50" r="3"/><text x="420" y="50">34°C</text><polyline points="0,70 70,50 140,30 210,60 280,70 350,60 420,50" /></svg>
+          <div class="moon"></div>
+          <div class="cloud">
+            <div class="rain rain1"></div>
+            <div class="rain rain2"></div>
+            <div class="rain rain3"></div>
+          </div>
+          <div class="text__area">
+            <div class="temporature">32°C</div>
+            <div class="info">
+              <div class="location">台東縣台東市臺東</div>
+              <div class="time">星期五 下午5:00</div>
+            </div>
+          </div>
+        </div>
+        <div class="bottom">
+        <div class="day__weather">
+          <h3>MON</h3>
+          <svg viewbox="-50 -50 100 100"><circle class="sun" cx="0" cy="0" r="22" /></svg>
+        </div>
+          <div class="day__weather">
+          <h3>TUE</h3>
+          <svg viewbox="-50 -50 100 100"><circle class="sun" cx="0" cy="0" r="22" /></svg>
+        </div>
+          <div class="day__weather">
+          <h3>WED</h3>
+          <svg viewbox="-50 -50 100 100"><circle class="sun" cx="0" cy="0" r="22" /><circle class="cloud" cx="0" cy="30" r="20"/><circle class="cloud" cx="-15" cy="30" r="20"/><circle class="cloud" cx="-30" cy="30" r="20"/><circle class="cloud" cx="-25" cy="10" r="15"/><circle class="cloud" cx="-7" cy="15" r="15"/></svg>
+        </div>
+          <div class="day__weather">
+          <h3>THU</h3>
+          <svg viewbox="-50 -50 100 100"><circle class="sun" cx="0" cy="0" r="22" /></svg>
+        </div>
+          <div class="day__weather">
+          <h3>FRI</h3>
+          <svg viewbox="-50 -50 100 100"><circle class="sun" cx="0" cy="0" r="22" /></svg>
+        </div>
+          <div class="day__weather">
+          <h3>SAT</h3>
+          <svg viewbox="-63 -30 100 100"><line class="rain" x1="-25" y1="15" x2="-25" y2="35 "/><line class="rain rain2" x1="0" y1="10" x2="0" y2="30"/><line class="rain rain3" x1="-10" y1="20" x2="-10" y2="40 "/><circle class="cloud" cx="0" cy="30" r="20"/><circle class="cloud" cx="-15" cy="30" r="20"/><circle class="cloud" cx="-30" cy="30" r="20"/><circle class="cloud" cx="-25" cy="10" r="15"/><circle class="cloud" cx="-7" cy="15" r="15"/></svg>
+        </div>
+          <div class="day__weather">
+          <h3>SUN</h3>
+          <svg viewbox="-63 -30 100 100"><line class="rain" x1="-25" y1="15" x2="-25" y2="35 "/><line class="rain rain2" x1="0" y1="10" x2="0" y2="30"/><line class="rain rain3" x1="-10" y1="20" x2="-10" y2="40 "/><circle class="cloud" cx="0" cy="30" r="20"/><circle class="cloud" cx="-15" cy="30" r="20"/><circle class="cloud" cx="-30" cy="30" r="20"/><circle class="cloud" cx="-25" cy="10" r="15"/><circle class="cloud" cx="-7" cy="15" r="15"/></svg>
+        </div>
+      </div>
+    </label>
+  </div>
+</div>
+<ol>
+<li>天氣折線圖</li>
+</ol>
+<p>使用 SVG 繪製，圓點用 circle 元素、折線使用 polyline，需要注意的是 SVG 屬性名稱有些和 CSS 不同：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>CSS</th>
+<th>SVG</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>邊框顏色</td>
+<td>border-color</td>
+<td>stroke</td>
+</tr>
+<tr>
+<td>框線粗細</td>
+<td>border-width</td>
+<td>stroke-width</td>
+</tr>
+<tr>
+<td>背景</td>
+<td>background-color</td>
+<td>fill</td>
+</tr>
+<tr>
+<td>定位</td>
+<td>left/top/bottom/right</td>
+<td>x/y（圓形 cx/cy）</td>
+</tr>
+<tr>
+<td>寬高</td>
+<td>width/height</td>
+<td>width/height</td>
+</tr>
+</tbody>
+</table>
+<p>在 svg 中有一個 <code class="language-text">viewbox</code> 屬性，放四個參數（x, y, width, height），可以把它想像成整個 svg 圖檔的可視範圍，超過就不會顯示出來，像天氣折線圖中的最後一個圓點因 x 座標超過範圍，不會出現在畫面上。</p>
+<pre class="grvsc-container visual-studio-dark" data-language="html" data-index="1"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk13">&lt;</span><span class="mtk4">svg</span><span class="mtk1"> </span><span class="mtk8">class</span><span class="mtk1">=</span><span class="mtk11">&quot;temsvg&quot;</span><span class="mtk1"> </span><span class="mtk8">viewbox</span><span class="mtk1">=</span><span class="mtk11">&quot;0 0 400 400&quot;</span><span class="mtk13">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk13">&lt;</span><span class="mtk4">circle</span><span class="mtk1"> </span><span class="mtk8">cx</span><span class="mtk1">=</span><span class="mtk11">&quot;0&quot;</span><span class="mtk1"> </span><span class="mtk8">cy</span><span class="mtk1">=</span><span class="mtk11">&quot;70&quot;</span><span class="mtk1"> </span><span class="mtk8">r</span><span class="mtk1">=</span><span class="mtk11">&quot;3&quot;</span><span class="mtk13">/&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk13">&lt;</span><span class="mtk4">text</span><span class="mtk1"> </span><span class="mtk8">x</span><span class="mtk1">=</span><span class="mtk11">&quot;0&quot;</span><span class="mtk1"> </span><span class="mtk8">y</span><span class="mtk1">=</span><span class="mtk11">&quot;70&quot;</span><span class="mtk13">&gt;</span><span class="mtk1">32°C</span><span class="mtk13">&lt;/</span><span class="mtk4">text</span><span class="mtk13">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk13">&lt;</span><span class="mtk4">circle</span><span class="mtk1"> </span><span class="mtk8">cx</span><span class="mtk1">=</span><span class="mtk11">&quot;70&quot;</span><span class="mtk1"> </span><span class="mtk8">cy</span><span class="mtk1">=</span><span class="mtk11">&quot;50&quot;</span><span class="mtk1"> </span><span class="mtk8">r</span><span class="mtk1">=</span><span class="mtk11">&quot;3&quot;</span><span class="mtk13">/&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk13">&lt;</span><span class="mtk4">text</span><span class="mtk1"> </span><span class="mtk8">x</span><span class="mtk1">=</span><span class="mtk11">&quot;70&quot;</span><span class="mtk1"> </span><span class="mtk8">y</span><span class="mtk1">=</span><span class="mtk11">&quot;50&quot;</span><span class="mtk13">&gt;</span><span class="mtk1">34°C</span><span class="mtk13">&lt;/</span><span class="mtk4">text</span><span class="mtk13">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk13">&lt;</span><span class="mtk4">circle</span><span class="mtk1"> </span><span class="mtk8">cx</span><span class="mtk1">=</span><span class="mtk11">&quot;140&quot;</span><span class="mtk1"> </span><span class="mtk8">cy</span><span class="mtk1">=</span><span class="mtk11">&quot;30&quot;</span><span class="mtk1"> </span><span class="mtk8">r</span><span class="mtk1">=</span><span class="mtk11">&quot;3&quot;</span><span class="mtk13">/&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk13">&lt;</span><span class="mtk4">text</span><span class="mtk1"> </span><span class="mtk8">x</span><span class="mtk1">=</span><span class="mtk11">&quot;140&quot;</span><span class="mtk1"> </span><span class="mtk8">y</span><span class="mtk1">=</span><span class="mtk11">&quot;30&quot;</span><span class="mtk13">&gt;</span><span class="mtk1">34.5°C</span><span class="mtk13">&lt;/</span><span class="mtk4">text</span><span class="mtk13">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk13">&lt;</span><span class="mtk4">circle</span><span class="mtk1"> </span><span class="mtk8">cx</span><span class="mtk1">=</span><span class="mtk11">&quot;210&quot;</span><span class="mtk1"> </span><span class="mtk8">cy</span><span class="mtk1">=</span><span class="mtk11">&quot;60&quot;</span><span class="mtk1"> </span><span class="mtk8">r</span><span class="mtk1">=</span><span class="mtk11">&quot;3&quot;</span><span class="mtk13">/&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk13">&lt;</span><span class="mtk4">text</span><span class="mtk1"> </span><span class="mtk8">x</span><span class="mtk1">=</span><span class="mtk11">&quot;210&quot;</span><span class="mtk1"> </span><span class="mtk8">y</span><span class="mtk1">=</span><span class="mtk11">&quot;60&quot;</span><span class="mtk13">&gt;</span><span class="mtk1">33°C</span><span class="mtk13">&lt;/</span><span class="mtk4">text</span><span class="mtk13">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk13">&lt;</span><span class="mtk4">circle</span><span class="mtk1"> </span><span class="mtk8">cx</span><span class="mtk1">=</span><span class="mtk11">&quot;280&quot;</span><span class="mtk1"> </span><span class="mtk8">cy</span><span class="mtk1">=</span><span class="mtk11">&quot;70&quot;</span><span class="mtk1"> </span><span class="mtk8">r</span><span class="mtk1">=</span><span class="mtk11">&quot;3&quot;</span><span class="mtk13">/&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk13">&lt;</span><span class="mtk4">text</span><span class="mtk1"> </span><span class="mtk8">x</span><span class="mtk1">=</span><span class="mtk11">&quot;280&quot;</span><span class="mtk1"> </span><span class="mtk8">y</span><span class="mtk1">=</span><span class="mtk11">&quot;70&quot;</span><span class="mtk13">&gt;</span><span class="mtk1">32.5°C</span><span class="mtk13">&lt;/</span><span class="mtk4">text</span><span class="mtk13">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk13">&lt;</span><span class="mtk4">circle</span><span class="mtk1"> </span><span class="mtk8">cx</span><span class="mtk1">=</span><span class="mtk11">&quot;350&quot;</span><span class="mtk1"> </span><span class="mtk8">cy</span><span class="mtk1">=</span><span class="mtk11">&quot;60&quot;</span><span class="mtk1"> </span><span class="mtk8">r</span><span class="mtk1">=</span><span class="mtk11">&quot;3&quot;</span><span class="mtk13">/&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk13">&lt;</span><span class="mtk4">text</span><span class="mtk1"> </span><span class="mtk8">x</span><span class="mtk1">=</span><span class="mtk11">&quot;350&quot;</span><span class="mtk1"> </span><span class="mtk8">y</span><span class="mtk1">=</span><span class="mtk11">&quot;60&quot;</span><span class="mtk13">&gt;</span><span class="mtk1">33°C</span><span class="mtk13">&lt;/</span><span class="mtk4">text</span><span class="mtk13">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk13">&lt;</span><span class="mtk4">circle</span><span class="mtk1"> </span><span class="mtk8">cx</span><span class="mtk1">=</span><span class="mtk11">&quot;420&quot;</span><span class="mtk1"> </span><span class="mtk8">cy</span><span class="mtk1">=</span><span class="mtk11">&quot;50&quot;</span><span class="mtk1"> </span><span class="mtk8">r</span><span class="mtk1">=</span><span class="mtk11">&quot;3&quot;</span><span class="mtk13">/&gt;</span><span class="mtk1"> </span><span class="mtk3">&lt;!-- 從 x 軸往右 400 以內才是可視區 --&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk13">&lt;</span><span class="mtk4">text</span><span class="mtk1"> </span><span class="mtk8">x</span><span class="mtk1">=</span><span class="mtk11">&quot;420&quot;</span><span class="mtk1"> </span><span class="mtk8">y</span><span class="mtk1">=</span><span class="mtk11">&quot;50&quot;</span><span class="mtk13">&gt;</span><span class="mtk1">34°C</span><span class="mtk13">&lt;/</span><span class="mtk4">text</span><span class="mtk13">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk13">&lt;</span><span class="mtk4">polyline</span><span class="mtk1"> </span><span class="mtk8">points</span><span class="mtk1">=</span><span class="mtk11">&quot;0,70 70,50 140,30 210,60 280,70 350,60 420,50&quot;</span><span class="mtk1"> </span><span class="mtk13">/&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk13">&lt;/</span><span class="mtk4">svg</span><span class="mtk13">&gt;</span></span></span></code></pre>
+<pre class="grvsc-container visual-studio-dark" data-language="css" data-index="2"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk7">.temsvg</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk8">width</span><span class="mtk1">: </span><span class="mtk5">100%</span><span class="mtk1">;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk7">.temsvg</span><span class="mtk1"> </span><span class="mtk7">polyline</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk8">stroke</span><span class="mtk1">: #f3f3f3;     </span><span class="mtk3">/* 框線顏色 */</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk8">stroke-width</span><span class="mtk1">: </span><span class="mtk5">1px</span><span class="mtk1">;   </span><span class="mtk3">/* 框線粗細 */</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk8">fill</span><span class="mtk1">: none;          </span><span class="mtk3">/* 無填滿 */</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk7">.temsvg</span><span class="mtk1"> </span><span class="mtk7">text</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk8">transform</span><span class="mtk1">: translate(</span><span class="mtk5">-10px</span><span class="mtk1">, </span><span class="mtk5">20px</span><span class="mtk1">);    </span><span class="mtk3">/* 讓文字在圓點下方 */</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk8">font-size</span><span class="mtk1">: </span><span class="mtk5">10px</span><span class="mtk1">;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk8">fill</span><span class="mtk1">: #f3f3f3;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk7">.temsvg</span><span class="mtk1"> </span><span class="mtk7">circle</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk8">fill</span><span class="mtk1">: #f3f3f3;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span></code></pre>
+<p>動畫部分，一開始讓折線圖文字隱藏、幾乎要看不到點線，等到點擊卡片才變跑出來，最簡單的做法：</p>
 <ul>
-<li>只有 class component 才能擁有 state（<del>這點在 React 16.8 之後被打破</del>）</li>
-<li>初學者容易把它和 props 混淆</li>
-<li>state 是一個 JS 物件，會存放和元件有關的資料</li>
-<li>state 要在創建元件時就被初始化</li>
-<li>state 只能透過 <code class="language-text">setState</code> 方法更新，不能用一般 JavaScript 習慣的賦值</li>
-<li>更新 state 狀態會促使 component 重新渲染 => 換句話說，想要讓畫面變動，要透過 <code class="language-text">setState</code> 方法來更新 state</li>
+<li>使用 <code class="language-text">opacity</code> 來調整</li>
 </ul>
-<br>
-<h5 id="初始化-state" style="position:relative;">初始化 state<a href="#%E5%88%9D%E5%A7%8B%E5%8C%96-state" aria-label="初始化 state permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h5>
-<p>state 要在創造元件時就被初始化，這樣在 <code class="language-text">render</code> 方法就能使用到變數，之後的某個時間點同樣也可以用 <code class="language-text">setState</code> 進行更新來重新渲染。</p>
-<p>而要做到這一點，在 JavaScript 中有一個會隨著 class 一同建立並初始化物件的特殊方法、會在進行其他事情之前先被自動調用，很適合拿來初始化 state，那就是 <strong>constructor</strong>（構造函數）。</p>
-<br>
-<blockquote>
-<p><strong>constructor function 構造函數</strong></p>
-</blockquote>
-<p>參考「 <a href="https://overreacted.io/zh-hant/why-do-we-write-super-props/">為什麼我們要寫 super(props) ？</a>」，當你呼叫 constructor 建構子後、參數帶入父層傳遞的 props，JavaScript 規定必須先呼叫 super function，才能使用 <code class="language-text">this</code>。</p>
-<p>原因是，我們現在是借用 <code class="language-text">React.Component</code> 的方法，當我們在 App 裡面呼叫 constructor 時，實際上正在覆蓋掉 <code class="language-text">React.Component</code> 原本的 constructor 設置，為了要確保那些設置可以被正常使用，才會呼叫 super => 指示它去參照父類別的 constructor。</p>
-<pre class="grvsc-container visual-studio-dark" data-language="javascript" data-index="1"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">super</span><span class="mtk1">(props)  </span><span class="mtk3">// 是對父類構造函數的引用</span></span></span></code></pre>
-<p>在 super 被呼叫前，JavaScript 不允許我們去使用 <code class="language-text">this</code>，是為了避免遇到以下這種情況：</p>
-<p>例如：在還沒有設置前就先被呼叫</p>
-<pre class="grvsc-container visual-studio-dark" data-language="javascript" data-index="2"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">class</span><span class="mtk1"> Person {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk4">constructor</span><span class="mtk1">(name) {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">this</span><span class="mtk1">.name = name;</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  }</span></span></span>
+<pre class="grvsc-container visual-studio-dark" data-language="css" data-index="3"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">/* 初始化設置透明度 */</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk7">.temsvg</span><span class="mtk1"> </span><span class="mtk7">polyline</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk8">opacity</span><span class="mtk1">: </span><span class="mtk5">0.2</span><span class="mtk1">;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk7">.temsvg</span><span class="mtk1"> </span><span class="mtk7">text</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk8">opacity</span><span class="mtk1">: </span><span class="mtk5">0</span><span class="mtk1">;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk7">.temsvg</span><span class="mtk1"> </span><span class="mtk7">circle</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk8">opacity</span><span class="mtk1">: </span><span class="mtk5">0.2</span><span class="mtk1">;</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">class</span><span class="mtk1"> PolitePerson </span><span class="mtk4">extends</span><span class="mtk1"> Person {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk4">constructor</span><span class="mtk1">(name) {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">this</span><span class="mtk1">.greetColleagues(); </span><span class="mtk3">// 🔴 不被允許</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">super</span><span class="mtk1">(name);</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">/* 動畫時間效果：duration 和 delay 使用 */</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk7">.temsvg</span><span class="mtk1"> </span><span class="mtk7">polyline</span><span class="mtk1">, </span><span class="mtk7">.temsvg</span><span class="mtk1"> </span><span class="mtk7">circle</span><span class="mtk1">, </span><span class="mtk7">.temsvg</span><span class="mtk1"> </span><span class="mtk7">text</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk8">transition-duration</span><span class="mtk1">: </span><span class="mtk5">0.5s</span><span class="mtk1">;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk7">.temsvg</span><span class="mtk1"> </span><span class="mtk7">text</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk8">transition-delay</span><span class="mtk1">: </span><span class="mtk5">1s</span><span class="mtk1">;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk7">.temsvg</span><span class="mtk1"> </span><span class="mtk7">polyline</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk8">transition-delay</span><span class="mtk1">: </span><span class="mtk5">0.5s</span><span class="mtk1">;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">/* 點擊後才調整透明度 */</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk7">#switch_night:checked</span><span class="mtk1"> + </span><span class="mtk7">.top</span><span class="mtk1"> </span><span class="mtk7">.temsvg</span><span class="mtk1"> </span><span class="mtk7">polyline</span><span class="mtk1">, </span><span class="mtk7">#switch_night:checked</span><span class="mtk1"> + </span><span class="mtk7">.top</span><span class="mtk1"> </span><span class="mtk7">.temsvg</span><span class="mtk1"> </span><span class="mtk7">circle</span><span class="mtk1">, </span><span class="mtk7">#switch_night:checked</span><span class="mtk1"> + </span><span class="mtk7">.top</span><span class="mtk1"> </span><span class="mtk7">.temsvg</span><span class="mtk1"> </span><span class="mtk7">text</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk8">opacity</span><span class="mtk1">: </span><span class="mtk5">1</span><span class="mtk1">;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span></code></pre>
+<ol start="2">
+<li>雲朵和雲</li>
+</ol>
+<p>雲朵可以用 SVG 做，但這邊紀錄另一種做法 ── 使用「<strong>偽元素</strong>」，先設定半橢圓的底部，再用上 ::before、::after 變成兩圓形，內部添加細長條的雨滴，最後根據父層的雲朵調整內部位置。</p>
+<p><img src="https://i.imgur.com/Zs6slzu.png"></p>
+<pre class="grvsc-container visual-studio-dark" data-language="html" data-index="4"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">&lt;!-- 一朵雲和它的雨 --&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk13">&lt;</span><span class="mtk4">div</span><span class="mtk1"> </span><span class="mtk8">class</span><span class="mtk1">=</span><span class="mtk11">&quot;cloud&quot;</span><span class="mtk13">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk13">&lt;</span><span class="mtk4">div</span><span class="mtk1"> </span><span class="mtk8">class</span><span class="mtk1">=</span><span class="mtk11">&quot;rain rain1&quot;</span><span class="mtk13">&gt;&lt;/</span><span class="mtk4">div</span><span class="mtk13">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk13">&lt;</span><span class="mtk4">div</span><span class="mtk1"> </span><span class="mtk8">class</span><span class="mtk1">=</span><span class="mtk11">&quot;rain rain2&quot;</span><span class="mtk13">&gt;&lt;/</span><span class="mtk4">div</span><span class="mtk13">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk13">&lt;</span><span class="mtk4">div</span><span class="mtk1"> </span><span class="mtk8">class</span><span class="mtk1">=</span><span class="mtk11">&quot;rain rain3&quot;</span><span class="mtk13">&gt;&lt;/</span><span class="mtk4">div</span><span class="mtk13">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk13">&lt;/</span><span class="mtk4">div</span><span class="mtk13">&gt;</span></span></span></code></pre>
+<p>動畫方面，雲和雨是設置上下移動：</p>
+<ol>
+<li>寫一組影格動畫 cloudAnim，設置 <code class="language-text">translateY</code></li>
+<li>把動畫分配給雲朵，設置以 4 秒為一次的無限循環</li>
+<li>另一組雨的動畫則另外加上淡出效果</li>
+</ol>
+<pre class="grvsc-container visual-studio-dark" data-language="css" data-index="5"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk7">.cloud</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk8">animation</span><span class="mtk1">: cloudAnim </span><span class="mtk5">4s</span><span class="mtk1"> infinite;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk8">animation-delay</span><span class="mtk1">: </span><span class="mtk5">-0.2s</span><span class="mtk1">;   </span><span class="mtk3">/* 為了在進入頁面前就看到移動，設置負數開始播放 */</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">@keyframes</span><span class="mtk1"> cloudAnim {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  0% { </span><span class="mtk8">transform</span><span class="mtk1">: translateY(</span><span class="mtk5">0px</span><span class="mtk1">); }    </span><span class="mtk3">/* 動畫進度 0% 要做到的事 */</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  50% { </span><span class="mtk8">transform</span><span class="mtk1">: translateY(</span><span class="mtk5">-10px</span><span class="mtk1">); } </span><span class="mtk3">/* 動畫進度 50% 要做到的事 */</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  100% { </span><span class="mtk8">transform</span><span class="mtk1">: translateY(</span><span class="mtk5">0px</span><span class="mtk1">); }  </span><span class="mtk3">/* 動畫進度 100% 要做到的事 */</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk7">.rain</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk8">animation</span><span class="mtk1">: rainAnim </span><span class="mtk5">1s</span><span class="mtk1"> infinite linear;  </span><span class="mtk3">/* linear 等速播動畫 */</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">@keyframes</span><span class="mtk1"> rainAnim {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  0% { </span><span class="mtk8">transform</span><span class="mtk1">: translateY(</span><span class="mtk5">0px</span><span class="mtk1">); }</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  100% { </span><span class="mtk8">transform</span><span class="mtk1">: translateY(</span><span class="mtk5">50px</span><span class="mtk1">); </span><span class="mtk8">opacity</span><span class="mtk1">: </span><span class="mtk5">0</span><span class="mtk1">; }  </span><span class="mtk3">/* 漸漸淡出 */</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk7">.rain2</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk8">animation-delay</span><span class="mtk1">: </span><span class="mtk5">-0.4s</span><span class="mtk1">; </span><span class="mtk3">/* 同樣從負數開始播放 */</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk7">.rain3</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk8">animation-delay</span><span class="mtk1">: </span><span class="mtk5">-0.7s</span><span class="mtk1">;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span></code></pre>
+<ol start="3">
+<li>月亮</li>
+</ol>
+<p>做法超級神奇！運用位移來創造出陰晴圓缺效果，本身只是圓形加上一個偏移很多的陰影，但只要把本體框線拿掉就會發現是弦月的形狀</p>
+<p><img src="https://i.imgur.com/N4ZG9uf.png"></p>
+<pre class="grvsc-container visual-studio-dark" data-language="html" data-index="6"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk13">&lt;</span><span class="mtk4">div</span><span class="mtk1"> </span><span class="mtk8">class</span><span class="mtk1">=</span><span class="mtk11">&quot;moon&quot;</span><span class="mtk13">&gt;&lt;/</span><span class="mtk4">div</span><span class="mtk13">&gt;</span></span></span></code></pre>
+<p>利用本體和陰影的移動，來創造視差</p>
+<pre class="grvsc-container visual-studio-dark" data-language="css" data-index="7"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk7">.moon</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk8">width</span><span class="mtk1">: </span><span class="mtk5">50px</span><span class="mtk1">;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk8">height</span><span class="mtk1">: </span><span class="mtk5">50px</span><span class="mtk1">;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk8">border-radius</span><span class="mtk1">: </span><span class="mtk5">100%</span><span class="mtk1">;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk8">box-shadow</span><span class="mtk1">: </span><span class="mtk5">15px</span><span class="mtk1"> </span><span class="mtk5">-15px</span><span class="mtk1">;              </span><span class="mtk3">/* 陰影 */</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk8">animation</span><span class="mtk1">: moonmove </span><span class="mtk5">20s</span><span class="mtk1"> infinite;    </span><span class="mtk3">/* 每 20 秒一次的動畫 */</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">@keyframes</span><span class="mtk1"> moonmove {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  0% {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk8">box-shadow</span><span class="mtk1">: </span><span class="mtk5">15px</span><span class="mtk1"> </span><span class="mtk5">-15px</span><span class="mtk1"> #FFD633;    </span><span class="mtk3">/* 陰影的開始位置 */</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk8">transform</span><span class="mtk1">: translate(</span><span class="mtk5">-15px</span><span class="mtk1">, </span><span class="mtk5">15px</span><span class="mtk1">); </span><span class="mtk3">/* 本身位移，抵銷陰影的移動 */</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  }</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  greetColleagues() {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    alert(</span><span class="mtk11">&#39;My name is &#39;</span><span class="mtk1"> + </span><span class="mtk4">this</span><span class="mtk1">.name + </span><span class="mtk11">&#39;, nice to meet you!&#39;</span><span class="mtk1">);</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  100% {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk8">box-shadow</span><span class="mtk1">: </span><span class="mtk5">-25px</span><span class="mtk1"> </span><span class="mtk5">25px</span><span class="mtk1"> #FFD633;    </span><span class="mtk3">/* 陰影的結束位置 */</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk8">transform</span><span class="mtk1">: translate(</span><span class="mtk5">25px</span><span class="mtk1">, </span><span class="mtk5">-25px</span><span class="mtk1">); </span><span class="mtk3">/* 本身位移，抵銷陰影的移動 */</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  }</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span></code></pre>
-<p>帶入 props 也是類似的形式，讓 constructor 初始化 <code class="language-text">this.props</code>，接下來也可以設置狀態，創建一個 state 物件指派給 <code class="language-text">this.state</code> 變數</p>
-<pre class="grvsc-container visual-studio-dark" data-language="javascript" data-index="3"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">// React 內部</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">class</span><span class="mtk1"> Component {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk4">constructor</span><span class="mtk1">(props) {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">this</span><span class="mtk1">.props = props;</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk3">// ...</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  }</span></span></span>
+<ol start="4">
+<li>太陽</li>
+</ol>
+<p>太陽做法同樣巧妙，利用加粗的邊框和「虛線」來繪製周圍的光暈，這邊紀錄 stroke 的幾種屬性：</p>
+<table>
+<thead>
+<tr>
+<th>stroke 五個設定</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>stroke</td>
+<td>邊框顏色</td>
+<td></td>
+</tr>
+<tr>
+<td>stroke-width</td>
+<td>邊框的寬度</td>
+<td></td>
+</tr>
+<tr>
+<td>stroke-linecap</td>
+<td>邊框端點</td>
+<td>butt（預設）、square、round</td>
+</tr>
+<tr>
+<td>stroke-linejoin</td>
+<td>邊框接合尖角</td>
+<td>miter（預設）、round、bevel</td>
+</tr>
+<tr>
+<td>stroke-dasharray</td>
+<td>虛線</td>
+<td>放入一陣列 <code class="language-text">&quot;2, 5, 4&quot;</code>，設定線段長度與虛線間隔</td>
+</tr>
+</tbody>
+</table>
+<p><img src="http://www.oxxostudio.tw/img/articles/201406/20140613_1_03.png"></p>
+<pre class="grvsc-container visual-studio-dark" data-language="html" data-index="8"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">&lt;!-- 以 (-50,-50) 為起點，往右邊和下面看 100 --&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">&lt;!-- 圓形設置 (0,0) 自然會在 svg 視覺中央 --&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk13">&lt;</span><span class="mtk4">svg</span><span class="mtk1"> </span><span class="mtk8">viewbox</span><span class="mtk1">=</span><span class="mtk11">&quot;-50 -50 100 100&quot;</span><span class="mtk13">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk13">&lt;</span><span class="mtk4">circle</span><span class="mtk1"> </span><span class="mtk8">class</span><span class="mtk1">=</span><span class="mtk11">&quot;sun&quot;</span><span class="mtk1"> </span><span class="mtk8">cx</span><span class="mtk1">=</span><span class="mtk11">&quot;0&quot;</span><span class="mtk1"> </span><span class="mtk8">cy</span><span class="mtk1">=</span><span class="mtk11">&quot;0&quot;</span><span class="mtk1"> </span><span class="mtk8">r</span><span class="mtk1">=</span><span class="mtk11">&quot;22&quot;</span><span class="mtk1"> </span><span class="mtk13">/&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk13">&lt;/</span><span class="mtk4">svg</span><span class="mtk13">&gt;</span></span></span></code></pre>
+<pre class="grvsc-container visual-studio-dark" data-language="css" data-index="9"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk7">.sun</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk8">fill</span><span class="mtk1">: #FFD633;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk8">stroke</span><span class="mtk1">: rgba(</span><span class="mtk5">255</span><span class="mtk1">, </span><span class="mtk5">214</span><span class="mtk1">, </span><span class="mtk5">51</span><span class="mtk1">, </span><span class="mtk5">0.3</span><span class="mtk1">);</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk8">stroke-width</span><span class="mtk1">: </span><span class="mtk5">30px</span><span class="mtk1">;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk8">stroke-dasharray</span><span class="mtk1">: </span><span class="mtk5">5px</span><span class="mtk1">;   </span><span class="mtk3">/* 每一段虛線 */</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span></code></pre>
+<ol start="5">
+<li>底部卡片展開</li>
+</ol>
+<p>一開始就先讓底部高度只留一點，hover 時再調整回原高，天氣小圖也是一樣，只不過是調整位移和 transition 來做到往上升的效果</p>
+<pre class="grvsc-container visual-studio-dark" data-language="css" data-index="10"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk7">.bottom</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk8">height</span><span class="mtk1">: </span><span class="mtk5">10px</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk7">.day__weather</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk8">text-align</span><span class="mtk1">: center;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk8">width</span><span class="mtk1">: calc(</span><span class="mtk5">100%</span><span class="mtk1"> / </span><span class="mtk5">7</span><span class="mtk1"> - </span><span class="mtk5">5px</span><span class="mtk1">);  </span><span class="mtk3">/* CSS 可用 calc 算數 */</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk8">opacity</span><span class="mtk1">: </span><span class="mtk5">0</span><span class="mtk1">;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk8">top</span><span class="mtk1">: </span><span class="mtk5">20px</span><span class="mtk1">;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk8">transition</span><span class="mtk1">: </span><span class="mtk5">0.5s</span><span class="mtk1">;</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">class</span><span class="mtk1"> App </span><span class="mtk4">extends</span><span class="mtk1"> React.Component {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk4">constructor</span><span class="mtk1">(props) {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">super</span><span class="mtk1">(props)</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">this</span><span class="mtk1">.state = { lat: </span><span class="mtk4">null</span><span class="mtk1"> } </span><span class="mtk3">// 初始化 state 才會用 assignment</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  }</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  render() {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">return</span><span class="mtk1"> (</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk13">&lt;</span><span class="mtk4">div</span><span class="mtk13">&gt;</span><span class="mtk1">Latitude: </span><span class="mtk4">{this</span><span class="mtk1">.state.lat</span><span class="mtk4">}</span><span class="mtk13">&lt;/</span><span class="mtk4">div</span><span class="mtk13">&gt;</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    )</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  }</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">/* hover */</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk7">.box:hover</span><span class="mtk1"> </span><span class="mtk7">.bottom</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk8">height</span><span class="mtk1">: </span><span class="mtk5">100px</span><span class="mtk1">;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk7">.box:hover</span><span class="mtk1"> </span><span class="mtk7">.bottom</span><span class="mtk1"> </span><span class="mtk7">.day__weather</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk8">opacity</span><span class="mtk1">: </span><span class="mtk5">1</span><span class="mtk1">;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk8">top</span><span class="mtk1">: </span><span class="mtk5">0px</span><span class="mtk1">;</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span></code></pre>
 <hr>
-<br>
-<h5 id="更新-state" style="position:relative;">更新 state<a href="#%E6%9B%B4%E6%96%B0-state" aria-label="更新 state permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h5>
-<p>一般跟渲染無關的操作，不會將程式碼寫在 <code class="language-text">render</code> 方法裡面，因為 <code class="language-text">render</code> 方法很常被呼叫，為了避免重複取得執行結果，不能將邏輯寫在這裏。</p>
-<p>這邊寫在 constructor 裡面，在 callback function 裡面更新：</p>
-<ul>
-<li>狀態有 lat 和 errorMessage 兩個屬性，分別在獲得不同地理位址的結果時更新</li>
-<li>不用每次更新全部屬性，它會添加或修改，但不會移除屬性，可以<strong>只針對我們要調整的值</strong></li>
-</ul>
-<pre class="grvsc-container visual-studio-dark" data-language="javascript" data-index="4"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">class</span><span class="mtk1"> App </span><span class="mtk4">extends</span><span class="mtk1"> React.Component {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk4">constructor</span><span class="mtk1">(props) {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">super</span><span class="mtk1">(props)</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">this</span><span class="mtk1">.state = { lat: </span><span class="mtk4">null</span><span class="mtk1">, errorMessage: </span><span class="mtk11">&#39;&#39;</span><span class="mtk1"> }</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    window.navigator.geolocation.getCurrentPosition(</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        (position) </span><span class="mtk4">=&gt;</span><span class="mtk1"> {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">          </span><span class="mtk3">// call setState method if updating</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">          </span><span class="mtk4">this</span><span class="mtk1">.setState({ lat: position.coords.latitude })</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        },</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        (err) </span><span class="mtk4">=&gt;</span><span class="mtk1"> {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">          </span><span class="mtk3">// error handling</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">          </span><span class="mtk4">this</span><span class="mtk1">.setState({ errorMessage: err.message })</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        }</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    );</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  }</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  render() {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">return</span><span class="mtk1"> (</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk13">&lt;</span><span class="mtk4">div</span><span class="mtk13">&gt;</span><span class="mtk1">Latitude:</span><span class="mtk13">&lt;/</span><span class="mtk4">div</span><span class="mtk13">&gt;</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    )</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  }</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span></code></pre>
-<p>總結，目前流程如下</p>
-<ol>
-<li>瀏覽器加載 XML 文件，請求 JavaScript file 然後執行</li>
-<li>創建 App 的實例</li>
-<li>在 Class Component 裡面第一個被呼叫的是「constructor」構造函數，呼叫 super 引用父類別設定</li>
-<li>初始化狀態，創建 state object 並得指配給 <code class="language-text">this.state</code> 這個特殊的變數</li>
-<li>render 方法，回傳 JSX</li>
-<li>如果執行完一些程式碼需要更新狀態，得呼叫 <code class="language-text">this.setState</code> 這個內建的特殊函式，傳入新的狀態</li>
-<li>呼叫 <code class="language-text">this.setState</code> 後，React 會自動知道我們已經更新屬性，幾乎立即重新渲染元件</li>
-</ol>
-<br>
-<p>其他參考資料：</p>
-<ul>
-<li><a href="https://www.digitalocean.com/community/tutorials/react-constructors-with-react-components">Understanding Constructors with React Components</a></li>
-</ul>
 <style class="grvsc-styles">
   .grvsc-container {
     overflow: auto;
@@ -315,10 +493,13 @@ data-styled.g32[id="blog-post__CommentWrapper-sc-1hz7w8z-0"]{content:"hYboqo,"}/
   .visual-studio-dark .mtk3 { color: #6A9955; }
   .visual-studio-dark .mtk4 { color: #569CD6; }
   .visual-studio-dark .mtk1 { color: #D4D4D4; }
+  .visual-studio-dark .mtk7 { color: #D7BA7D; }
   .visual-studio-dark .mtk13 { color: #808080; }
+  .visual-studio-dark .mtk8 { color: #9CDCFE; }
   .visual-studio-dark .mtk11 { color: #CE9178; }
+  .visual-studio-dark .mtk5 { color: #B5CEA8; }
   .visual-studio-dark .grvsc-line-highlighted::before {
     background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
     box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
   }
-</style></div><footer class="post-content-footer"><a class="tag__BlogTag-ipvvgn-0 htfJiN" href="/tags/react">React</a><a class="tag__BlogTag-ipvvgn-0 htfJiN" href="/tags/udemy">Udemy</a><div class="blog-post__CommentWrapper-sc-1hz7w8z-0 hYboqo"><div shortname="gatsby-zoeaeen13" config="[object Object]" id="disqus_thread"></div></div></footer></article></div></main><footer class="site-foot">© <!-- -->2021<!-- --> <a href="/">Travel in Time.</a> — Built with<!-- --> <a href="https://gatsbyjs.org" target="_blank" rel="noopener noreferrer">Gatsby</a></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/modern-react-with-redux/CH4/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-e7171f4a9079a629925f.js"],"app":["/app-7200a275e6a5a54ac58c.js"],"component---node-modules-gatsby-plugin-offline-app-shell-js":["/component---node-modules-gatsby-plugin-offline-app-shell-js-2296adb1de2fc003fbd5.js"],"component---src-pages-404-js":["/component---src-pages-404-js-80af0913ab4bf1a275d6.js"],"component---src-pages-about-js":["/component---src-pages-about-js-721f8fd4e13cf7291268.js"],"component---src-pages-archive-js":["/component---src-pages-archive-js-32e877e6edb101e44f15.js"],"component---src-pages-blog-js":["/component---src-pages-blog-js-fbc5f19a393894966447.js"],"component---src-pages-coding-js":["/component---src-pages-coding-js-ac78486e9211ed681b9b.js"],"component---src-pages-elements-js":["/component---src-pages-elements-js-2887766e1579fc38cea2.js"],"component---src-pages-index-js":["/component---src-pages-index-js-d41a23c6c7a7f282a94e.js"],"component---src-pages-life-js":["/component---src-pages-life-js-0e3abc7a6391b098edb2.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js-35971da685d3b4c7d1dd.js"],"component---src-templates-category-page-js":["/component---src-templates-category-page-js-04d18374d82e3dc6e64d.js"],"component---src-templates-tag-page-js":["/component---src-templates-tag-page-js-72fa34e8d8bcbb07161b.js"]};/*]]>*/</script><script src="/polyfill-e7171f4a9079a629925f.js" nomodule=""></script><script src="/component---src-templates-blog-post-js-35971da685d3b4c7d1dd.js" async=""></script><script src="/5c3f3ed0ca01001d335c9b0021661d159a6a78f4-f0151228293631dd083a.js" async=""></script><script src="/78bde0f9cbfb3abf81d5baf6b7f31e60371328d0-caa364ff8415a13753f0.js" async=""></script><script src="/styles-e9d24b1846c7d6eb9685.js" async=""></script><script src="/app-7200a275e6a5a54ac58c.js" async=""></script><script src="/framework-2d6b7d2e2be378715b78.js" async=""></script><script src="/webpack-runtime-10bb59ba0b4fbb0de2ab.js" async=""></script></body></html>
+</style></div><footer class="post-content-footer"><a class="tag__BlogTag-ipvvgn-0 htfJiN" href="/tags/html">HTML</a><a class="tag__BlogTag-ipvvgn-0 htfJiN" href="/tags/css">CSS</a><div class="blog-post__CommentWrapper-sc-1hz7w8z-0 hYboqo"><div shortname="gatsby-zoeaeen13" config="[object Object]" id="disqus_thread"></div></div></footer></article></div></main><footer class="site-foot">© <!-- -->2021<!-- --> <a href="/">Travel in Time.</a> — Built with<!-- --> <a href="https://gatsbyjs.org" target="_blank" rel="noopener noreferrer">Gatsby</a></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/HTML X CSS Practice/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-e7171f4a9079a629925f.js"],"app":["/app-7200a275e6a5a54ac58c.js"],"component---node-modules-gatsby-plugin-offline-app-shell-js":["/component---node-modules-gatsby-plugin-offline-app-shell-js-2296adb1de2fc003fbd5.js"],"component---src-pages-404-js":["/component---src-pages-404-js-80af0913ab4bf1a275d6.js"],"component---src-pages-about-js":["/component---src-pages-about-js-721f8fd4e13cf7291268.js"],"component---src-pages-archive-js":["/component---src-pages-archive-js-32e877e6edb101e44f15.js"],"component---src-pages-blog-js":["/component---src-pages-blog-js-fbc5f19a393894966447.js"],"component---src-pages-coding-js":["/component---src-pages-coding-js-ac78486e9211ed681b9b.js"],"component---src-pages-elements-js":["/component---src-pages-elements-js-2887766e1579fc38cea2.js"],"component---src-pages-index-js":["/component---src-pages-index-js-d41a23c6c7a7f282a94e.js"],"component---src-pages-life-js":["/component---src-pages-life-js-0e3abc7a6391b098edb2.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js-35971da685d3b4c7d1dd.js"],"component---src-templates-category-page-js":["/component---src-templates-category-page-js-04d18374d82e3dc6e64d.js"],"component---src-templates-tag-page-js":["/component---src-templates-tag-page-js-72fa34e8d8bcbb07161b.js"]};/*]]>*/</script><script src="/polyfill-e7171f4a9079a629925f.js" nomodule=""></script><script src="/component---src-templates-blog-post-js-35971da685d3b4c7d1dd.js" async=""></script><script src="/5c3f3ed0ca01001d335c9b0021661d159a6a78f4-f0151228293631dd083a.js" async=""></script><script src="/78bde0f9cbfb3abf81d5baf6b7f31e60371328d0-caa364ff8415a13753f0.js" async=""></script><script src="/styles-e9d24b1846c7d6eb9685.js" async=""></script><script src="/app-7200a275e6a5a54ac58c.js" async=""></script><script src="/framework-2d6b7d2e2be378715b78.js" async=""></script><script src="/webpack-runtime-10bb59ba0b4fbb0de2ab.js" async=""></script></body></html>
