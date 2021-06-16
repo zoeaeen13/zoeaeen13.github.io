@@ -53,41 +53,20 @@
         }
       }
     })
-  </script><link rel="alternate" type="application/rss+xml" href="/rss.xml"/><link rel="icon" href="/favicon-32x32.png?v=6c1afc0e3c2660e267f5f3cecef47589" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><meta name="theme-color" content="#663399"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=6c1afc0e3c2660e267f5f3cecef47589"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=6c1afc0e3c2660e267f5f3cecef47589"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=6c1afc0e3c2660e267f5f3cecef47589"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=6c1afc0e3c2660e267f5f3cecef47589"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=6c1afc0e3c2660e267f5f3cecef47589"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=6c1afc0e3c2660e267f5f3cecef47589"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=6c1afc0e3c2660e267f5f3cecef47589"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=6c1afc0e3c2660e267f5f3cecef47589"/><title data-react-helmet="true">CH4/5：Class Component 和 State System | Travel in Time.</title><meta data-react-helmet="true" name="description" content="Class Component 在 Hook System 還沒有出現時，早期的 functional component 是沒辦法擁有 state，只能用來展示一些固定的內容，資料往往由父層 props 傳入、在創建的時候 data…"/><meta data-react-helmet="true" property="og:title" content="CH4/5：Class Component 和 State System"/><meta data-react-helmet="true" property="og:description" content="Class Component 在 Hook System 還沒有出現時，早期的 functional component 是沒辦法擁有 state，只能用來展示一些固定的內容，資料往往由父層 props 傳入、在創建的時候 data…"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:creator" content="Zoe Yu"/><meta data-react-helmet="true" name="twitter:title" content="CH4/5：Class Component 和 State System"/><meta data-react-helmet="true" name="twitter:description" content="Class Component 在 Hook System 還沒有出現時，早期的 functional component 是沒辦法擁有 state，只能用來展示一些固定的內容，資料往往由父層 props 傳入、在創建的時候 data…"/><style data-styled="" data-styled-version="5.2.3">.htfJiN{padding:8px 24px;margin-right:16px;font-size:12px;margin-bottom:16px;font-weight:500;-webkit-letter-spacing:.5px;-moz-letter-spacing:.5px;-ms-letter-spacing:.5px;letter-spacing:.5px;line-height:24px;color:#181818;border:1px solid #ECECEC;border-radius:4px;}/*!sc*/
+  </script><link rel="alternate" type="application/rss+xml" href="/rss.xml"/><link rel="icon" href="/favicon-32x32.png?v=6c1afc0e3c2660e267f5f3cecef47589" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><meta name="theme-color" content="#663399"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=6c1afc0e3c2660e267f5f3cecef47589"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=6c1afc0e3c2660e267f5f3cecef47589"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=6c1afc0e3c2660e267f5f3cecef47589"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=6c1afc0e3c2660e267f5f3cecef47589"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=6c1afc0e3c2660e267f5f3cecef47589"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=6c1afc0e3c2660e267f5f3cecef47589"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=6c1afc0e3c2660e267f5f3cecef47589"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=6c1afc0e3c2660e267f5f3cecef47589"/><title data-react-helmet="true">CH4/5：Class Component 和 State System | Travel in Time.</title><meta data-react-helmet="true" name="description" content="在 Hook System 還沒有出現時，早期的 functional component 是沒辦法擁有 state，只能用來展示一些固定的內容，資料往往由父層 props 傳入、在創建的時候 data 已經被決定好了。 為什麼需要 Class Component…"/><meta data-react-helmet="true" property="og:title" content="CH4/5：Class Component 和 State System"/><meta data-react-helmet="true" property="og:description" content="在 Hook System 還沒有出現時，早期的 functional component 是沒辦法擁有 state，只能用來展示一些固定的內容，資料往往由父層 props 傳入、在創建的時候 data 已經被決定好了。 為什麼需要 Class Component…"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:creator" content="Zoe Yu"/><meta data-react-helmet="true" name="twitter:title" content="CH4/5：Class Component 和 State System"/><meta data-react-helmet="true" name="twitter:description" content="在 Hook System 還沒有出現時，早期的 functional component 是沒辦法擁有 state，只能用來展示一些固定的內容，資料往往由父層 props 傳入、在創建的時候 data 已經被決定好了。 為什麼需要 Class Component…"/><style data-styled="" data-styled-version="5.2.3">.htfJiN{padding:8px 24px;margin-right:16px;font-size:12px;margin-bottom:16px;font-weight:500;-webkit-letter-spacing:.5px;-moz-letter-spacing:.5px;-ms-letter-spacing:.5px;letter-spacing:.5px;line-height:24px;color:#181818;border:1px solid #ECECEC;border-radius:4px;}/*!sc*/
 .htfJiN:hover{color:#C5322E;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
 data-styled.g29[id="tag__BlogTag-ipvvgn-0"]{content:"htfJiN,"}/*!sc*/
 .hYboqo{margin:10vh 0;padding:20px;background:#F6F6F6;}/*!sc*/
 data-styled.g32[id="blog-post__CommentWrapper-sc-1hz7w8z-0"]{content:"hYboqo,"}/*!sc*/
-</style><link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC|Source+Sans+Pro:300,400,500,700&amp;display=swap" rel="stylesheet"/><link as="script" rel="preload" href="/webpack-runtime-10bb59ba0b4fbb0de2ab.js"/><link as="script" rel="preload" href="/framework-2d6b7d2e2be378715b78.js"/><link as="script" rel="preload" href="/app-7200a275e6a5a54ac58c.js"/><link as="script" rel="preload" href="/styles-e9d24b1846c7d6eb9685.js"/><link as="script" rel="preload" href="/78bde0f9cbfb3abf81d5baf6b7f31e60371328d0-caa364ff8415a13753f0.js"/><link as="script" rel="preload" href="/5c3f3ed0ca01001d335c9b0021661d159a6a78f4-f0151228293631dd083a.js"/><link as="script" rel="preload" href="/component---src-templates-blog-post-js-35971da685d3b4c7d1dd.js"/><link as="fetch" rel="preload" href="/page-data/modern-react-with-redux/CH4-5：Class Component 和 State System/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/63159454.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="site-wrapper "><header class="site-head"><div class="site-head-container"><a class="nav-burger" href="#"><div class="hamburger hamburger--collapse" aria-label="Menu" role="button" aria-controls="navigation"><div class="hamburger-box"><div class="hamburger-inner"></div></div></div></a><div class="site-head-center"><a class="site-head-logo" href="/">Travel in Time.</a></div><div class="site-head-right"><ul class="nav" role="menu"><li class="nav-elements" role="menuitem"><a href="/blog">Blog</a></li><li class="nav-elements" role="menuitem"><a href="/life">Life</a></li><li class="nav-elements" role="menuitem"><a href="/coding">Coding</a></li><li class="nav-elements" role="menuitem"><a href="/archive">Archive</a></li><li class="nav-about" role="menuitem"><a href="/about">About</a></li></ul></div></div></header><main id="site-main" class="site-main"><div id="swup" class="transition-fade"><article class="post-content no-image"><header class="post-content-header"><h1 class="post-content-title">CH4/5：Class Component 和 State System</h1><div><h5 class="post-content-date">Jun 15, 2021</h5><a class="post-content-category" href="/category/modern-react-with-redux">Modern React with Redux</a></div></header><div class="post-content-list"><ul>
-<li>
-<p><a href="/modern-react-with-redux/CH4-5%EF%BC%9AClass%20Component%20%E5%92%8C%20State%20System/#class-component">Class Component</a></p>
-<ul>
-<li><a href="/modern-react-with-redux/CH4-5%EF%BC%9AClass%20Component%20%E5%92%8C%20State%20System/#%E7%82%BA%E4%BB%80%E9%BA%BC%E9%9C%80%E8%A6%81%E5%AE%83%EF%BC%9F">為什麼需要它？</a></li>
-<li><a href="/modern-react-with-redux/CH4-5%EF%BC%9AClass%20Component%20%E5%92%8C%20State%20System/#%E5%85%A9%E8%80%85%E5%B7%AE%E7%95%B0">兩者差異</a></li>
-</ul>
-</li>
-<li>
-<p><a href="/modern-react-with-redux/CH4-5%EF%BC%9AClass%20Component%20%E5%92%8C%20State%20System/#react-state-system">React State System</a></p>
-<ul>
-<li><a href="/modern-react-with-redux/CH4-5%EF%BC%9AClass%20Component%20%E5%92%8C%20State%20System/#%E5%88%9D%E5%A7%8B%E5%8C%96-state">初始化 state</a></li>
-<li><a href="/modern-react-with-redux/CH4-5%EF%BC%9AClass%20Component%20%E5%92%8C%20State%20System/#%E6%9B%B4%E6%96%B0-state">更新 state</a></li>
-</ul>
-</li>
-</ul></div><div class="post-content-body"><h4 id="Class-Component" style="position:relative;">Class Component<a href="#Class-Component" aria-label="Class Component permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
-<p>在 Hook System 還沒有出現時，早期的 functional component 是沒辦法擁有 state，只能用來展示一些固定的內容，資料往往由父層 props 傳入、在創建的時候 data 已經被決定好了。</p>
+</style><link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC|Source+Sans+Pro:300,400,500,700&amp;display=swap" rel="stylesheet"/><link as="script" rel="preload" href="/webpack-runtime-10bb59ba0b4fbb0de2ab.js"/><link as="script" rel="preload" href="/framework-2d6b7d2e2be378715b78.js"/><link as="script" rel="preload" href="/app-7200a275e6a5a54ac58c.js"/><link as="script" rel="preload" href="/styles-e9d24b1846c7d6eb9685.js"/><link as="script" rel="preload" href="/78bde0f9cbfb3abf81d5baf6b7f31e60371328d0-caa364ff8415a13753f0.js"/><link as="script" rel="preload" href="/5c3f3ed0ca01001d335c9b0021661d159a6a78f4-f0151228293631dd083a.js"/><link as="script" rel="preload" href="/component---src-templates-blog-post-js-35971da685d3b4c7d1dd.js"/><link as="fetch" rel="preload" href="/page-data/modern-react-with-redux/CH4-5：Class Component 和 State System/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/63159454.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="site-wrapper "><header class="site-head"><div class="site-head-container"><a class="nav-burger" href="#"><div class="hamburger hamburger--collapse" aria-label="Menu" role="button" aria-controls="navigation"><div class="hamburger-box"><div class="hamburger-inner"></div></div></div></a><div class="site-head-center"><a class="site-head-logo" href="/">Travel in Time.</a></div><div class="site-head-right"><ul class="nav" role="menu"><li class="nav-elements" role="menuitem"><a href="/blog">Blog</a></li><li class="nav-elements" role="menuitem"><a href="/life">Life</a></li><li class="nav-elements" role="menuitem"><a href="/coding">Coding</a></li><li class="nav-elements" role="menuitem"><a href="/archive">Archive</a></li><li class="nav-about" role="menuitem"><a href="/about">About</a></li></ul></div></div></header><main id="site-main" class="site-main"><div id="swup" class="transition-fade"><article class="post-content no-image"><header class="post-content-header"><h1 class="post-content-title">CH4/5：Class Component 和 State System</h1><div><h5 class="post-content-date">Jun 15, 2021</h5><a class="post-content-category" href="/category/modern-react-with-redux">Modern React with Redux</a></div></header><div class="post-content-body"><p>在 Hook System 還沒有出現時，早期的 functional component 是沒辦法擁有 state，只能用來展示一些固定的內容，資料往往由父層 props 傳入、在創建的時候 data 已經被決定好了。</p>
 <br>
-<h5 id="為什麼需要它？" style="position:relative;">為什麼需要它？<a href="#%E7%82%BA%E4%BB%80%E9%BA%BC%E9%9C%80%E8%A6%81%E5%AE%83%EF%BC%9F" aria-label="為什麼需要它？ permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h5>
+<h5 id="為什麼需要-Class-Component？" style="position:relative;">為什麼需要 Class Component？<a href="#%E7%82%BA%E4%BB%80%E9%BA%BC%E9%9C%80%E8%A6%81-Class-Component%EF%BC%9F" aria-label="為什麼需要 Class Component？ permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h5>
 <p>執行 React 專案時，首先 JS file 被瀏覽器載入，這時候 App component 會被創建，裡面的程式碼一一被執行，然後才是回傳 JSX、被 ReactDOM 渲染到畫面上。</p>
 <p>如果那些程式碼是非同步的話，就得用 callback function 才能處理，但結果返回的時候，畫面往往已經渲染完畢，這時候，如何才能跟 component 溝通、去更新畫面呢？</p>
-<p>我們需要 Class Component 來做狀態管理。</p>
+<p>我們需要 class component 來做狀態管理。</p>
+<p>它不但可以像 functional component 一樣產生 JSX，還擁有生命週期方法，讓我們能在特定時間點執行程式碼，另外也具備「state system」來管理狀態，可以方便更新畫面。</p>
+<hr>
 <br>
-<h5 id="兩者差異" style="position:relative;">兩者差異<a href="#%E5%85%A9%E8%80%85%E5%B7%AE%E7%95%B0" aria-label="兩者差異 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h5>
-<p>相較於 functional component，class component 可以</p>
-<ul>
-<li>同樣產生 JSX</li>
-<li>能使用「lifecycle」生命週期方法，選擇在特定時間點執行程式碼</li>
-<li>能使用「state system」來管理狀態（state），用以更新畫面上的東西</li>
-</ul>
 <br>
 <p>在改寫 functional component 為 class component 時，有幾點要留意：</p>
 <ol>
@@ -118,7 +97,7 @@ data-styled.g32[id="blog-post__CommentWrapper-sc-1hz7w8z-0"]{content:"hYboqo,"}/
 <ul>
 <li>只有 class component 才能擁有 state（<del>這點在 React 16.8 之後被打破</del>）</li>
 <li>初學者容易把它和 props 混淆</li>
-<li>state 是一個 JS 物件，會存放和元件有關的資料</li>
+<li>state 是一個 JS 物件，會存放和元件有關的 data</li>
 <li>state 要在創建元件時就被初始化</li>
 <li>state 只能透過 <code class="language-text">setState</code> 方法更新，不能用一般 JavaScript 習慣的賦值</li>
 <li>更新 state 狀態會促使 component 重新渲染 => 換句話說，想要讓畫面變動，要透過 <code class="language-text">setState</code> 方法來更新 state</li>
@@ -129,9 +108,9 @@ data-styled.g32[id="blog-post__CommentWrapper-sc-1hz7w8z-0"]{content:"hYboqo,"}/
 <p>而要做到這一點，在 JavaScript 中有一個會隨著 class 一同建立並初始化物件的特殊方法、會在進行其他事情之前先被自動調用，很適合拿來初始化 state，那就是 <strong>constructor</strong>（構造函數）。</p>
 <br>
 <blockquote>
-<p><strong>constructor function 構造函數</strong></p>
+<p><strong>constructor 構造函數</strong></p>
 </blockquote>
-<p>參考「 <a href="https://overreacted.io/zh-hant/why-do-we-write-super-props/">為什麼我們要寫 super(props) ？</a>」，當你呼叫 constructor 建構子後、參數帶入父層傳遞的 props，JavaScript 規定必須先呼叫 super function，才能使用 <code class="language-text">this</code>。</p>
+<p>參考「 <a href="https://overreacted.io/zh-hant/why-do-we-write-super-props/">為什麼我們要寫 super(props) </a>」，當你呼叫 constructor 建構子後、參數帶入父層傳遞的 props，JavaScript 規定必須先呼叫 super function，才能使用 <code class="language-text">this</code>。</p>
 <p>原因是，我們現在是借用 <code class="language-text">React.Component</code> 的方法，當我們在 App 裡面呼叫 constructor 時，實際上正在覆蓋掉 <code class="language-text">React.Component</code> 原本的 constructor 設置，為了要確保那些設置可以被正常使用，才會呼叫 super => 指示它去參照父類別的 constructor。</p>
 <pre class="grvsc-container visual-studio-dark" data-language="javascript" data-index="1"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">super</span><span class="mtk1">(props)  </span><span class="mtk3">// 是對父類構造函數的引用</span></span></span></code></pre>
 <p>在 super 被呼叫前，JavaScript 不允許我們去使用 <code class="language-text">this</code>，是為了避免遇到以下這種情況：</p>
@@ -175,11 +154,11 @@ data-styled.g32[id="blog-post__CommentWrapper-sc-1hz7w8z-0"]{content:"hYboqo,"}/
 <hr>
 <br>
 <h5 id="更新-state" style="position:relative;">更新 state<a href="#%E6%9B%B4%E6%96%B0-state" aria-label="更新 state permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h5>
-<p>一般跟渲染無關的操作，不會將程式碼寫在 <code class="language-text">render</code> 方法裡面，因為 <code class="language-text">render</code> 方法很常被呼叫，為了避免重複取得執行結果，不能將邏輯寫在這裏。</p>
-<p>這邊寫在 constructor 裡面，在 callback function 裡面更新：</p>
+<p>一般跟渲染無關的操作，不會將程式碼寫在 <code class="language-text">render</code> 方法裡面，因為 <code class="language-text">render</code> 方法很常被呼叫，為了避免重複取得執行結果，通常不會將邏輯寫在這裏。</p>
+<p>初始化的話，除了之後介紹的生命週期方法，也可以寫在 constructor 裡面：</p>
 <ul>
-<li>狀態有 lat 和 errorMessage 兩個屬性，分別在獲得不同地理位址的結果時更新</li>
-<li>不用每次更新全部屬性，它會添加或修改，但不會移除屬性，可以<strong>只針對我們要調整的值</strong></li>
+<li>假設有狀態 lat 和 errorMessage 兩個，分別會在獲得不同的結果時更新</li>
+<li>不需每次更新全部屬性，可以<strong>只針對我們要調整的值</strong>，它不會移除屬性</li>
 </ul>
 <pre class="grvsc-container visual-studio-dark" data-language="javascript" data-index="4"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">class</span><span class="mtk1"> App </span><span class="mtk4">extends</span><span class="mtk1"> React.Component {</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk4">constructor</span><span class="mtk1">(props) {</span></span></span>
@@ -207,18 +186,15 @@ data-styled.g32[id="blog-post__CommentWrapper-sc-1hz7w8z-0"]{content:"hYboqo,"}/
 <p>總結，目前流程如下</p>
 <ol>
 <li>瀏覽器加載 XML 文件，請求 JavaScript file 然後執行</li>
-<li>創建 App 的實例</li>
-<li>在 Class Component 裡面第一個被呼叫的是「constructor」構造函數，呼叫 super 引用父類別設定</li>
-<li>初始化狀態，創建 state object 並得指配給 <code class="language-text">this.state</code> 這個特殊的變數</li>
-<li>render 方法，回傳 JSX</li>
-<li>如果執行完一些程式碼需要更新狀態，得呼叫 <code class="language-text">this.setState</code> 這個內建的特殊函式，傳入新的狀態</li>
-<li>呼叫 <code class="language-text">this.setState</code> 後，React 會自動知道我們已經更新屬性，幾乎立即重新渲染元件</li>
+<li>創建 App</li>
+<li>class component 先調用的是 <code class="language-text">constructor</code> 函數，呼叫 super 引用 <code class="language-text">React.Component</code> 設定</li>
+<li>初始化狀態，創建 state object 並指配給 <code class="language-text">this.state</code> 這個特殊的變數</li>
+<li>執行 render 方法，回傳 JSX</li>
+<li>如果需要更新狀態，得呼叫 <code class="language-text">this.setState</code> 這個內建的特殊函式，傳入新的狀態</li>
+<li>在 <code class="language-text">this.setState</code> 後，React 自動會知道我們已經更新屬性，立即重新渲染元件</li>
 </ol>
 <br>
-<p>其他參考資料：</p>
-<ul>
-<li><a href="https://www.digitalocean.com/community/tutorials/react-constructors-with-react-components">Understanding Constructors with React Components</a></li>
-</ul>
+<p>其他參考資料： <a href="https://www.digitalocean.com/community/tutorials/react-constructors-with-react-components">Understanding Constructors with React Components</a></p>
 <style class="grvsc-styles">
   .grvsc-container {
     overflow: auto;

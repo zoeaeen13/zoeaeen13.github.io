@@ -91,16 +91,16 @@ data-styled.g32[id="blog-post__CommentWrapper-sc-1hz7w8z-0"]{content:"hYboqo,"}/
 </ul>
 <p>渲染器，負責處理 JSX，將其轉化成 HTML 展示，和瀏覽器及真實的 DOM 互動</p>
 <p>最早在 v0.14 之前是沒有 ReactDOM 的，所有功能都包含在 React library 裡面，而分開的原因很簡單，因為後來出現了 ReactNative，於是兩者拆分出來，React library 只包含通用的核心部分，跟 Web DOM 有關的操作就被移到了 ReactDOM library 中</p>
-<p><img src="https://i.imgur.com/6A9HxeZ.jpg"></p>
-<p><code class="language-text">ReactDOM.render</code> 裡面的參數：</p>
+<blockquote>
+<p><code class="language-text">ReactDOM.render</code> 裡面的參數</p>
+</blockquote>
 <ul>
 <li>第一個參數，是調用組件函數（通常是 <code class="language-text">&lt;App /&gt;</code>）、拿到 JSX</li>
 <li>第二個參數，決定在 index.html 裡的哪個元素來展現內容</li>
 </ul>
+<p><img src="https://i.imgur.com/6A9HxeZ.jpg"></p>
 <hr>
 <h4 id="建立專案" style="position:relative;">建立專案<a href="#%E5%BB%BA%E7%AB%8B%E5%B0%88%E6%A1%88" aria-label="建立專案 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
-<pre class="grvsc-container visual-studio-dark" data-language="html" data-index="1"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">npm install -g create-react-app</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">create-react-app [my-project-name]</span></span></span></code></pre>
 <ul>
 <li><code class="language-text">npm</code>：套件管理器，可以將大量的開源專案安裝到自己的專案上</li>
 <li><code class="language-text">install</code>：sub command</li>
@@ -108,26 +108,29 @@ data-styled.g32[id="blog-post__CommentWrapper-sc-1hz7w8z-0"]{content:"hYboqo,"}/
 <li><code class="language-text">create-react-app</code>：套件名稱，用來產生新的 React 專案</li>
 </ul>
 <p><img src="https://i.imgur.com/jA6uaOk.png"></p>
+<pre class="grvsc-container visual-studio-dark" data-language="html" data-index="1"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">npm install -g create-react-app</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">create-react-app [my-project-name]</span></span></span></code></pre>
 <p>官方文件是提供以下指令來建立專案，不過可能因 node 過舊而出現版本問題</p>
 <pre class="grvsc-container visual-studio-dark" data-language="javascript" data-index="2"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">npx create-react-app [my-project-name]</span></span></span></code></pre>
+<hr>
+<br>
+<br>
 <blockquote>
 <p>初始檔案結構</p>
 </blockquote>
-<ul>
-<li><code class="language-text">/src</code> 主要開發的地方，一開始會有一些預設檔案，可以都刪掉</li>
-<li><code class="language-text">/public</code> 放置靜態檔案 static files</li>
-</ul>
+<p><code class="language-text">/src</code> 主要開發的地方，開始的預設檔案可以刪掉</p>
+<p><code class="language-text">/public</code> 放置靜態檔案 static files</p>
 <br/>
 <blockquote>
 <p>基本的 index.js</p>
 </blockquote>
 <ol>
-<li>引入需要的 libraries</li>
+<li>引入需要的 library</li>
 <li>
 <p>建立 component 組件</p>
 <ul>
 <li>可以是 Class 或 Function，他們目的都是產出 JSX</li>
-<li>次要功能是進行事件處理</li>
+<li>進行事件處理</li>
 </ul>
 </li>
 <li>將其渲染到畫面上，使用 <code class="language-text">ReactDOM.render()</code> 方法</li>

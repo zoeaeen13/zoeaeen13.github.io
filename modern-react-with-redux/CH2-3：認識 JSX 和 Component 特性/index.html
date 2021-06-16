@@ -64,13 +64,19 @@ data-styled.g32[id="blog-post__CommentWrapper-sc-1hz7w8z-0"]{content:"hYboqo,"}/
 <li><a href="/modern-react-with-redux/CH2-3%EF%BC%9A%E8%AA%8D%E8%AD%98%20JSX%20%E5%92%8C%20Component%20%E7%89%B9%E6%80%A7/#component-%E7%9A%84%E4%B8%89%E5%80%8B%E7%89%B9%E6%80%A7">component 的三個特性</a></li>
 </ul></div><div class="post-content-body"><h4 id="認識-JSX" style="position:relative;">認識 JSX<a href="#%E8%AA%8D%E8%AD%98-JSX" aria-label="認識 JSX permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
 <p>前面說過元件會回傳 JSX，JSX 不是新的語言，它只是 React 提供的語法糖，開發 React 並不一定要使用 JSX，它只是讓我們能更方便、快速建立 HTML 內容（並非真的在撰寫 HTML），瀏覽器是無法辨識 JSX 的，所以需要經由 babel 轉換成正常的 JavaScript 來執行。</p>
-<p>用 <a href="https://babeljs.io/">https://babeljs.io/</a> 進行測試，可以發現這段 JSX 會被 babel 變成下面的形式：</p>
-<pre class="grvsc-container visual-studio-dark" data-language="javascript" data-index="0"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">// JSX</span></span></span>
+<p>用 <a href="https://babeljs.io/">https://babeljs.io/</a> 進行測試，可以發現這段 JSX 會被 babel 變成下面的形式</p>
+<p><strong>呼叫 React.createElement 方法</strong></p>
+<ol>
+<li>第一個參數，要創建的元素類型，例如 div、input、img 等等</li>
+<li>第二個參數，object，放入該元素的屬性</li>
+<li>第三個參數，元素裡面要放的內容 text</li>
+</ol>
+<pre class="grvsc-container visual-studio-dark" data-language="javascript" data-index="0"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">// before</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">const</span><span class="mtk1"> Button = () </span><span class="mtk4">=&gt;</span><span class="mtk1"> {</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">	</span><span class="mtk4">return</span><span class="mtk1"> </span><span class="mtk13">&lt;</span><span class="mtk4">button</span><span class="mtk1"> </span><span class="mtk8">type</span><span class="mtk1">=</span><span class="mtk11">&quot;button&quot;</span><span class="mtk13">&gt;</span><span class="mtk1">submit</span><span class="mtk13">&lt;/</span><span class="mtk4">button</span><span class="mtk13">&gt;</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">// babel -&gt; convert to JavaScript</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">// after babel</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">const</span><span class="mtk1"> Button = () </span><span class="mtk4">=&gt;</span><span class="mtk1"> {</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk4">return</span><span class="mtk1"> React.createElement(</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk11">&quot;button&quot;</span><span class="mtk1">,            </span><span class="mtk3">// the type of element</span></span></span>
@@ -78,30 +84,26 @@ data-styled.g32[id="blog-post__CommentWrapper-sc-1hz7w8z-0"]{content:"hYboqo,"}/
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk11">&quot;submit&quot;</span><span class="mtk1">             </span><span class="mtk3">// the text to show inside the element</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  )</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span></code></pre>
-<p><strong>呼叫 React.createElement 方法</strong></p>
-<ol>
-<li>第一個參數，要創建的元素類型，例如 div、input、img 等等</li>
-<li>第二個參數，object，放入該元素的屬性</li>
-<li>第三個參數，元素裡面要放的內容 text</li>
-</ol>
 <hr>
 <br />
 <h4 id="和-html-的不同" style="position:relative;">和 html 的不同<a href="#%E5%92%8C-html-%E7%9A%84%E4%B8%8D%E5%90%8C" aria-label="和 html 的不同 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
 <ol>
 <li>
-<p><strong>JSX 添加樣式的方式</strong></p>
+<p><strong>添加樣式的方式</strong></p>
 <ul>
-<li>要寫 inline-style 得使用 <code class="language-text">{{}}</code>，外層括號表示要在 JSX 中「引入 JavsScript 變量」</li>
+<li>要寫 inline-style 得使用 <code class="language-text">{{}}</code>，外層括號表示要在 JSX 引入 JavaScript 變量</li>
 <li>內層括號，放 JavsScript 物件</li>
-<li>JSX 內的標籤、名稱等一般字串是用雙引號，但對於非 JSX 的變數建議使用單引號</li>
+<li>JSX 內的標籤、名稱等一般字串是用雙引號，對於非 JSX 的變數建議使用單引號</li>
 </ul>
 </li>
 </ol>
 <p><img src="https://i.imgur.com/LinjW1d.png"></p>
 <ol start="2">
-<li><strong>不要使用 class 或某些屬性名稱</strong></li>
+<li><strong>不要使用 class、for 或某些屬性名稱</strong></li>
 </ol>
-<p>React 會查看你給元素的一些屬性，偶爾會在 devtool 看到 <code class="language-text">invalid property</code> 的提醒字樣，這是因為那些字在 JavaScript 中屬於 keyword，像是 class、for 等等，為了避免衝突所以一律使用 <code class="language-text">className</code>、<code class="language-text">htmlFor</code> 及其他 React 建議的文字代替</p>
+<p>React 會查看元素的一些屬性</p>
+<p>偶爾你可能會在 devTool 看到 <code class="language-text">invalid property</code> 的提醒字樣，這是因為那些字在 JavaScript 中屬於 keyword，像是 class、for 等等，為了避免衝突所以一律使用 <code class="language-text">className</code>、<code class="language-text">htmlFor</code> 及其他 React 建議的文字代替</p>
+<br>
 <ol start="3">
 <li><strong>可以引用 JavsScript 的變量，用 <code class="language-text">{}</code> 包裹起來</strong></li>
 </ol>
@@ -127,19 +129,20 @@ data-styled.g32[id="blog-post__CommentWrapper-sc-1hz7w8z-0"]{content:"hYboqo,"}/
 <h6 id="Component-Nesting" style="position:relative;">Component Nesting<a href="#Component-Nesting" aria-label="Component Nesting permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h6>
 </blockquote>
 <ol>
-<li>找出 HTML 架構重複相似的部分</li>
-<li>將重複的 JSX 拆出來變成一個元件，給予一個好的、有意義的名字</li>
+<li>將 JSX 拆出來變成一個元件，給予一個好的、有意義的名字</li>
 <li>
 <p>在 <code class="language-text">./component</code> 資料夾底下新建一個檔案來寫，檔名和元件名稱一樣（都以大寫開頭）</p>
 <ul>
 <li>寫好元件，把它 export 出去</li>
-<li>在 import 時，後面不需要加上 .js 或其他副檔名，webpack 會自動幫你處理這塊
+<li>在 import 時，後面不需要加上 .js 或副檔名，webpack 會自動幫你處理這塊
 <img src="https://i.imgur.com/eWBbo67.png"></li>
-<li>雖為變量，這邊是特例、不用另外寫 <code class="language-text">{}</code>，在一個元件裡面放另一元件時只需要使用 JSX tag 包起來</li>
+<li>不用另外寫 <code class="language-text">{}</code>，在一個元件裡面放另一元件時只需要使用 JSX tag 包起來</li>
 </ul>
 </li>
 </ol>
 <p><img src="https://i.imgur.com/skLnC5o.png"></p>
+<hr>
+<br>
 <blockquote>
 <h6 id="Component-Configurable" style="position:relative;">Component Configurable<a href="#Component-Configurable" aria-label="Component Configurable permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h6>
 </blockquote>
@@ -160,6 +163,7 @@ data-styled.g32[id="blog-post__CommentWrapper-sc-1hz7w8z-0"]{content:"hYboqo,"}/
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk13">&lt;/</span><span class="mtk4">div</span><span class="mtk13">&gt;</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  )</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span></code></pre>
+<br>
 <ol start="2">
 <li>子元件接收父層的東西</li>
 </ol>
@@ -173,6 +177,7 @@ data-styled.g32[id="blog-post__CommentWrapper-sc-1hz7w8z-0"]{content:"hYboqo,"}/
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  )</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span></code></pre>
 <hr>
+<br>
 <blockquote>
 <h6 id="Component-Reusable" style="position:relative;">Component Reusable<a href="#Component-Reusable" aria-label="Component Reusable permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h6>
 </blockquote>
@@ -197,14 +202,11 @@ data-styled.g32[id="blog-post__CommentWrapper-sc-1hz7w8z-0"]{content:"hYboqo,"}/
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk8">author</span><span class="mtk1">=</span><span class="mtk11">&quot;Sam&quot;</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk8">content</span><span class="mtk1">=</span><span class="mtk11">&quot;Nice blog post!&quot;</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk8">avatar</span><span class="mtk1">=</span><span class="mtk4">{</span><span class="mtk1">faker.image.avatar()</span><span class="mtk4">}</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk13">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk13">/&gt;</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk13">&lt;/</span><span class="mtk4">ApprovalCard</span><span class="mtk13">&gt;</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  )</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span></code></pre>
-<p>參考資料：</p>
-<ul>
-<li><a href="https://www.cnblogs.com/chenwenhao/p/12548263.html#_label0">React 和 ReactDOM 的區別</a></li>
-</ul>
+<p>其他參考資料：<a href="https://www.cnblogs.com/chenwenhao/p/12548263.html#_label0">React 和 ReactDOM 的區別</a></p>
 <style class="grvsc-styles">
   .grvsc-container {
     overflow: auto;
