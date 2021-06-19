@@ -1,4 +1,224 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Travel in Time.]]></title><description><![CDATA[Travel in Time.]]></description><link>https://zoeaeen13.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 16 Jun 2021 14:52:01 GMT</lastBuildDate><item><title><![CDATA[CH6：討論生命週期]]></title><link>https://zoeaeen13.github.io/modern-react-with-redux/CH6：討論生命週期/</link><guid isPermaLink="false">https://zoeaeen13.github.io/modern-react-with-redux/CH6：討論生命週期/</guid><pubDate>Wed, 16 Jun 2021 00:00:00 GMT</pubDate><content:encoded>&lt;style class=&quot;grvsc-styles&quot;&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Travel in Time.]]></title><description><![CDATA[Travel in Time.]]></description><link>https://zoeaeen13.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 19 Jun 2021 12:55:55 GMT</lastBuildDate><item><title><![CDATA[一些 React 元件設定與事件綁定的技巧]]></title><description><![CDATA[第六章談到 class component 有生命週期，即繼承 可借用的方法，除了  之外，其他可以自行決定是否要實作，將會在某些特定時機點被 React 觸發。 因為之前已經寫過 React：認識生命週期方法及觸發時間點，這邊會就同樣的部分略過，以紀錄 CH6、CH…]]></description><link>https://zoeaeen13.github.io/modern-react-with-redux/一些元件設定與事件綁定的技巧/</link><guid isPermaLink="false">https://zoeaeen13.github.io/modern-react-with-redux/一些元件設定與事件綁定的技巧/</guid><pubDate>Sat, 19 Jun 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;第六章談到 class component 有生命週期，即繼承&lt;code class=&quot;language-text&quot;&gt;React.Component&lt;/code&gt; 可借用的方法，除了 &lt;code class=&quot;language-text&quot;&gt;render&lt;/code&gt; 之外，其他可以自行決定是否要實作，將會在某些特定時機點被 React 觸發。&lt;/p&gt;
+&lt;p&gt;因為之前已經寫過 &lt;a href=&quot;../../Lidemy/React%20Lifecycle%EF%BC%9A%E8%AA%8D%E8%AD%98%E7%94%9F%E5%91%BD%E9%80%B1%E6%9C%9F%E6%96%B9%E6%B3%95%E5%8F%8A%E8%A7%B8%E7%99%BC%E6%99%82%E9%96%93%E9%BB%9E&quot;&gt;React：認識生命週期方法及觸發時間點&lt;/a&gt;，這邊會就同樣的部分略過，以紀錄 CH6、CH7 中學到的實作知識為主。&lt;/p&gt;
+&lt;hr&gt;
+&lt;br&gt;
+&lt;h5 id=&quot;不在-constructor-載入資料&quot; style=&quot;position:relative;&quot;&gt;不在 constructor 載入資料&lt;a href=&quot;#%E4%B8%8D%E5%9C%A8-constructor-%E8%BC%89%E5%85%A5%E8%B3%87%E6%96%99&quot; aria-label=&quot;不在 constructor 載入資料 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h5&gt;
+&lt;p&gt;在一開始練習時，將獲取用戶地理位置的程式碼寫在了 contructor 裡，但更好的方式，是讓這些獲得資料的操作放在 &lt;code class=&quot;language-text&quot;&gt;componentDidMount&lt;/code&gt; 統一管理，constructor 只用來設置初始化 state。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;componentDidMount&lt;/code&gt; 第一次渲染到畫面，設定初始 data&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/SRmgPlO.png&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;br&gt;
+&lt;h5 id=&quot;初始化狀態的另一寫法&quot; style=&quot;position:relative;&quot;&gt;初始化狀態的另一寫法&lt;a href=&quot;#%E5%88%9D%E5%A7%8B%E5%8C%96%E7%8B%80%E6%85%8B%E7%9A%84%E5%8F%A6%E4%B8%80%E5%AF%AB%E6%B3%95&quot; aria-label=&quot;初始化狀態的另一寫法 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h5&gt;
+&lt;p&gt;state 是一個 Javascript 物件，為 class component 管理狀態的地方，前面說過要先實作 constructor 並呼叫 &lt;code class=&quot;language-text&quot;&gt;super()&lt;/code&gt;，不然沒辦法使用 this 變數及初始化 &lt;code class=&quot;language-text&quot;&gt;this.state&lt;/code&gt;，不過其實有另一種簡單的方式可以設定 state。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;直接寫&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;javascript&quot; data-index=&quot;0&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; App &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;extends&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; React.Component {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  state = { lat: &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;, errorMessage: &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  render() {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; (&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;      &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;Latitude:&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    )&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;不需要寫 constructor，相當於在 constructor 初始化 this.state&lt;/li&gt;
+&lt;li&gt;用 create react app 建立，已經引用了 &lt;code class=&quot;language-text&quot;&gt;@babel/plugin-proposal-class-properties&lt;/code&gt; 套件&lt;/li&gt;
+&lt;li&gt;因為 babel 自動幫我們實作 constructor，不必再自己定義構造函數、呼叫 super 及處理 props&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;br&gt;
+&lt;h5 id=&quot;設定-default-props&quot; style=&quot;position:relative;&quot;&gt;設定 default props&lt;a href=&quot;#%E8%A8%AD%E5%AE%9A-default-props&quot; aria-label=&quot;設定 default props permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h5&gt;
+&lt;p&gt;應該滿常在程式碼中看到這種寫法&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;javascript&quot; data-index=&quot;1&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;className&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;loader&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;props.message || &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;#39;Loading...&amp;#39;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;課程介紹除了用 &lt;code class=&quot;language-text&quot;&gt;{props.XX || default value}&lt;/code&gt; 這類做法，React 其實有為 component 提供 &lt;strong&gt;defaultProps&lt;/strong&gt; 屬性，能使用它來為 props 添加預設值。&lt;/p&gt;
+&lt;p&gt;當父元件如果沒有傳對應的 props 進來，會自動帶入設定預設的屬性值，不管是 functional 或 class component 都可以加上。&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;javascript&quot; data-index=&quot;2&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;const&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; Spinner = props &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; (&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;      &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;className&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;loader&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;props.message&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  )&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;Spinner.defaultProps = {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  message: &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;#39;Loading...&amp;#39;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;br&gt;
+&lt;h5 id=&quot;自行設定-renderbody&quot; style=&quot;position:relative;&quot;&gt;自行設定 renderbody&lt;a href=&quot;#%E8%87%AA%E8%A1%8C%E8%A8%AD%E5%AE%9A-renderbody&quot; aria-label=&quot;自行設定 renderbody permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h5&gt;
+&lt;p&gt;不是什麼技巧，只是增進程式碼的可讀性。&lt;/p&gt;
+&lt;p&gt;假設今天要渲染的東西設有多重條件、或判斷多，這種情況下不要把邏輯部份摻在 return 裡面，寫成一個 function，渲染時再呼叫。&lt;/p&gt;
+&lt;p&gt;舉例，我有一段 JSX，是根據 page 來決定顯示，以往習慣用三元運算子或 &lt;code class=&quot;language-text&quot;&gt;&amp;amp;&amp;amp;&lt;/code&gt; 進行判斷：&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;javascript&quot; data-index=&quot;3&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk3&quot;&gt;// 按照 currentTab.page 的值渲染對應頁面&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; (&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;Tabs&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;tabs&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;tabs&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;currentTab.index&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;      &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;currentTab.page === SERVICE_PAGE.CONTENT &amp;amp;&amp;amp; &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;ServiceContent&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;/&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;      &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;currentTab.page === SERVICE_PAGE.RULES &amp;amp;&amp;amp; &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;Rules&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;/&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;      &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;currentTab.page === SERVICE_PAGE.MY_PACKAGE &amp;amp;&amp;amp; &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;MyPackage&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;/&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;不過，其實能拉出來寫成 function，讓 currentTab.page 以參數傳入，讓整體邏輯拉出來，不會都放在 return 判斷&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;javascript&quot; data-index=&quot;4&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;renderContent = (page) &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;switch&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; (page) {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;case&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; SERVICE_PAGE.CONTENT:&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;      &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;ServiceContent&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;case&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; SERVICE_PAGE.RULES:&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;      &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;Rules&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;case&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; SERVICE_PAGE.MY_PACKAGE:&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;      &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;MyPackage&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;: &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;      &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&amp;gt;&amp;lt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk3&quot;&gt;// 🔶 清爽許多&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;render() {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; (&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;      &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;Tabs&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;tabs&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;tabs&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;currentTab.index&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;      &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;renderContent(currentTab.page)&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  )&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;br&gt;
+&lt;h5 id=&quot;畫面應該由-React-來控制&quot; style=&quot;position:relative;&quot;&gt;畫面應該由 React 來控制&lt;a href=&quot;#%E7%95%AB%E9%9D%A2%E6%87%89%E8%A9%B2%E7%94%B1-React-%E4%BE%86%E6%8E%A7%E5%88%B6&quot; aria-label=&quot;畫面應該由 React 來控制 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h5&gt;
+&lt;p&gt;在 React 裡，元件有 controlled 和 uncontrolled 區別，前者透過 state 來保存資料、利用 setState 設定值，後者則是沒有綁定 state，像傳統作法由 DOM 本身處理。&lt;/p&gt;
+&lt;p&gt;以程式碼為例，input 元素就是 uncontrolled 的元件&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;javascript&quot; data-index=&quot;5&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; SearchBar &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;extends&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; React.Component {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  render() {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; (&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;      &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;form&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;Search&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;text&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;      &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;form&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    )&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;它的值是由 HTML 元素內部管理和存放，當今天我們想在 React 上知道現在的 search value 是多少，不得不透過其他方式到 DOM 上面找值，因為並不存放在 React 中。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/vrzcY79.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;uncontrolled 看著簡單，然而當你需要控制的 DOM 數量一多起來，手動操作的量就變得繁重， 而 controlled component 是由資料本身來更動畫面，遵循 React「單向資料流」的原則，所以才需要使用到 state，因為這關係了&lt;strong&gt;資料是否由 React 所控制&lt;/strong&gt;。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;而要怎麼讓 input 的值被 React 所管理，就要進行事件綁定來監聽。&lt;/p&gt;
+&lt;p&gt;不同事件，會連結不同的屬性名稱，像是 onChange、onClick、onSubmit 等等，其實跟我們原本在寫 HTML 元素很像，就是要元素本身擁有這個事件才能設定，像 div 就不會有 submit 事件。&lt;/p&gt;
+&lt;p&gt;監聽 input 的 onChange 事件，從參數 event 可以拿到用戶剛剛鍵入的文字，把它存入 state，並設定 input 永遠顯示 state 內的資料，這樣一來就可以做到資料被 React 所管理。&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;javascript&quot; data-index=&quot;6&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; SearchBar &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;extends&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; React.Component {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  state = { term: &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  render() {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; (&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;      &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;form&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;Search&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;input&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;          &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;text&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;          &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;{this&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.state.term&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;// 顯示 state 的值&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;          &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;onChange&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;(e) &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.setState({ term: e.target.value })&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;// 變動就改 state&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;      &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;form&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    )&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;br&gt;
+&lt;h5 id=&quot;處理-class-component-中的-this-問題&quot; style=&quot;position:relative;&quot;&gt;處理 class component 中的 &lt;code class=&quot;language-text&quot;&gt;this&lt;/code&gt; 問題&lt;a href=&quot;#%E8%99%95%E7%90%86-class-component-%E4%B8%AD%E7%9A%84-this-%E5%95%8F%E9%A1%8C&quot; aria-label=&quot;處理 class component 中的 this 問題 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h5&gt;
+&lt;p&gt;事件綁定時，如果操作很多會將 callback function 拉出來寫，通常分配給事件的回調函式會以命名 on 或 handle 開頭，例如 &lt;code class=&quot;language-text&quot;&gt;onInputChange&lt;/code&gt; 或 &lt;code class=&quot;language-text&quot;&gt;handleInputChange&lt;/code&gt;，其實就跟原生 JS 寫法事件綁定寫法一樣。&lt;/p&gt;
+&lt;p&gt;但是，卻遇到以下的問題？&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;html&quot; data-index=&quot;7&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;Cannot read property &amp;#39;state&amp;#39; of undefined&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;報錯了！問題就出在 this 上？&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;javascript&quot; data-index=&quot;8&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; SearchBar &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;extends&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; React.Component {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  state = { term: &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  onFormSubmit(e) {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    e.preventDefault()&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    console.log(&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.state.term) &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;// 🔴 Cannot read property &amp;#39;state&amp;#39; of undefined&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  render() {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; (&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;      &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;form&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;onSubmit&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;{this&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.onFormSubmit&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;Search&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;input&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;          &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;text&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;          &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;{this&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.state.term&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;          &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;onChange&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;(e) &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.setState({ term: e.target.value })&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;      &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;form&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    )&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在 onFormSubmit 函式裡面用到了 &lt;code class=&quot;language-text&quot;&gt;this&lt;/code&gt;，原本是想要引用 searchBar 類別，但這時的 &lt;code class=&quot;language-text&quot;&gt;this.state&lt;/code&gt; 印出來卻是 undefined？&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;在&lt;a href=&quot;../../%5B%E7%AD%86%E8%A8%98%5D%20%E5%85%8B%E6%9C%8D%20JS%20%E7%9A%84%E5%A5%87%E6%80%AA%E9%83%A8%E5%88%86/&quot;&gt;克服 JavaScript 的奇怪部分&lt;/a&gt;中有提到，&lt;code class=&quot;language-text&quot;&gt;this&lt;/code&gt; 的值取決於函式位置及函式被呼叫的方式，一般情況都是指向 window，當函式是連結到物件的方法時（即&lt;strong&gt;作為物件的方法被呼叫&lt;/strong&gt;），this 才會指向物件本身。&lt;/p&gt;
+&lt;p&gt;有三種方式可以解決：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在 constructor 設定，以 bind 方法綁好 this 的值&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;javascript&quot; data-index=&quot;9&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; SearchBar &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;extends&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; React.Component {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;(props) {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;(props)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.state = { term: &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.onFormSubmit = &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.onFormSubmit.bind(&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;) &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;// ✅ it works!&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  onFormSubmit(e) {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    e.preventDefault()&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    console.log(&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.state.term)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;// ...&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;寫成箭頭函式（ES6 之後的功能）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;使用箭頭函式會自動將 this 的值確認指向&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;javascript&quot; data-index=&quot;10&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; SearchBar &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;extends&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; React.Component {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  state = { term: &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  onFormSubmit = (e) &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; {  &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;// ✅ this 指向 SearchBar&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    e.preventDefault()&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    console.log(&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.state.term)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;// ...&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;在 callback function 裡面使用箭頭函式&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;javascript&quot; data-index=&quot;11&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; SearchBar &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;extends&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; React.Component {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  state = { term: &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  onFormSubmit = (e) &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    e.preventDefault()&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    console.log(&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.state.term)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  render() {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; ( &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;// ✅ 確保 onFormSubmit 的 this 指向，作爲 this(SearchBar) 被呼叫&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;      &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;form&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;onSubmit&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;() &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.onFormSubmit&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;Search&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;input&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;          &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;text&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;          &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;{this&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.state.term&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;          &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;onChange&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;(e) &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.setState({ term: e.target.value })&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;      &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;form&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    )&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;不過第三種問題比較大，每次渲染 searchBar 時都會創建不同的 callback function，如果這個 callback function 會作為 props 傳入更下層的元件，就會造成不必要的重複渲染，建議用第二種方式來綁定，避免效能問題。&lt;/p&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;參考資料&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;%5Bhttps://%5D(https://ithelp.ithome.com.tw/articles/10235204)&quot;&gt;[Day 09] React State &amp;#x26; props&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;%5Bhttps://%5D(https://zhuanlan.zhihu.com/p/278449050)&quot;&gt;React 事件處理中的this的指向問題&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://zh-hans.reactjs.org/docs/handling-events.html&quot;&gt;React 官方文件 - 事件處理&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;style class=&quot;grvsc-styles&quot;&gt;
   .grvsc-container {
     overflow: auto;
     position: relative;
@@ -87,7 +307,21 @@
     opacity: 0.7;
   }
   
-&lt;/style&gt;</content:encoded></item><item><title><![CDATA[CH4/5：Class Component 和 State System]]></title><description><![CDATA[在 Hook System 還沒有出現時，早期的 functional component 是沒辦法擁有 state，只能用來展示一些固定的內容，資料往往由父層 props 傳入、在創建的時候 data 已經被決定好了。 為什麼需要 Class Component…]]></description><link>https://zoeaeen13.github.io/modern-react-with-redux/CH4-5：Class Component 和 State System/</link><guid isPermaLink="false">https://zoeaeen13.github.io/modern-react-with-redux/CH4-5：Class Component 和 State System/</guid><pubDate>Tue, 15 Jun 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;在 Hook System 還沒有出現時，早期的 functional component 是沒辦法擁有 state，只能用來展示一些固定的內容，資料往往由父層 props 傳入、在創建的時候 data 已經被決定好了。&lt;/p&gt;
+  .visual-studio-dark {
+    background-color: #1E1E1E;
+    color: #D4D4D4;
+  }
+  .visual-studio-dark .mtk4 { color: #569CD6; }
+  .visual-studio-dark .mtk1 { color: #D4D4D4; }
+  .visual-studio-dark .mtk11 { color: #CE9178; }
+  .visual-studio-dark .mtk13 { color: #808080; }
+  .visual-studio-dark .mtk8 { color: #9CDCFE; }
+  .visual-studio-dark .mtk3 { color: #6A9955; }
+  .visual-studio-dark .grvsc-line-highlighted::before {
+    background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
+    box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
+  }
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[Class Component 和 State System]]></title><description><![CDATA[在 Hook System 還沒有出現時，早期的 functional component 是沒辦法擁有 state，只能用來展示一些固定的內容，資料往往由父層 props 傳入、在創建的時候 data 已經被決定好了。 為什麼需要 Class Component…]]></description><link>https://zoeaeen13.github.io/modern-react-with-redux/Class Component 和 State System/</link><guid isPermaLink="false">https://zoeaeen13.github.io/modern-react-with-redux/Class Component 和 State System/</guid><pubDate>Tue, 15 Jun 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;在 Hook System 還沒有出現時，早期的 functional component 是沒辦法擁有 state，只能用來展示一些固定的內容，資料往往由父層 props 傳入、在創建的時候 data 已經被決定好了。&lt;/p&gt;
 &lt;br&gt;
 &lt;h5 id=&quot;為什麼需要-Class-Component？&quot; style=&quot;position:relative;&quot;&gt;為什麼需要 Class Component？&lt;a href=&quot;#%E7%82%BA%E4%BB%80%E9%BA%BC%E9%9C%80%E8%A6%81-Class-Component%EF%BC%9F&quot; aria-label=&quot;為什麼需要 Class Component？ permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h5&gt;
 &lt;p&gt;執行 React 專案時，首先 JS file 被瀏覽器載入，這時候 App component 會被創建，裡面的程式碼一一被執行，然後才是回傳 JSX、被 ReactDOM 渲染到畫面上。&lt;/p&gt;
@@ -129,7 +363,7 @@
 &lt;li&gt;state 是一個 JS 物件，會存放和元件有關的 data&lt;/li&gt;
 &lt;li&gt;state 要在創建元件時就被初始化&lt;/li&gt;
 &lt;li&gt;state 只能透過 &lt;code class=&quot;language-text&quot;&gt;setState&lt;/code&gt; 方法更新，不能用一般 JavaScript 習慣的賦值&lt;/li&gt;
-&lt;li&gt;更新 state 狀態會促使 component 重新渲染 =&gt; 換句話說，想要讓畫面變動，要透過 &lt;code class=&quot;language-text&quot;&gt;setState&lt;/code&gt; 方法來更新 state&lt;/li&gt;
+&lt;li&gt;更新 state 狀態會使元件及其子元件重新渲染 =&gt; 換句話說，想要讓畫面變動，要透過 &lt;code class=&quot;language-text&quot;&gt;setState&lt;/code&gt; 方法來更新&lt;/li&gt;
 &lt;/ul&gt;
 &lt;br&gt;
 &lt;h5 id=&quot;初始化-state&quot; style=&quot;position:relative;&quot;&gt;初始化 state&lt;a href=&quot;#%E5%88%9D%E5%A7%8B%E5%8C%96-state&quot; aria-label=&quot;初始化 state permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h5&gt;
@@ -326,7 +560,7 @@
     background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
     box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
   }
-&lt;/style&gt;</content:encoded></item><item><title><![CDATA[CH2/3：認識 JSX 和 Component 特性]]></title><description><![CDATA[認識 JSX 前面說過元件會回傳 JSX，JSX 不是新的語言，它只是 React 提供的語法糖，開發 React 並不一定要使用 JSX，它只是讓我們能更方便、快速建立 HTML 內容（並非真的在撰寫 HTML），瀏覽器是無法辨識 JSX 的，所以需要經由 babel…]]></description><link>https://zoeaeen13.github.io/modern-react-with-redux/CH2-3：認識 JSX 和 Component 特性/</link><guid isPermaLink="false">https://zoeaeen13.github.io/modern-react-with-redux/CH2-3：認識 JSX 和 Component 特性/</guid><pubDate>Mon, 14 Jun 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h4 id=&quot;認識-JSX&quot; style=&quot;position:relative;&quot;&gt;認識 JSX&lt;a href=&quot;#%E8%AA%8D%E8%AD%98-JSX&quot; aria-label=&quot;認識 JSX permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h4&gt;
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[認識 JSX 和 Component 特性]]></title><description><![CDATA[認識 JSX 前面說過元件會回傳 JSX，JSX 不是新的語言，它只是 React 提供的語法糖，開發 React 並不一定要使用 JSX，它只是讓我們能更方便、快速建立 HTML 內容（並非真的在撰寫 HTML），瀏覽器是無法辨識 JSX 的，所以需要經由 babel…]]></description><link>https://zoeaeen13.github.io/modern-react-with-redux/認識 JSX 和 Component 特性/</link><guid isPermaLink="false">https://zoeaeen13.github.io/modern-react-with-redux/認識 JSX 和 Component 特性/</guid><pubDate>Mon, 14 Jun 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h4 id=&quot;認識-JSX&quot; style=&quot;position:relative;&quot;&gt;認識 JSX&lt;a href=&quot;#%E8%AA%8D%E8%AD%98-JSX&quot; aria-label=&quot;認識 JSX permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;前面說過元件會回傳 JSX，JSX 不是新的語言，它只是 React 提供的語法糖，開發 React 並不一定要使用 JSX，它只是讓我們能更方便、快速建立 HTML 內容（並非真的在撰寫 HTML），瀏覽器是無法辨識 JSX 的，所以需要經由 babel 轉換成正常的 JavaScript 來執行。&lt;/p&gt;
 &lt;p&gt;用 &lt;a href=&quot;https://babeljs.io/&quot;&gt;https://babeljs.io/&lt;/a&gt; 進行測試，可以發現這段 JSX 會被 babel 變成下面的形式&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;呼叫 React.createElement 方法&lt;/strong&gt;&lt;/p&gt;
@@ -574,7 +808,7 @@
     background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
     box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
   }
-&lt;/style&gt;</content:encoded></item><item><title><![CDATA[CH1：React 概述]]></title><description><![CDATA[Overview 一般初始化 React 專案，會看到這幾行程式碼  是 React 元件（Component） 元件，用來產出 JSX 語法和處理事件綁定，JSX 是 JavaScript 的一種形式，長得和 HTML 元素很像，用來告訴 React…]]></description><link>https://zoeaeen13.github.io/modern-react-with-redux/CH1：React 基本概述/</link><guid isPermaLink="false">https://zoeaeen13.github.io/modern-react-with-redux/CH1：React 基本概述/</guid><pubDate>Fri, 11 Jun 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h4 id=&quot;Overview&quot; style=&quot;position:relative;&quot;&gt;Overview&lt;a href=&quot;#Overview&quot; aria-label=&quot;Overview permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h4&gt;
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[[筆記] Modern React with Redux：概述]]></title><description><![CDATA[Overview 一般初始化 React 專案，會看到這幾行程式碼  是 React 元件（Component） 元件，用來產出 JSX 語法和處理事件綁定，JSX 是 JavaScript 的一種形式，長得和 HTML 元素很像，用來告訴 React…]]></description><link>https://zoeaeen13.github.io/modern-react-with-redux/[筆記] Modern React with Redux：概述/</link><guid isPermaLink="false">https://zoeaeen13.github.io/modern-react-with-redux/[筆記] Modern React with Redux：概述/</guid><pubDate>Fri, 11 Jun 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h4 id=&quot;Overview&quot; style=&quot;position:relative;&quot;&gt;Overview&lt;a href=&quot;#Overview&quot; aria-label=&quot;Overview permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;一般初始化 React 專案，會看到這幾行程式碼&lt;/p&gt;
 &lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;javascript&quot; data-index=&quot;0&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;import&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; React &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;react&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;import&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; ReactDOM &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;react-dom&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
@@ -829,216 +1063,6 @@
 &lt;p&gt;五菜一湯，豐富的肉類和海鮮、美味的長濱米，配上海景，值得在這裡好好吃上一頓飯。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://i.imgur.com/X1Ykg6Q.jpg&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://i.imgur.com/90K21gS.jpg&quot;&gt;&lt;/p&gt;
-&lt;style class=&quot;grvsc-styles&quot;&gt;
-  .grvsc-container {
-    overflow: auto;
-    position: relative;
-    -webkit-overflow-scrolling: touch;
-    padding-top: 1rem;
-    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
-    padding-bottom: 1rem;
-    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
-    border-radius: 8px;
-    border-radius: var(--grvsc-border-radius, 8px);
-    font-feature-settings: normal;
-    line-height: 1.4;
-  }
-  
-  .grvsc-code {
-    display: table;
-  }
-  
-  .grvsc-line {
-    display: table-row;
-    box-sizing: border-box;
-    width: 100%;
-    position: relative;
-  }
-  
-  .grvsc-line &gt; * {
-    position: relative;
-  }
-  
-  .grvsc-gutter-pad {
-    display: table-cell;
-    padding-left: 0.75rem;
-    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
-  }
-  
-  .grvsc-gutter {
-    display: table-cell;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-  }
-  
-  .grvsc-gutter::before {
-    content: attr(data-content);
-  }
-  
-  .grvsc-source {
-    display: table-cell;
-    padding-left: 1.5rem;
-    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
-    padding-right: 1.5rem;
-    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
-  }
-  
-  .grvsc-source:empty::after {
-    content: &apos; &apos;;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-  }
-  
-  .grvsc-gutter + .grvsc-source {
-    padding-left: 0.75rem;
-    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
-  }
-  
-  /* Line transformer styles */
-  
-  .grvsc-has-line-highlighting &gt; .grvsc-code &gt; .grvsc-line::before {
-    content: &apos; &apos;;
-    position: absolute;
-    width: 100%;
-  }
-  
-  .grvsc-line-diff-add::before {
-    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
-  }
-  
-  .grvsc-line-diff-del::before {
-    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
-  }
-  
-  .grvsc-line-number {
-    padding: 0 2px;
-    text-align: right;
-    opacity: 0.7;
-  }
-  
-&lt;/style&gt;</content:encoded></item><item><title><![CDATA[Logs]]></title><description><![CDATA[2021 年 5 月 Work Leisure 和家人去長濱參加 金剛馬拉松 Idle moment 2021 年 4 月 Work 花一週的下班時間，用 gatsby 改版部落格，超滿意！ 工作逐漸上手，完成兩個後台功能、修一個 App bug，和 PM…]]></description><link>https://zoeaeen13.github.io/log/</link><guid isPermaLink="false">https://zoeaeen13.github.io/log/</guid><pubDate>Sat, 01 May 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h3 id=&quot;2021-年-5-月&quot; style=&quot;position:relative;&quot;&gt;2021 年 5 月&lt;a href=&quot;#2021-%E5%B9%B4-5-%E6%9C%88&quot; aria-label=&quot;2021 年 5 月 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;Work&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Leisure&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;和家人去長濱參加 &lt;a href=&quot;../%E9%95%B7%E6%BF%B1%E5%81%87%E6%9C%9F&quot;&gt;金剛馬拉松&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Idle moment&lt;/strong&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&quot;2021-年-4-月&quot; style=&quot;position:relative;&quot;&gt;2021 年 4 月&lt;a href=&quot;#2021-%E5%B9%B4-4-%E6%9C%88&quot; aria-label=&quot;2021 年 4 月 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;Work&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;花一週的下班時間，用 gatsby 改版部落格，超滿意！&lt;/li&gt;
-&lt;li&gt;工作逐漸上手，完成兩個後台功能、修一個 App bug，和 PM 們合作愉快&lt;/li&gt;
-&lt;li&gt;因月初月底都放連假，週五 front-end 讀書會進度慢（僅完成 &lt;a href=&quot;https://github.com/getify/You-Dont-Know-JS/tree/2nd-ed/get-started&quot;&gt;YDKJS&lt;/a&gt; 導讀）&lt;/li&gt;
-&lt;li&gt;在 Udemy 上學習 &lt;a href=&quot;https://www.udemy.com/course/understand-javascript/&quot;&gt;JavaScript: Understanding the Weird Parts&lt;/a&gt;，目前進行第四章&lt;/li&gt;
-&lt;li&gt;擔任線上助教的第一個月，學習成為引導的角色&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Leisure&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;和子心、家誼有個 Happy Friday 喝酒聚！&lt;/li&gt;
-&lt;li&gt;月中爸媽來台北看我，陪他們到北投到處走走&lt;/li&gt;
-&lt;li&gt;連續兩個週三和阿姨有午餐約會，收到她做給我的咖哩和肉燥🥰&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Idle moment&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;看一部峰迴路轉（Knives Out），劇情流暢、場景拍得好美！&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;這個月，漸漸熟悉工作之後會開始思考下班時間該如何規劃，而不會讓每日生活只有兩點一線，從寫作開始出發，把很久之前做的 hexo 砍掉、用 gatsby 重建，花了整整一週把原本的 starter 大改，&lt;u&gt;非常滿意目前的形式、各類文章不會互相干擾閱讀&lt;/u&gt;，等摸透了 &lt;strong&gt;gatsby&lt;/strong&gt; 再寫一篇改版歷程；也在工作之餘開始學習，除了跟著團隊讀書會，也買線上課程進修，希望一切盡快步上軌道。&lt;/p&gt;
-&lt;p&gt;不過，規劃初期總是想做的事情太多，因為腦子裡塞太多訊息，本月真正的空閒時間不多，只有一部《峰迴路轉》讓我好好放鬆到！其他的 Netflix 影片感受都普普，兔嘲男孩還行，婚姻故事看到一半就棄了QQ&lt;/p&gt;
-&lt;p&gt;整體狀態很差，運動方面放掉了不少、假日也沒有心力拉去戶外，加上文章搬遷和補缺是一件很耗費心力的事情，四月沒有產出。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/luVytgZ.jpg&quot;&gt;&lt;/p&gt;
-&lt;style class=&quot;grvsc-styles&quot;&gt;
-  .grvsc-container {
-    overflow: auto;
-    position: relative;
-    -webkit-overflow-scrolling: touch;
-    padding-top: 1rem;
-    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
-    padding-bottom: 1rem;
-    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
-    border-radius: 8px;
-    border-radius: var(--grvsc-border-radius, 8px);
-    font-feature-settings: normal;
-    line-height: 1.4;
-  }
-  
-  .grvsc-code {
-    display: table;
-  }
-  
-  .grvsc-line {
-    display: table-row;
-    box-sizing: border-box;
-    width: 100%;
-    position: relative;
-  }
-  
-  .grvsc-line &gt; * {
-    position: relative;
-  }
-  
-  .grvsc-gutter-pad {
-    display: table-cell;
-    padding-left: 0.75rem;
-    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
-  }
-  
-  .grvsc-gutter {
-    display: table-cell;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-  }
-  
-  .grvsc-gutter::before {
-    content: attr(data-content);
-  }
-  
-  .grvsc-source {
-    display: table-cell;
-    padding-left: 1.5rem;
-    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
-    padding-right: 1.5rem;
-    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
-  }
-  
-  .grvsc-source:empty::after {
-    content: &apos; &apos;;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-  }
-  
-  .grvsc-gutter + .grvsc-source {
-    padding-left: 0.75rem;
-    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
-  }
-  
-  /* Line transformer styles */
-  
-  .grvsc-has-line-highlighting &gt; .grvsc-code &gt; .grvsc-line::before {
-    content: &apos; &apos;;
-    position: absolute;
-    width: 100%;
-  }
-  
-  .grvsc-line-diff-add::before {
-    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
-  }
-  
-  .grvsc-line-diff-del::before {
-    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
-  }
-  
-  .grvsc-line-number {
-    padding: 0 2px;
-    text-align: right;
-    opacity: 0.7;
-  }
-  
-&lt;/style&gt;</content:encoded></item><item><title><![CDATA[Love Logs]]></title><description><![CDATA[2021 年 4 月]]></description><link>https://zoeaeen13.github.io/love-logs/</link><guid isPermaLink="false">https://zoeaeen13.github.io/love-logs/</guid><pubDate>Sat, 01 May 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h3 id=&quot;2021-年-4-月&quot; style=&quot;position:relative;&quot;&gt;2021 年 4 月&lt;a href=&quot;#2021-%E5%B9%B4-4-%E6%9C%88&quot; aria-label=&quot;2021 年 4 月 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;style class=&quot;grvsc-styles&quot;&gt;
   .grvsc-container {
     overflow: auto;
@@ -2293,34 +2317,35 @@
     background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
     box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
   }
-&lt;/style&gt;</content:encoded></item><item><title><![CDATA[React：認識生命週期方法及觸發時間點]]></title><description><![CDATA[什麼是 Component 的生命週期？ 不同於 function component，class component…]]></description><link>https://zoeaeen13.github.io/Lidemy/React Lifecycle：認識生命週期方法及觸發時間點/</link><guid isPermaLink="false">https://zoeaeen13.github.io/Lidemy/React Lifecycle：認識生命週期方法及觸發時間點/</guid><pubDate>Sat, 05 Dec 2020 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[React Lifecycle：認識生命週期方法及觸發時間點]]></title><description><![CDATA[什麼是 Component 的生命週期？ 不同於 function component，class component 繼承  擁有許多內建方法，稱為 lifecycle methods…]]></description><link>https://zoeaeen13.github.io/Lidemy/React Lifecycle：認識生命週期方法及觸發時間點/</link><guid isPermaLink="false">https://zoeaeen13.github.io/Lidemy/React Lifecycle：認識生命週期方法及觸發時間點/</guid><pubDate>Sat, 05 Dec 2020 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;p&gt;什麼是 Component 的生命週期？&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;不同於 function component，class component 是一個物件，裡面有許多內建函式，他們分別對應一個元件從準備、渲染到頁面、狀態更新後重新渲染、從頁面上移除前…等各個階段（時間點），組成了所謂的 Lifecycle。&lt;/p&gt;
-&lt;p&gt;這些 Lifecycle 方法，讓我們得以掌握元件的生命週期，在開發過程中某些特定時刻能執行我們需要的程式，例如載入完元件後才去非同步抓取資料，更新 props 觸發處理事件。&lt;/p&gt;
+&lt;p&gt;不同於 function component，class component 繼承 &lt;code class=&quot;language-text&quot;&gt;React.Component&lt;/code&gt; 擁有許多內建方法，稱為 lifecycle methods，分別對應一個元件從準備、渲染到頁面、狀態更新後重新渲染、從頁面上移除前…等各個階段（時間點），組成了所謂的生命週期。&lt;/p&gt;
+&lt;p&gt;這些方法，讓我們得以掌握元件的生命週期，在開發過程中選擇適合的時刻能執行我們需要的程式碼，例如載入完元件後才去非同步抓取資料，更新 props 觸發處理事件。&lt;/p&gt;
 &lt;hr&gt;
+&lt;br&gt;
 &lt;h3 id=&quot;一、生命週期各個階段&quot; style=&quot;position:relative;&quot;&gt;一、生命週期各個階段&lt;a href=&quot;#%E4%B8%80%E3%80%81%E7%94%9F%E5%91%BD%E9%80%B1%E6%9C%9F%E5%90%84%E5%80%8B%E9%9A%8E%E6%AE%B5&quot; aria-label=&quot;一、生命週期各個階段 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;h5 id=&quot;1-Mounting-階段：會在元件被建立時被執行&quot; style=&quot;position:relative;&quot;&gt;1 Mounting 階段：會在元件被建立時被執行&lt;a href=&quot;#1-Mounting-%E9%9A%8E%E6%AE%B5%EF%BC%9A%E6%9C%83%E5%9C%A8%E5%85%83%E4%BB%B6%E8%A2%AB%E5%BB%BA%E7%AB%8B%E6%99%82%E8%A2%AB%E5%9F%B7%E8%A1%8C&quot; aria-label=&quot;1 Mounting 階段：會在元件被建立時被執行 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h5&gt;
 &lt;p&gt;當一個 component 被建立且加入 DOM tree 中時，其生命週期將會依照下列的順序呼叫這些方法：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;constructor()&lt;/li&gt;
+&lt;li&gt;✅ constructor()&lt;/li&gt;
 &lt;li&gt;static getDerivedStateFromProps()&lt;/li&gt;
-&lt;li&gt;render()&lt;/li&gt;
-&lt;li&gt;componentDidMount()&lt;/li&gt;
+&lt;li&gt;✅ render()&lt;/li&gt;
+&lt;li&gt;✅ componentDidMount()&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h5 id=&quot;2-Updateing-階段&quot; style=&quot;position:relative;&quot;&gt;2 Updateing 階段&lt;a href=&quot;#2-Updateing-%E9%9A%8E%E6%AE%B5&quot; aria-label=&quot;2 Updateing 階段 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h5&gt;
 &lt;p&gt;當 prop 或 state 有變化時，就會產生狀態更新。當一個 component 處於更新階段，其生命週期將會依照下列的順序呼叫這些方法：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;getDerivedStateFromProps()&lt;/li&gt;
 &lt;li&gt;shouldComponentUpdate()&lt;/li&gt;
-&lt;li&gt;render()&lt;/li&gt;
+&lt;li&gt;✅ render()&lt;/li&gt;
 &lt;li&gt;getSnapshotBeforeUpdate()&lt;/li&gt;
-&lt;li&gt;componentDidUpdate()&lt;/li&gt;
+&lt;li&gt;✅ componentDidUpdate()&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h5 id=&quot;3-Unmounting-階段&quot; style=&quot;position:relative;&quot;&gt;3 Unmounting 階段&lt;a href=&quot;#3-Unmounting-%E9%9A%8E%E6%AE%B5&quot; aria-label=&quot;3 Unmounting 階段 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h5&gt;
 &lt;p&gt;當一個 component 被從 DOM 中移除時，以下方法將會被呼叫：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;componentWillUnmount()&lt;/li&gt;
+&lt;li&gt;✅ componentWillUnmount()&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h5 id=&quot;4-錯誤處理&quot; style=&quot;position:relative;&quot;&gt;4 錯誤處理&lt;a href=&quot;#4-%E9%8C%AF%E8%AA%A4%E8%99%95%E7%90%86&quot; aria-label=&quot;4 錯誤處理 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h5&gt;
 &lt;p&gt;當一個 component 在 render 過程、生命週期、或在某個 child component 的 constructor 中發生錯誤時，會呼叫以下方法處理：&lt;/p&gt;
@@ -2331,9 +2356,9 @@
 &lt;p&gt;&lt;img src=&quot;https://iamian.cc/static/56e1ae1a077d66ecc3899de3eec3e5d6/acfc1/react-life.png&quot;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h3 id=&quot;二、常用的生命週期方法&quot; style=&quot;position:relative;&quot;&gt;二、常用的生命週期方法&lt;a href=&quot;#%E4%BA%8C%E3%80%81%E5%B8%B8%E7%94%A8%E7%9A%84%E7%94%9F%E5%91%BD%E9%80%B1%E6%9C%9F%E6%96%B9%E6%B3%95&quot; aria-label=&quot;二、常用的生命週期方法 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
-&lt;h4 id=&quot;1-constructor&quot; style=&quot;position:relative;&quot;&gt;1. constructor&lt;a href=&quot;#1-constructor&quot; aria-label=&quot;1 constructor permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h4&gt;
-&lt;p&gt;會在 mount 之前被呼叫，用來建構並初始化物件，這邊繼承 &lt;code class=&quot;language-text&quot;&gt;React.Component&lt;/code&gt;，當你需要初始化 state 或綁定方法時，才需要實作它。建立 constructor 時，你應該先呼叫 &lt;code class=&quot;language-text&quot;&gt;super()&lt;/code&gt;，帶入 props 參數，否則 &lt;code class=&quot;language-text&quot;&gt;this.props&lt;/code&gt; 的值會出現 undefined 問題。&lt;/p&gt;
-&lt;p&gt;參考 &lt;a href=&quot;https://https://overreacted.io/why-do-we-write-super-props/&quot;&gt;Why Do We Write super(props)?&lt;/a&gt; 一文，super 會繼承父類別（指 React.Component），當我們呼叫過後，它才會配置 &lt;code class=&quot;language-text&quot;&gt;this.props = props&lt;/code&gt;，這時才能在建構子中使用 this。&lt;/p&gt;
+&lt;h4 id=&quot;1-constructor-構造函數&quot; style=&quot;position:relative;&quot;&gt;1. constructor 構造函數&lt;a href=&quot;#1-constructor-%E6%A7%8B%E9%80%A0%E5%87%BD%E6%95%B8&quot; aria-label=&quot;1 constructor 構造函數 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;會在 mount 之前被呼叫，用來建構並初始化物件，當初始化 state 或綁定方法時才需要實作它。建立 constructor 時，你需要先呼叫 &lt;code class=&quot;language-text&quot;&gt;super()&lt;/code&gt; 帶入 props 參數，否則 &lt;code class=&quot;language-text&quot;&gt;this.props&lt;/code&gt; 的值會出現 undefined 問題。&lt;/p&gt;
+&lt;p&gt;參考 &lt;a href=&quot;https://https://overreacted.io/why-do-we-write-super-props/&quot;&gt;Why Do We Write super(props)?&lt;/a&gt; ，super 會繼承父類別（指 &lt;code class=&quot;language-text&quot;&gt;React.Component&lt;/code&gt;），當我們呼叫過後，它才會配置 this.props = props，這時才能使用 &lt;code class=&quot;language-text&quot;&gt;this&lt;/code&gt;。&lt;/p&gt;
 &lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;jsx&quot; data-index=&quot;0&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;constructor(props) {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;(props);&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
@@ -2341,21 +2366,20 @@
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.handleClick = &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.handleClick.bind(&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;);&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
-&lt;li&gt;只有在 constructor 裡面才可以指定 &lt;code class=&quot;language-text&quot;&gt;this.state&lt;/code&gt; 值，其它地方則需要使用到 &lt;code class=&quot;language-text&quot;&gt;this.setState()&lt;/code&gt; 方法&lt;/li&gt;
-&lt;li&gt;constructor 裡面只用來設置初始化和綁定方法&lt;/li&gt;
-&lt;li&gt;不要做任何會產生 side effect 或 subscription 的事，那些應該在渲染完之後進行，例如使用 &lt;code class=&quot;language-text&quot;&gt;componentDidMount()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;只有在初始化時才可以賦值 &lt;code class=&quot;language-text&quot;&gt;this.state&lt;/code&gt;，其它更新都需要使用 &lt;code class=&quot;language-text&quot;&gt;this.setState()&lt;/code&gt; 方法&lt;/li&gt;
+&lt;li&gt;constructor 裡面只用來設置初始化 state 和綁定方法&lt;/li&gt;
+&lt;li&gt;不做任何會產生 side effect 或 subscription 的事，那些應該在渲染完之後進行，例如使用 &lt;code class=&quot;language-text&quot;&gt;componentDidMount()&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Q: 常見錯誤：直接複製 prop 的值到 state 中！&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;jsx&quot; data-index=&quot;1&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;constructor(props) {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;(props);&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.state = { color: props.color }; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;// don&amp;#39;t do that!å&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.state = { color: props.color }; ❌&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;// 1. 多此一舉，可以直接用 this.props.color&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;// 2. 產生 bug，prop 產生的更新根本不會出現在 state 中&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;// 3. 不能讓 state 依賴 prop&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;// 多此一舉，可以直接用 this.props.color&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;// 產生 bug，prop 產生的更新根本不會出現在 state 中&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;// 不能讓 state 依賴 prop&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;h4 id=&quot;2-render&quot; style=&quot;position:relative;&quot;&gt;2. render&lt;a href=&quot;#2-render&quot; aria-label=&quot;2 render permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;render()&lt;/code&gt; 是 class component 中唯一一個&lt;strong&gt;必須實作&lt;/strong&gt;的方法。&lt;/p&gt;
@@ -2369,36 +2393,51 @@
 &lt;p&gt;&lt;strong&gt;Q: 更新狀態一定會呼叫到 render 嗎？&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;大部分都會，唯一的例外情況是當 &lt;code class=&quot;language-text&quot;&gt;shouldComponentUpdate()&lt;/code&gt; 回傳的值為 false 的話，render() 將不會被呼叫到。&lt;/p&gt;
+&lt;hr&gt;
+&lt;br&gt;
 &lt;h4 id=&quot;3-componentDidMount&quot; style=&quot;position:relative;&quot;&gt;3. componentDidMount&lt;a href=&quot;#3-componentDidMount&quot; aria-label=&quot;3 componentDidMount permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;在 component 被加入 DOM tree 中後，&lt;code class=&quot;language-text&quot;&gt;componentDidMount()&lt;/code&gt; 會馬上被調用。&lt;/p&gt;
-&lt;p&gt;可以在該方法裡面呼叫 &lt;code class=&quot;language-text&quot;&gt;setState()&lt;/code&gt;，雖然會觸發一次額外的 render，但是是在瀏覽器畫面更新之前發生，使用者不會看見兩次 render 中過渡時期的狀態，只是可能導致效能上問題。&lt;/p&gt;
+&lt;p&gt;可以在該方法裡面呼叫 &lt;code class=&quot;language-text&quot;&gt;setState()&lt;/code&gt;，雖然會觸發一次額外的 render，但是是在瀏覽器畫面更新之前發生，使用者不會看見兩次 render 中過渡時期的狀態，只是有一些效能上的問題。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;執行 ajax，適合進行網路請求&lt;/li&gt;
 &lt;li&gt;設定 subscription&lt;/li&gt;
 &lt;li&gt;綁定 DOM 事件&lt;/li&gt;
 &lt;/ul&gt;
+&lt;hr&gt;
+&lt;br&gt;
 &lt;h4 id=&quot;4-componentDidUpdate&quot; style=&quot;position:relative;&quot;&gt;4. componentDidUpdate&lt;a href=&quot;#4-componentDidUpdate&quot; aria-label=&quot;4 componentDidUpdate permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h4&gt;
-&lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;jsx&quot; data-index=&quot;2&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;componentDidUpdate(prevProps, prevState, snapshot)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;javascript&quot; data-index=&quot;2&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;componentDidUpdate(prevProps, prevState, snapshot)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;用途和 componentDidMount 相似，區別在於它是用在 Updating 階段，可以在這裡寫&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;對 DOM 進行運作的處理&lt;/li&gt;
 &lt;li&gt;網路請求&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;記得設定條件，例如比較前後的 prop，不然每次重新渲染都執行一遍，很影響效能&lt;/p&gt;
+&lt;hr&gt;
+&lt;br&gt;
 &lt;h4 id=&quot;5-componentWillUnmount&quot; style=&quot;position:relative;&quot;&gt;5. componentWillUnmount&lt;a href=&quot;#5-componentWillUnmount&quot; aria-label=&quot;5 componentWillUnmount permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h4&gt;
-&lt;p&gt;在 component 要從畫面上被移除前（unmount）馬上被呼叫，在這個方法內進行任何狀態的清除，像是取消計時和網路請求或是移除監聽。&lt;/p&gt;
+&lt;p&gt;在 component 要從畫面上被移除前，會被呼叫，在這個方法內進行任何狀態的清除，像是取消計時和網路請求或是移除監聽。&lt;/p&gt;
 &lt;p&gt;常用的生命週期方法大概就這幾種，其它比較少用的可以參考這篇 &lt;a href=&quot;https://zh-hant.reactjs.org/docs/react-component.html&quot;&gt;React.Component&lt;/a&gt; 和 &lt;a href=&quot;https://zh-hant.reactjs.org/docs/state-and-lifecycle.html&quot;&gt;State 和生命週期&lt;/a&gt; 有詳細的介紹與範例。&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id=&quot;三、元件渲染順序&quot; style=&quot;position:relative;&quot;&gt;三、元件渲染順序&lt;a href=&quot;#%E4%B8%89%E3%80%81%E5%85%83%E4%BB%B6%E6%B8%B2%E6%9F%93%E9%A0%86%E5%BA%8F&quot; aria-label=&quot;三、元件渲染順序 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;ul&gt;
+&lt;br&gt;
+&lt;h3 id=&quot;三、元件渲染順序&quot; style=&quot;position:relative;&quot;&gt;三、元件渲染順序&lt;a href=&quot;#%E4%B8%89%E3%80%81%E5%85%83%E4%BB%B6%E6%B8%B2%E6%9F%93%E9%A0%86%E5%BA%8F&quot; aria-label=&quot;三、元件渲染順序 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;ol&gt;
 &lt;li&gt;Mounting
 父元件先執行到 &lt;code class=&quot;language-text&quot;&gt;render()&lt;/code&gt; 後，再來開始執行子元件的 Mounting 生命週期，最後執行完子元件的 &lt;code class=&quot;language-text&quot;&gt;componentDidMount()&lt;/code&gt; 後，再回頭執行父元件的 &lt;code class=&quot;language-text&quot;&gt;componentDidMount()&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br&gt;
+&lt;ol start=&quot;2&quot;&gt;
 &lt;li&gt;Updating
 父元件執行到 render 後，換子元件執行直到 &lt;code class=&quot;language-text&quot;&gt;getSnapshotBeforeUpdate()&lt;/code&gt;，會再回父元件執行 &lt;code class=&quot;language-text&quot;&gt;getSnapshotBeforeUpdate()&lt;/code&gt;，然後再執行子元件的 &lt;code class=&quot;language-text&quot;&gt;componentDidUpdate()&lt;/code&gt;，再回父元件執行 &lt;code class=&quot;language-text&quot;&gt;componentDidUpdate()&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br&gt;
+&lt;ol start=&quot;3&quot;&gt;
 &lt;li&gt;UnMounting
 父元件先執行 componentWillUnmount，再來是子元件執行&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;參考資料&quot; style=&quot;position:relative;&quot;&gt;參考資料&lt;a href=&quot;#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99&quot; aria-label=&quot;參考資料 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;br&gt;
+&lt;h5 id=&quot;參考資料&quot; style=&quot;position:relative;&quot;&gt;參考資料&lt;a href=&quot;#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99&quot; aria-label=&quot;參考資料 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h5&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://zh-hant.reactjs.org/docs/react-component.html&quot;&gt;React.Component&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://https://iamian.cc/reactlife/&quot;&gt;React Life Cycle 生命週期更新版，父子元件執行順序&lt;/a&gt;&lt;/li&gt;
