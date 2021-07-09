@@ -1,4 +1,271 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Travel in Time.]]></title><description><![CDATA[Travel in Time.]]></description><link>https://zoeaeen13.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 08 Jul 2021 14:08:54 GMT</lastBuildDate><item><title><![CDATA[一些 React 元件設定與事件綁定的技巧]]></title><description><![CDATA[第六章談到 class component 有生命週期，即繼承 可借用的方法，除了  之外，其他可以自行決定是否要實作，將會在某些特定時機點被 React 觸發。 因為之前已經寫過 React：認識生命週期方法及觸發時間點，這邊會就同樣的部分略過，以紀錄 CH6、CH…]]></description><link>https://zoeaeen13.github.io/modern-react-with-redux/一些元件設定與事件綁定的技巧/</link><guid isPermaLink="false">https://zoeaeen13.github.io/modern-react-with-redux/一些元件設定與事件綁定的技巧/</guid><pubDate>Sat, 19 Jun 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;第六章談到 class component 有生命週期，即繼承&lt;code class=&quot;language-text&quot;&gt;React.Component&lt;/code&gt; 可借用的方法，除了 &lt;code class=&quot;language-text&quot;&gt;render&lt;/code&gt; 之外，其他可以自行決定是否要實作，將會在某些特定時機點被 React 觸發。&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Travel in Time.]]></title><description><![CDATA[Travel in Time.]]></description><link>https://zoeaeen13.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 09 Jul 2021 13:05:28 GMT</lastBuildDate><item><title><![CDATA[CH12：useState、useEffect、useRef 使用補充]]></title><description><![CDATA[Hooks 提供 functional component 可以擁有狀態、類似生命週期的方法  useState 使用 array Destructuring，快速存取陣列裡面的元素 只要調用到 setter function，元件就會觸發 re-render，而 state…]]></description><link>https://zoeaeen13.github.io/modern-react-with-redux/useState、useEffect、useRef 使用補充/</link><guid isPermaLink="false">https://zoeaeen13.github.io/modern-react-with-redux/useState、useEffect、useRef 使用補充/</guid><pubDate>Fri, 09 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Hooks 提供 functional component 可以擁有狀態、類似生命週期的方法&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/qI4UX9i.png&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h4 id=&quot;useState&quot; style=&quot;position:relative;&quot;&gt;useState&lt;a href=&quot;#useState&quot; aria-label=&quot;useState permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;使用 array Destructuring，快速存取陣列裡面的元素&lt;/li&gt;
+&lt;li&gt;只要調用到 setter function，元件就會觸發 re-render，而 state 的初始值將不會再被使用（預設 null），直接被新值取代&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;javascript&quot; data-index=&quot;0&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;import&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; React, { useState } &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;#39;react&amp;#39;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;const&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; [activeIndex, setActiveIndex] = useState(&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk3&quot;&gt;// 第一個參數，放某個會被 React 保留的變數引用&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk3&quot;&gt;// 第二個參數，是一個可以用來更新該變數的 setter function&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk3&quot;&gt;// 接受一個參數，作為 state 初始值&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;class Component 可以同時定義和更改多個狀態，但 functional component 卻需要多次調用&lt;/p&gt;
+&lt;hr&gt;
+&lt;br&gt;
+&lt;h4 id=&quot;useEffect&quot; style=&quot;position:relative;&quot;&gt;useEffect&lt;a href=&quot;#useEffect&quot; aria-label=&quot;useEffect permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h4&gt;
+&lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;javascript&quot; data-index=&quot;1&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;useEffect(() &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;// 要執行的程式碼&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}, [])&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;有三種方法可以配置 useEffect 使用，達到生命週期的作用&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;第一次渲染元件時執行&lt;/li&gt;
+&lt;li&gt;第一次渲染時、或任何時候 re-render 完執行（不放第二個參數）&lt;/li&gt;
+&lt;li&gt;第一次渲染時、或在某些數據改變時才執行&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/dmzIXYt.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;useEffect 第二個參數是一陣列，裡面放的東西不同，將控制什麼時候執行程式碼。如果放多個元素，只要任一改變就會觸發&lt;/p&gt;
+&lt;hr&gt;
+&lt;BR&gt;
+&lt;h5 id=&quot;Q-useEffect-裡面放-async-function？&quot; style=&quot;position:relative;&quot;&gt;Q: useEffect 裡面放 async function？&lt;a href=&quot;#Q-useEffect-%E8%A3%A1%E9%9D%A2%E6%94%BE-async-function%EF%BC%9F&quot; aria-label=&quot;Q useEffect 裡面放 async function？ permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h5&gt;
+&lt;p&gt;注意 useEffect 要執行的程式碼，不能直接寫 async function&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;javascript&quot; data-index=&quot;2&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;const&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; [term, setTerm] = useState(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;useEffect(&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;async&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; () &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;await&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; axios(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;#39;XXX&amp;#39;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;)... &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;// 🔴&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}, [term])&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;可透過以下幾種方式解決：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在 useEffect 裡面定義一個 async function 執行&lt;/li&gt;
+&lt;li&gt;把 async function 變成 IIFE，立即調用（和上面差不多）&lt;/li&gt;
+&lt;li&gt;使用 Promise&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;javascript&quot; data-index=&quot;3&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;const&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; [term, setTerm] = useState(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk3&quot;&gt;// #1 設一個 helper function&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;useEffect(() &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;const&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; search = &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;async&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; () &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;await&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; axios.get(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;#39;XXX&amp;#39;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  search()&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}, [term])&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk3&quot;&gt;// #2 和 #1 差不多，只是少掉變數宣告&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;useEffect(() &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  (&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;async&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; () &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;await&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; axios.get(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;#39;XXX&amp;#39;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  })()&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}, [term])&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk3&quot;&gt;// #3 promise chain&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;useEffect(() &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  axios.get(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;#39;XXX&amp;#39;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  .then((response) &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    console.log(response.data)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  })&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}, [term])&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;BR&gt;
+&lt;h5 id=&quot;Q-useEffect-的-cleanup-function-怎麼使用？&quot; style=&quot;position:relative;&quot;&gt;Q: useEffect 的 cleanup function 怎麼使用？&lt;a href=&quot;#Q-useEffect-%E7%9A%84-cleanup-function-%E6%80%8E%E9%BA%BC%E4%BD%BF%E7%94%A8%EF%BC%9F&quot; aria-label=&quot;Q useEffect 的 cleanup function 怎麼使用？ permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h5&gt;
+&lt;p&gt;常碰到一個情境：使用者停止輸入後，延遲幾秒才送出搜尋，避免短時間發出多個 request。&lt;/p&gt;
+&lt;p&gt;延續上面例子，可以在 term 改變後設定計時器，每 500 毫秒去 call 一次 API 搜尋，而流程會像下圖，第一次 input 改變時設定一個計時，第二次 input 在 500 毫秒以內改變就取消上一個計時，重新設定下一個…&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/RAMXi8H.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;使用 setTimeout 創建計時器， setTimeout 會返回一個數字或整數標示計時器，可以利用 clearTimeout 來清除它，這樣裡面的程式碼就不會執行&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;javascript&quot; data-index=&quot;4&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;useEffect(() &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;const&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; search = &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;async&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; () &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;await&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; axios.get(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;#39;XXX&amp;#39;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;// 每次延遲 500 ms 發出請求&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  setTimeout(() &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; (term) {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;      search()&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  }, &lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;500&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}, [term])&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;但是，清除的時機點是什麼？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;在 useEffect 裡面，只能回傳一個特定類型的值，就是 function，也是所謂的清理函數 &lt;code class=&quot;language-text&quot;&gt;cleanup function&lt;/code&gt;，而它的清理功能&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;會在元件從 UI 中移除之前運行&lt;/li&gt;
+&lt;li&gt;元件渲染多次時，每次執行 useEffect 主要程式碼之前會運行&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;javascript&quot; data-index=&quot;5&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;useEffect(&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;// main function&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  () &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;const&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; search = &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;async&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; () &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;await&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; axios.get(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;#39;XXX&amp;#39;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;const&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; timeoutId = setTimeout(() &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; (term) {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;      search()&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  }, &lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;500&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;// cleanup function&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; () &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    clearTimeout(timeoutId)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}, [term])&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;第一次渲染時，會執行整個 arrow function 的內容，並 return 一個清理函數，React 會將清理函數保留起來。&lt;/p&gt;
+&lt;p&gt;當要再次執行 arrow function 內容時，React 會先調用清理函數（第一次執行時返回的東西），接著才執行 arrow function，然後回傳清理函數，順序如下&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/EsMAc3m.png&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;BR&gt;
+&lt;h4 id=&quot;useRef-使用&quot; style=&quot;position:relative;&quot;&gt;useRef 使用&lt;a href=&quot;#useRef-%E4%BD%BF%E7%94%A8&quot; aria-label=&quot;useRef 使用 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;利用 Refs 系統，訪問由 JSX 所產生真正的 DOM element，代替 &lt;code class=&quot;language-text&quot;&gt;document.querySelector&lt;/code&gt; 使用。&lt;/p&gt;
+&lt;p&gt;ref 是一個 JS 物件，有一個 current 屬性會指向其綁定的 DOM 節點，之前在 class componenet 裡面就是用 &lt;code class=&quot;language-text&quot;&gt;React.createRef()&lt;/code&gt; 設定，在 Hooks 裡面也有提供類似的 useRef 方法。&lt;/p&gt;
+&lt;p&gt;以設計下拉選單為例，實作點擊頁面其他部分要收起選單：
+首先，第一次渲染下拉元件時，在 useEffect 為 body 添加 click 事件監聽，理想來說，當事件最後冒泡到 body 就會執行關閉選單？&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;javascript&quot; data-index=&quot;6&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;useEffect(() &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    document.body.addEventListener(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;#39;click&amp;#39;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;, () &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;        setOpen(&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    })&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}, [])&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然而，Dropdown 元件中會執行到 setOpen 的還有其他點擊事件，以為是按照冒泡的順序由下往上傳遞，但實際順序卻和想像不太一樣。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;因執行順序問題，竟然發生又打開選單的狀況？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;在 JSX 元件上面綁的監聽器，是通過 react 來連結，使用原生 JS 寫法連結的事件反而最先被調用&lt;/strong&gt;，所以正確執行順序如下，當點擊 Dropdown 選項時：&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;javascript&quot; data-index=&quot;7&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk5&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; 用 addEventListenr 綁定的事件&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk5&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; 子元件綁定的 click 事件&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk5&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; 父元件綁定的 click 事件&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/GELW4iO.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;所以，要排除 body click 的某些情況，可以使用 useRef 參照其 DOM 元素&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;javascript&quot; data-index=&quot;8&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;useEffect(() &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  document.body.addEventListener(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;#39;click&amp;#39;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;, (event) &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;// 確認目前點擊的元素是否在 Dropdown 裡&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; (dropDownRef.current.contains(event.target)) &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;return&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    setOpen(&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  })&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;})&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;不過要注意監聽器的清理，當元件從 DOM 上消失時，所有添加到內部元素的 ref 會被設定成 null（因為沒有東西可以引用了），但是監聽器仍然存在，可能會造成 &lt;code class=&quot;language-text&quot;&gt;null.current.contains&lt;/code&gt; 的錯誤狀況&lt;/p&gt;
+&lt;p&gt;記得利用上面提到的 useEffect 清理功能，當元件從畫面上移掉時，關閉監聽器&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;javascript&quot; data-index=&quot;9&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;useEffect(() &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;const&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; onBodyClick = (event) &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; (dropDownRef.current.contains(event.target)) &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;return&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;        setOpen(&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    })&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    document.body.addEventListener(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;#39;click&amp;#39;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;, onBodyClick)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;// cleanup function&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; () &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;        document.body.removeEventListener(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;#39;click&amp;#39;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;, onBodyClick)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;})&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;h6 id=&quot;PS-補充&quot; style=&quot;position:relative;&quot;&gt;P.S 補充&lt;a href=&quot;#PS-%E8%A3%9C%E5%85%85&quot; aria-label=&quot;PS 補充 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h6&gt;
+&lt;p&gt;React v17 之後，監聽器要加上第三個參數 =&gt; &lt;code class=&quot;language-text&quot;&gt;{ capture: true }&lt;/code&gt;，參考 &lt;a href=&quot;https://reactjs.org/blog/2020/08/10/react-v17-rc.html#fixing-potential-issues&quot;&gt;Fixing Potential Issues&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;style class=&quot;grvsc-styles&quot;&gt;
+  .grvsc-container {
+    overflow: auto;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 1rem;
+    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
+    padding-bottom: 1rem;
+    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
+    border-radius: 8px;
+    border-radius: var(--grvsc-border-radius, 8px);
+    font-feature-settings: normal;
+    line-height: 1.4;
+  }
+  
+  .grvsc-code {
+    display: table;
+  }
+  
+  .grvsc-line {
+    display: table-row;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+  }
+  
+  .grvsc-line &gt; * {
+    position: relative;
+  }
+  
+  .grvsc-gutter-pad {
+    display: table-cell;
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  .grvsc-gutter {
+    display: table-cell;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter::before {
+    content: attr(data-content);
+  }
+  
+  .grvsc-source {
+    display: table-cell;
+    padding-left: 1.5rem;
+    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
+    padding-right: 1.5rem;
+    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
+  }
+  
+  .grvsc-source:empty::after {
+    content: &apos; &apos;;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter + .grvsc-source {
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  /* Line transformer styles */
+  
+  .grvsc-has-line-highlighting &gt; .grvsc-code &gt; .grvsc-line::before {
+    content: &apos; &apos;;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .grvsc-line-diff-add::before {
+    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
+  }
+  
+  .grvsc-line-diff-del::before {
+    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
+  }
+  
+  .grvsc-line-number {
+    padding: 0 2px;
+    text-align: right;
+    opacity: 0.7;
+  }
+  
+  .visual-studio-dark {
+    background-color: #1E1E1E;
+    color: #D4D4D4;
+  }
+  .visual-studio-dark .mtk4 { color: #569CD6; }
+  .visual-studio-dark .mtk1 { color: #D4D4D4; }
+  .visual-studio-dark .mtk11 { color: #CE9178; }
+  .visual-studio-dark .mtk3 { color: #6A9955; }
+  .visual-studio-dark .mtk5 { color: #B5CEA8; }
+  .visual-studio-dark .grvsc-line-highlighted::before {
+    background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
+    box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
+  }
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[一些 React 元件設定與事件綁定的技巧]]></title><description><![CDATA[第六章談到 class component 有生命週期，即繼承 可借用的方法，除了  之外，其他可以自行決定是否要實作，將會在某些特定時機點被 React 觸發。 因為之前已經寫過 React：認識生命週期方法及觸發時間點，這邊會就同樣的部分略過，以紀錄 CH6、CH…]]></description><link>https://zoeaeen13.github.io/modern-react-with-redux/一些元件設定與事件綁定的技巧/</link><guid isPermaLink="false">https://zoeaeen13.github.io/modern-react-with-redux/一些元件設定與事件綁定的技巧/</guid><pubDate>Sat, 19 Jun 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;第六章談到 class component 有生命週期，即繼承&lt;code class=&quot;language-text&quot;&gt;React.Component&lt;/code&gt; 可借用的方法，除了 &lt;code class=&quot;language-text&quot;&gt;render&lt;/code&gt; 之外，其他可以自行決定是否要實作，將會在某些特定時機點被 React 觸發。&lt;/p&gt;
 &lt;p&gt;因為之前已經寫過 &lt;a href=&quot;../../Lidemy/React%20Lifecycle%EF%BC%9A%E8%AA%8D%E8%AD%98%E7%94%9F%E5%91%BD%E9%80%B1%E6%9C%9F%E6%96%B9%E6%B3%95%E5%8F%8A%E8%A7%B8%E7%99%BC%E6%99%82%E9%96%93%E9%BB%9E&quot;&gt;React：認識生命週期方法及觸發時間點&lt;/a&gt;，這邊會就同樣的部分略過，以紀錄 CH6、CH7 中學到的實作知識為主。&lt;/p&gt;
 &lt;hr&gt;
 &lt;br&gt;
@@ -805,7 +1072,7 @@
     background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
     box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
   }
-&lt;/style&gt;</content:encoded></item><item><title><![CDATA[[筆記] Modern React with Redux：概述]]></title><description><![CDATA[Overview 一般初始化 React 專案，會看到這幾行程式碼  是 React 元件（Component） 元件，用來產出 JSX 語法和處理事件綁定，JSX 是 JavaScript 的一種形式，長得和 HTML 元素很像，用來告訴 React…]]></description><link>https://zoeaeen13.github.io/modern-react-with-redux/[筆記] Modern React with Redux：概述/</link><guid isPermaLink="false">https://zoeaeen13.github.io/modern-react-with-redux/[筆記] Modern React with Redux：概述/</guid><pubDate>Fri, 11 Jun 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h4 id=&quot;Overview&quot; style=&quot;position:relative;&quot;&gt;Overview&lt;a href=&quot;#Overview&quot; aria-label=&quot;Overview permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h4&gt;
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[CH1：Modern React with Redux：概述]]></title><description><![CDATA[Overview 一般初始化 React 專案，會看到這幾行程式碼  是 React 元件（Component） 元件，用來產出 JSX 語法和處理事件綁定，JSX 是 JavaScript 的一種形式，長得和 HTML 元素很像，用來告訴 React…]]></description><link>https://zoeaeen13.github.io/modern-react-with-redux/Modern React with Redux：概述/</link><guid isPermaLink="false">https://zoeaeen13.github.io/modern-react-with-redux/Modern React with Redux：概述/</guid><pubDate>Fri, 11 Jun 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h4 id=&quot;Overview&quot; style=&quot;position:relative;&quot;&gt;Overview&lt;a href=&quot;#Overview&quot; aria-label=&quot;Overview permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;一般初始化 React 專案，會看到這幾行程式碼&lt;/p&gt;
 &lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;javascript&quot; data-index=&quot;0&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;import&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; React &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;react&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;import&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; ReactDOM &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;react-dom&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
@@ -3974,447 +4241,6 @@ DOM 是描述 HTML 文件的表示法，也就是我們常看到的、可以使�
   .visual-studio-dark .mtk3 { color: #6A9955; }
   .visual-studio-dark .mtk1 { color: #D4D4D4; }
   .visual-studio-dark .mtk11 { color: #CE9178; }
-  .visual-studio-dark .grvsc-line-highlighted::before {
-    background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
-    box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
-  }
-&lt;/style&gt;</content:encoded></item><item><title><![CDATA[HTML X CSS Practice]]></title><description><![CDATA[01. 名片設計 box-shadow 屬性 用來產生陰影效果，可設置 X 軸偏移量、Y 軸偏移量、模糊效果（邊緣是否清晰）、擴散程度（陰影放大縮放）及顏色，其中 Y 值為正、陰影是往下方移動。 半圓形，則使用到「絕對定位」及「overflow」屬性。 在卡片上畫兩個 div…]]></description><link>https://zoeaeen13.github.io/HTML X CSS Practice/</link><guid isPermaLink="false">https://zoeaeen13.github.io/HTML X CSS Practice/</guid><pubDate>Sat, 29 Aug 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h4 id=&quot;01-名片設計&quot; style=&quot;position:relative;&quot;&gt;01. 名片設計&lt;a href=&quot;#01-%E5%90%8D%E7%89%87%E8%A8%AD%E8%A8%88&quot; aria-label=&quot;01 名片設計 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h4&gt;
-&lt;div class=&quot;project-skill-tags&quot;&gt;
-  &lt;text&gt;HTML&lt;/text&gt;
-  &lt;text&gt;CSS&lt;/text&gt;
-&lt;/div&gt;
-&lt;div class=&quot;project_wrap project1&quot;&gt;
-  &lt;div class=&quot;mark&quot;&gt;NAMECARD&lt;/div&gt;
-  &lt;a href=&quot;https://www.cakeresume.com/zoeaeen13-frontend&quot; alt=&quot;&quot; class=&quot;namecard&quot;&gt;
-    &lt;h2&gt;
-      老余
-      &lt;span&gt;(Zoe)&lt;/span&gt;
-    &lt;/h2&gt;
-    &lt;h5&gt;前端工程師&lt;/h5&gt;
-    &lt;hr/&gt;
-    &lt;p&gt;網頁前端開發者，熱愛動腦的過程，也喜歡動手實作&lt;/p&gt;
-    &lt;p&gt;在一次旅行後開啟自學程式之路，持續學習、精進技術和邏輯思維&lt;br/&gt;期待有一天結合技術能力創造有價值的產品&lt;/p&gt;  
-    &lt;div class=&quot;circle circle1&quot;&gt;&lt;/div&gt;
-    &lt;div class=&quot;circle circle2&quot;&gt;&lt;/div&gt;
-  &lt;/a&gt;
-&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;box-shadow 屬性&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;用來產生陰影效果，可設置 X 軸偏移量、Y 軸偏移量、模糊效果（邊緣是否清晰）、擴散程度（陰影放大縮放）及顏色，其中 Y 值為正、陰影是往下方移動。&lt;/p&gt;
-&lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;css&quot; data-index=&quot;0&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk3&quot;&gt;/* offset-x | offset-y | blur-radius | spread-radius | color */&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;box-shadow&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;: 0px 25px 15px -20px rgba(0, 0, 0, 0&lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;.2&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;);&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;半圓形，則使用到「絕對定位」及「overflow」屬性。&lt;/p&gt;
-&lt;p&gt;在卡片上畫兩個 div，圓角 100% 及設定他們為絕對定位，而父層卡片設置 &lt;code class=&quot;language-text&quot;&gt;position: relative&lt;/code&gt;，因為是要以&lt;strong&gt;卡片&lt;/strong&gt;本身來定位，參考 &lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web/CSS/position&quot;&gt;MDN&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;接著調整 top、right、bottom、left（根據卡片本身），因圓形半徑為 75px，一個放在卡片右上角，一個對著卡片底部，超過的部分則用 &lt;code class=&quot;language-text&quot;&gt;overflow: hidden;&lt;/code&gt; 處理。&lt;/p&gt;
-&lt;hr&gt;
-&lt;h4 id=&quot;02-動態天氣盒子&quot; style=&quot;position:relative;&quot;&gt;02. 動態天氣盒子&lt;a href=&quot;#02-%E5%8B%95%E6%85%8B%E5%A4%A9%E6%B0%A3%E7%9B%92%E5%AD%90&quot; aria-label=&quot;02 動態天氣盒子 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h4&gt;
-&lt;div class=&quot;project-skill-tags&quot;&gt;
-  &lt;text&gt;HTML&lt;/text&gt;
-  &lt;text&gt;CSS&lt;/text&gt;
-  &lt;text&gt;SVG&lt;/text&gt;
-  &lt;text&gt;ANIMATION&lt;/text&gt;
-&lt;/div&gt;
-&lt;div class=&quot;project_wrap project2&quot;&gt;
-  &lt;div class=&quot;box&quot;&gt;
-    &lt;label&gt;
-      &lt;input type=&quot;checkbox&quot; id=&quot;switch_night&quot;&gt;
-        &lt;div class=&quot;top&quot; viewbox=&quot;0 0 400 400&quot;&gt;
-          &lt;svg class=&quot;temsvg&quot;&gt;&lt;circle cx=&quot;0&quot; cy=&quot;70&quot; r=&quot;3&quot;/&gt;&lt;text x=&quot;0&quot; y=&quot;70&quot;&gt;32°C&lt;/text&gt;&lt;circle cx=&quot;70&quot; cy=&quot;50&quot; r=&quot;3&quot;/&gt;&lt;text x=&quot;70&quot; y=&quot;50&quot;&gt;34°C&lt;/text&gt;&lt;circle cx=&quot;140&quot; cy=&quot;30&quot; r=&quot;3&quot;/&gt;&lt;text x=&quot;140&quot; y=&quot;30&quot;&gt;34.5°C&lt;/text&gt;&lt;circle cx=&quot;210&quot; cy=&quot;60&quot; r=&quot;3&quot;/&gt;&lt;text x=&quot;210&quot; y=&quot;60&quot;&gt;33°C&lt;/text&gt;&lt;circle cx=&quot;280&quot; cy=&quot;70&quot; r=&quot;3&quot;/&gt;&lt;text x=&quot;280&quot; y=&quot;70&quot;&gt;32.5°C&lt;/text&gt;&lt;circle cx=&quot;350&quot; cy=&quot;60&quot; r=&quot;3&quot;/&gt;&lt;text x=&quot;350&quot; y=&quot;60&quot;&gt;33°C&lt;/text&gt;&lt;circle cx=&quot;420&quot; cy=&quot;50&quot; r=&quot;3&quot;/&gt;&lt;text x=&quot;420&quot; y=&quot;50&quot;&gt;34°C&lt;/text&gt;&lt;polyline points=&quot;0,70 70,50 140,30 210,60 280,70 350,60 420,50&quot; /&gt;&lt;/svg&gt;
-          &lt;div class=&quot;moon&quot;&gt;&lt;/div&gt;
-          &lt;div class=&quot;cloud&quot;&gt;
-            &lt;div class=&quot;rain rain1&quot;&gt;&lt;/div&gt;
-            &lt;div class=&quot;rain rain2&quot;&gt;&lt;/div&gt;
-            &lt;div class=&quot;rain rain3&quot;&gt;&lt;/div&gt;
-          &lt;/div&gt;
-          &lt;div class=&quot;text__area&quot;&gt;
-            &lt;div class=&quot;temporature&quot;&gt;32°C&lt;/div&gt;
-            &lt;div class=&quot;info&quot;&gt;
-              &lt;div class=&quot;location&quot;&gt;台東縣台東市臺東&lt;/div&gt;
-              &lt;div class=&quot;time&quot;&gt;星期五 下午5:00&lt;/div&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;bottom&quot;&gt;
-        &lt;div class=&quot;day__weather&quot;&gt;
-          &lt;h3&gt;MON&lt;/h3&gt;
-          &lt;svg viewbox=&quot;-50 -50 100 100&quot;&gt;&lt;circle class=&quot;sun&quot; cx=&quot;0&quot; cy=&quot;0&quot; r=&quot;22&quot; /&gt;&lt;/svg&gt;
-        &lt;/div&gt;
-          &lt;div class=&quot;day__weather&quot;&gt;
-          &lt;h3&gt;TUE&lt;/h3&gt;
-          &lt;svg viewbox=&quot;-50 -50 100 100&quot;&gt;&lt;circle class=&quot;sun&quot; cx=&quot;0&quot; cy=&quot;0&quot; r=&quot;22&quot; /&gt;&lt;/svg&gt;
-        &lt;/div&gt;
-          &lt;div class=&quot;day__weather&quot;&gt;
-          &lt;h3&gt;WED&lt;/h3&gt;
-          &lt;svg viewbox=&quot;-50 -50 100 100&quot;&gt;&lt;circle class=&quot;sun&quot; cx=&quot;0&quot; cy=&quot;0&quot; r=&quot;22&quot; /&gt;&lt;circle class=&quot;cloud&quot; cx=&quot;0&quot; cy=&quot;30&quot; r=&quot;20&quot;/&gt;&lt;circle class=&quot;cloud&quot; cx=&quot;-15&quot; cy=&quot;30&quot; r=&quot;20&quot;/&gt;&lt;circle class=&quot;cloud&quot; cx=&quot;-30&quot; cy=&quot;30&quot; r=&quot;20&quot;/&gt;&lt;circle class=&quot;cloud&quot; cx=&quot;-25&quot; cy=&quot;10&quot; r=&quot;15&quot;/&gt;&lt;circle class=&quot;cloud&quot; cx=&quot;-7&quot; cy=&quot;15&quot; r=&quot;15&quot;/&gt;&lt;/svg&gt;
-        &lt;/div&gt;
-          &lt;div class=&quot;day__weather&quot;&gt;
-          &lt;h3&gt;THU&lt;/h3&gt;
-          &lt;svg viewbox=&quot;-50 -50 100 100&quot;&gt;&lt;circle class=&quot;sun&quot; cx=&quot;0&quot; cy=&quot;0&quot; r=&quot;22&quot; /&gt;&lt;/svg&gt;
-        &lt;/div&gt;
-          &lt;div class=&quot;day__weather&quot;&gt;
-          &lt;h3&gt;FRI&lt;/h3&gt;
-          &lt;svg viewbox=&quot;-50 -50 100 100&quot;&gt;&lt;circle class=&quot;sun&quot; cx=&quot;0&quot; cy=&quot;0&quot; r=&quot;22&quot; /&gt;&lt;/svg&gt;
-        &lt;/div&gt;
-          &lt;div class=&quot;day__weather&quot;&gt;
-          &lt;h3&gt;SAT&lt;/h3&gt;
-          &lt;svg viewbox=&quot;-63 -30 100 100&quot;&gt;&lt;line class=&quot;rain&quot; x1=&quot;-25&quot; y1=&quot;15&quot; x2=&quot;-25&quot; y2=&quot;35 &quot;/&gt;&lt;line class=&quot;rain rain2&quot; x1=&quot;0&quot; y1=&quot;10&quot; x2=&quot;0&quot; y2=&quot;30&quot;/&gt;&lt;line class=&quot;rain rain3&quot; x1=&quot;-10&quot; y1=&quot;20&quot; x2=&quot;-10&quot; y2=&quot;40 &quot;/&gt;&lt;circle class=&quot;cloud&quot; cx=&quot;0&quot; cy=&quot;30&quot; r=&quot;20&quot;/&gt;&lt;circle class=&quot;cloud&quot; cx=&quot;-15&quot; cy=&quot;30&quot; r=&quot;20&quot;/&gt;&lt;circle class=&quot;cloud&quot; cx=&quot;-30&quot; cy=&quot;30&quot; r=&quot;20&quot;/&gt;&lt;circle class=&quot;cloud&quot; cx=&quot;-25&quot; cy=&quot;10&quot; r=&quot;15&quot;/&gt;&lt;circle class=&quot;cloud&quot; cx=&quot;-7&quot; cy=&quot;15&quot; r=&quot;15&quot;/&gt;&lt;/svg&gt;
-        &lt;/div&gt;
-          &lt;div class=&quot;day__weather&quot;&gt;
-          &lt;h3&gt;SUN&lt;/h3&gt;
-          &lt;svg viewbox=&quot;-63 -30 100 100&quot;&gt;&lt;line class=&quot;rain&quot; x1=&quot;-25&quot; y1=&quot;15&quot; x2=&quot;-25&quot; y2=&quot;35 &quot;/&gt;&lt;line class=&quot;rain rain2&quot; x1=&quot;0&quot; y1=&quot;10&quot; x2=&quot;0&quot; y2=&quot;30&quot;/&gt;&lt;line class=&quot;rain rain3&quot; x1=&quot;-10&quot; y1=&quot;20&quot; x2=&quot;-10&quot; y2=&quot;40 &quot;/&gt;&lt;circle class=&quot;cloud&quot; cx=&quot;0&quot; cy=&quot;30&quot; r=&quot;20&quot;/&gt;&lt;circle class=&quot;cloud&quot; cx=&quot;-15&quot; cy=&quot;30&quot; r=&quot;20&quot;/&gt;&lt;circle class=&quot;cloud&quot; cx=&quot;-30&quot; cy=&quot;30&quot; r=&quot;20&quot;/&gt;&lt;circle class=&quot;cloud&quot; cx=&quot;-25&quot; cy=&quot;10&quot; r=&quot;15&quot;/&gt;&lt;circle class=&quot;cloud&quot; cx=&quot;-7&quot; cy=&quot;15&quot; r=&quot;15&quot;/&gt;&lt;/svg&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/label&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;ol&gt;
-&lt;li&gt;天氣折線圖&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;使用 SVG 繪製，圓點用 circle 元素、折線使用 polyline，需要注意的是 SVG 屬性名稱有些和 CSS 不同：&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;th&gt;CSS&lt;/th&gt;
-&lt;th&gt;SVG&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;邊框顏色&lt;/td&gt;
-&lt;td&gt;border-color&lt;/td&gt;
-&lt;td&gt;stroke&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;框線粗細&lt;/td&gt;
-&lt;td&gt;border-width&lt;/td&gt;
-&lt;td&gt;stroke-width&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;背景&lt;/td&gt;
-&lt;td&gt;background-color&lt;/td&gt;
-&lt;td&gt;fill&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;定位&lt;/td&gt;
-&lt;td&gt;left/top/bottom/right&lt;/td&gt;
-&lt;td&gt;x/y（圓形 cx/cy）&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;寬高&lt;/td&gt;
-&lt;td&gt;width/height&lt;/td&gt;
-&lt;td&gt;width/height&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;在 svg 中有一個 &lt;code class=&quot;language-text&quot;&gt;viewbox&lt;/code&gt; 屬性，放四個參數（x, y, width, height），可以把它想像成整個 svg 圖檔的可視範圍，超過就不會顯示出來，像天氣折線圖中的最後一個圓點因 x 座標超過範圍，不會出現在畫面上。&lt;/p&gt;
-&lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;html&quot; data-index=&quot;1&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;svg&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;temsvg&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;viewbox&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;0 0 400 400&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;circle&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;cx&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;0&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;cy&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;70&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;3&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;0&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;70&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;32°C&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;circle&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;cx&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;70&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;cy&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;50&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;3&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;70&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;50&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;34°C&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;circle&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;cx&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;140&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;cy&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;30&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;3&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;140&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;30&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;34.5°C&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;circle&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;cx&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;210&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;cy&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;60&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;3&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;210&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;60&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;33°C&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;circle&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;cx&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;280&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;cy&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;70&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;3&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;280&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;70&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;32.5°C&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;circle&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;cx&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;350&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;cy&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;60&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;3&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;350&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;60&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;33°C&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;circle&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;cx&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;420&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;cy&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;50&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;3&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;/&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;&amp;lt;!-- 從 x 軸往右 400 以內才是可視區 --&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;420&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;50&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;34°C&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;polyline&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;points&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;0,70 70,50 140,30 210,60 280,70 350,60 420,50&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;svg&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;css&quot; data-index=&quot;2&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk7&quot;&gt;.temsvg&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;100%&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk7&quot;&gt;.temsvg&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;polyline&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;stroke&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;: #f3f3f3;     &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;/* 框線顏色 */&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;stroke-width&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;1px&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;   &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;/* 框線粗細 */&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;fill&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;: none;          &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;/* 無填滿 */&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk7&quot;&gt;.temsvg&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;: translate(&lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;-10px&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;, &lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;20px&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;);    &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;/* 讓文字在圓點下方 */&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;10px&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;fill&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;: #f3f3f3;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk7&quot;&gt;.temsvg&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;circle&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;fill&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;: #f3f3f3;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;動畫部分，一開始讓折線圖文字隱藏、幾乎要看不到點線，等到點擊卡片才變跑出來，最簡單的做法：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;使用 &lt;code class=&quot;language-text&quot;&gt;opacity&lt;/code&gt; 來調整&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;css&quot; data-index=&quot;3&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk3&quot;&gt;/* 初始化設置透明度 */&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk7&quot;&gt;.temsvg&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;polyline&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;opacity&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;0.2&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk7&quot;&gt;.temsvg&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;opacity&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk7&quot;&gt;.temsvg&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;circle&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;opacity&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;0.2&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk3&quot;&gt;/* 動畫時間效果：duration 和 delay 使用 */&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk7&quot;&gt;.temsvg&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;polyline&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;, &lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;.temsvg&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;circle&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;, &lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;.temsvg&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;transition-duration&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;0.5s&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk7&quot;&gt;.temsvg&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;transition-delay&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;1s&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk7&quot;&gt;.temsvg&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;polyline&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;transition-delay&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;0.5s&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk3&quot;&gt;/* 點擊後才調整透明度 */&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk7&quot;&gt;#switch_night:checked&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; + &lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;.top&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;.temsvg&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;polyline&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;, &lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;#switch_night:checked&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; + &lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;.top&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;.temsvg&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;circle&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;, &lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;#switch_night:checked&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; + &lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;.top&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;.temsvg&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;opacity&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;ol start=&quot;2&quot;&gt;
-&lt;li&gt;雲朵和雲&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;雲朵可以用 SVG 做，但這邊紀錄另一種做法 ── 使用「&lt;strong&gt;偽元素&lt;/strong&gt;」，先設定半橢圓的底部，再用上 ::before、::after 變成兩圓形，內部添加細長條的雨滴，最後根據父層的雲朵調整內部位置。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/Zs6slzu.png&quot;&gt;&lt;/p&gt;
-&lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;html&quot; data-index=&quot;4&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk3&quot;&gt;&amp;lt;!-- 一朵雲和它的雨 --&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;cloud&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;rain rain1&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;rain rain2&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;rain rain3&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;動畫方面，雲和雨是設置上下移動：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;寫一組影格動畫 cloudAnim，設置 &lt;code class=&quot;language-text&quot;&gt;translateY&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;把動畫分配給雲朵，設置以 4 秒為一次的無限循環&lt;/li&gt;
-&lt;li&gt;另一組雨的動畫則另外加上淡出效果&lt;/li&gt;
-&lt;/ol&gt;
-&lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;css&quot; data-index=&quot;5&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk7&quot;&gt;.cloud&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;animation&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;: cloudAnim &lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;4s&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; infinite;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;animation-delay&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;-0.2s&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;   &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;/* 為了在進入頁面前就看到移動，設置負數開始播放 */&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;@keyframes&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; cloudAnim {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  0% { &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;: translateY(&lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;0px&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;); }    &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;/* 動畫進度 0% 要做到的事 */&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  50% { &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;: translateY(&lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;-10px&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;); } &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;/* 動畫進度 50% 要做到的事 */&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  100% { &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;: translateY(&lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;0px&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;); }  &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;/* 動畫進度 100% 要做到的事 */&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk7&quot;&gt;.rain&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;animation&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;: rainAnim &lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;1s&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; infinite linear;  &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;/* linear 等速播動畫 */&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;@keyframes&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; rainAnim {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  0% { &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;: translateY(&lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;0px&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;); }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  100% { &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;: translateY(&lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;50px&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;); &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;opacity&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;; }  &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;/* 漸漸淡出 */&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk7&quot;&gt;.rain2&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;animation-delay&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;-0.4s&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;/* 同樣從負數開始播放 */&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk7&quot;&gt;.rain3&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;animation-delay&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;-0.7s&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;ol start=&quot;3&quot;&gt;
-&lt;li&gt;月亮&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;做法超級神奇！運用位移來創造出陰晴圓缺效果，本身只是圓形加上一個偏移很多的陰影，但只要把本體框線拿掉就會發現是弦月的形狀&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/N4ZG9uf.png&quot;&gt;&lt;/p&gt;
-&lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;html&quot; data-index=&quot;6&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;moon&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;利用本體和陰影的移動，來創造視差&lt;/p&gt;
-&lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;css&quot; data-index=&quot;7&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk7&quot;&gt;.moon&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;50px&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;50px&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;border-radius&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;100%&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;box-shadow&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;15px&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;-15px&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;              &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;/* 陰影 */&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;animation&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;: moonmove &lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;20s&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; infinite;    &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;/* 每 20 秒一次的動畫 */&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;@keyframes&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; moonmove {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  0% {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;box-shadow&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;15px&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;-15px&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; #FFD633;    &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;/* 陰影的開始位置 */&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;: translate(&lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;-15px&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;, &lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;15px&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;); &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;/* 本身位移，抵銷陰影的移動 */&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  100% {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;box-shadow&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;-25px&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;25px&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; #FFD633;    &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;/* 陰影的結束位置 */&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;: translate(&lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;25px&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;, &lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;-25px&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;); &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;/* 本身位移，抵銷陰影的移動 */&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;ol start=&quot;4&quot;&gt;
-&lt;li&gt;太陽&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;太陽做法同樣巧妙，利用加粗的邊框和「虛線」來繪製周圍的光暈，這邊紀錄 stroke 的幾種屬性：&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;stroke 五個設定&lt;/th&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;stroke&lt;/td&gt;
-&lt;td&gt;邊框顏色&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;stroke-width&lt;/td&gt;
-&lt;td&gt;邊框的寬度&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;stroke-linecap&lt;/td&gt;
-&lt;td&gt;邊框端點&lt;/td&gt;
-&lt;td&gt;butt（預設）、square、round&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;stroke-linejoin&lt;/td&gt;
-&lt;td&gt;邊框接合尖角&lt;/td&gt;
-&lt;td&gt;miter（預設）、round、bevel&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;stroke-dasharray&lt;/td&gt;
-&lt;td&gt;虛線&lt;/td&gt;
-&lt;td&gt;放入一陣列 &lt;code class=&quot;language-text&quot;&gt;&amp;quot;2, 5, 4&amp;quot;&lt;/code&gt;，設定線段長度與虛線間隔&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;&lt;img src=&quot;http://www.oxxostudio.tw/img/articles/201406/20140613_1_03.png&quot;&gt;&lt;/p&gt;
-&lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;html&quot; data-index=&quot;8&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk3&quot;&gt;&amp;lt;!-- 以 (-50,-50) 為起點，往右邊和下面看 100 --&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk3&quot;&gt;&amp;lt;!-- 圓形設置 (0,0) 自然會在 svg 視覺中央 --&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;svg&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;viewbox&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;-50 -50 100 100&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;circle&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;sun&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;cx&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;0&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;cy&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;0&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;&amp;quot;22&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;svg&lt;/span&gt;&lt;span class=&quot;mtk13&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;css&quot; data-index=&quot;9&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk7&quot;&gt;.sun&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;fill&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;: #FFD633;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;stroke&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;: rgba(&lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;, &lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;214&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;, &lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;51&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;, &lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;0.3&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;);&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;stroke-width&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;30px&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;stroke-dasharray&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;5px&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;   &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;/* 每一段虛線 */&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;ol start=&quot;5&quot;&gt;
-&lt;li&gt;底部卡片展開&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;一開始就先讓底部高度只留一點，hover 時再調整回原高，天氣小圖也是一樣，只不過是調整位移和 transition 來做到往上升的效果&lt;/p&gt;
-&lt;pre class=&quot;grvsc-container visual-studio-dark&quot; data-language=&quot;css&quot; data-index=&quot;10&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk7&quot;&gt;.bottom&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;10px&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk7&quot;&gt;.day__weather&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;text-align&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;: center;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;: calc(&lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;100%&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; / &lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; - &lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;5px&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;);  &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;/* CSS 可用 calc 算數 */&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;opacity&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;20px&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;transition&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;0.5s&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk3&quot;&gt;/* hover */&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk7&quot;&gt;.box:hover&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;.bottom&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;100px&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk7&quot;&gt;.box:hover&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;.bottom&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;.day__weather&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;opacity&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;mtk5&quot;&gt;0px&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;hr&gt;
-&lt;style class=&quot;grvsc-styles&quot;&gt;
-  .grvsc-container {
-    overflow: auto;
-    position: relative;
-    -webkit-overflow-scrolling: touch;
-    padding-top: 1rem;
-    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
-    padding-bottom: 1rem;
-    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
-    border-radius: 8px;
-    border-radius: var(--grvsc-border-radius, 8px);
-    font-feature-settings: normal;
-    line-height: 1.4;
-  }
-  
-  .grvsc-code {
-    display: table;
-  }
-  
-  .grvsc-line {
-    display: table-row;
-    box-sizing: border-box;
-    width: 100%;
-    position: relative;
-  }
-  
-  .grvsc-line &gt; * {
-    position: relative;
-  }
-  
-  .grvsc-gutter-pad {
-    display: table-cell;
-    padding-left: 0.75rem;
-    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
-  }
-  
-  .grvsc-gutter {
-    display: table-cell;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-  }
-  
-  .grvsc-gutter::before {
-    content: attr(data-content);
-  }
-  
-  .grvsc-source {
-    display: table-cell;
-    padding-left: 1.5rem;
-    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
-    padding-right: 1.5rem;
-    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
-  }
-  
-  .grvsc-source:empty::after {
-    content: &apos; &apos;;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-  }
-  
-  .grvsc-gutter + .grvsc-source {
-    padding-left: 0.75rem;
-    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
-  }
-  
-  /* Line transformer styles */
-  
-  .grvsc-has-line-highlighting &gt; .grvsc-code &gt; .grvsc-line::before {
-    content: &apos; &apos;;
-    position: absolute;
-    width: 100%;
-  }
-  
-  .grvsc-line-diff-add::before {
-    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
-  }
-  
-  .grvsc-line-diff-del::before {
-    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
-  }
-  
-  .grvsc-line-number {
-    padding: 0 2px;
-    text-align: right;
-    opacity: 0.7;
-  }
-  
-  .visual-studio-dark {
-    background-color: #1E1E1E;
-    color: #D4D4D4;
-  }
-  .visual-studio-dark .mtk3 { color: #6A9955; }
-  .visual-studio-dark .mtk4 { color: #569CD6; }
-  .visual-studio-dark .mtk1 { color: #D4D4D4; }
-  .visual-studio-dark .mtk7 { color: #D7BA7D; }
-  .visual-studio-dark .mtk13 { color: #808080; }
-  .visual-studio-dark .mtk8 { color: #9CDCFE; }
-  .visual-studio-dark .mtk11 { color: #CE9178; }
-  .visual-studio-dark .mtk5 { color: #B5CEA8; }
   .visual-studio-dark .grvsc-line-highlighted::before {
     background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
     box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
